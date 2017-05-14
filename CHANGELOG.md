@@ -1,7 +1,7 @@
 # JEC Commons Project: Update Release Notes
 
-<a name="jec-commons-1.0.0"></a>
-## **1.0.0** (2017-05-11)
+<a name="jec-commons-0.9.0"></a>
+## **0.9.0** (2017-05-14)
 
 ### Bug Fixes
 
