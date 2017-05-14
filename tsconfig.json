@@ -13,8 +13,7 @@
     "baseUrl": "."
   },
   "filesGlob": [
-    "./src/**/*.ts",
-    "./packages/**/*.ts"
+    "./src/**/*.ts"
   ],
   "exclude": [
     "node_modules",

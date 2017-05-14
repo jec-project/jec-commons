@@ -69,7 +69,7 @@ The documentation generator is [TypeDoc](http://typedoc.org/)
 For a complete listing of release notes for all JEC Commons update releases, see the [CHANGELOG](CHANGELOG) file. 
 
 ## License
-This JEC Commons Project is licensed under Apache 2.0. Full license text is available in [COPYING](COPYING).
+This JEC Commons Project is licensed under Apache 2.0. Full license text is available in [LICENSE](LICENSE).
 
 ```
 Copyright 2016-2017 Pascal ECHEMANN.
