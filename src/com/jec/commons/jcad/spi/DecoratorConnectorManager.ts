@@ -33,7 +33,8 @@ export class DecoratorConnectorManager {
    * Creates a new <code>DecoratorConnectorManager</code> instance.
    */
   constructor() {
-    if(DecoratorConnectorManager._locked || DecoratorConnectorManager.INSTANCE) {
+    if(DecoratorConnectorManager._locked ||
+                                      global["__DecoratorConnectorManager__"]) {
       throw new SingletonError(DecoratorConnectorManager);
     }
     DecoratorConnectorManager._locked = true;
@@ -43,11 +44,6 @@ export class DecoratorConnectorManager {
   //////////////////////////////////////////////////////////////////////////////
   // Singleton managment
   //////////////////////////////////////////////////////////////////////////////
-
-  /**
-   * The <code>DecoratorConnectorManager</code> singleton instance reference.
-   */
-  private static INSTANCE:DecoratorConnectorManager = null;
 
   /**
    * Prevents <code>DecoratorConnectorManager</code> illegal instanciations.
@@ -61,11 +57,11 @@ export class DecoratorConnectorManager {
    *                                    singleton.
    */
   public static getInstance():DecoratorConnectorManager{
-    if(DecoratorConnectorManager.INSTANCE === null) {
+    if(global["__DecoratorConnectorManager__"] === undefined) {
       DecoratorConnectorManager._locked = false;
-      DecoratorConnectorManager.INSTANCE = new DecoratorConnectorManager();
+      global["__DecoratorConnectorManager__"] = new DecoratorConnectorManager();
     }
-    return DecoratorConnectorManager.INSTANCE;
+    return global["__DecoratorConnectorManager__"];
   }
   
   //////////////////////////////////////////////////////////////////////////////

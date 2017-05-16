@@ -34,10 +34,12 @@ export {FileProperties} from "./files/reflect/FileProperties";
 export {SourceFileInspector} from "./files/reflect/SourceFileInspector";
 //--> com/jec/commons/jcad/spi
 export {AbstractDecoratorConnector} from "./jcad/spi/AbstractDecoratorConnector";
-export {DecoratorConnectorManager} from "./jcad/spi/DecoratorConnectorManager";
+import {DecoratorConnectorManager} from "./jcad/spi/DecoratorConnectorManager";
+exports.DecoratorConnectorManager = DecoratorConnectorManager.getInstance().constructor;
 export {JcadContextFactory} from "./jcad/spi/JcadContextFactory";
 export {JcadContextImpl} from "./jcad/spi/JcadContextImpl";
-export {JcadContextManager} from "./jcad/spi/JcadContextManager";
+import {JcadContextManager} from "./jcad/spi/JcadContextManager";
+exports.JcadContextManager = JcadContextManager.getInstance().constructor;
 //--> com/jec/commons/jcad
 export {Decorator} from "./jcad/Decorator";
 export {DecoratorConnector} from "./jcad/DecoratorConnector";

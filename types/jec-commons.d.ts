@@ -4,9 +4,9 @@
 
 // Please maintain packages and alphabetical order.
 
-import * as fs from "fs";
-
 declare module "jec-commons" {
+
+import * as fs from "fs";
 
 export class SingletonError extends Error {
   constructor(classRef:any);

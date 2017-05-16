@@ -1,5 +1,16 @@
 # JEC Commons Project: Update Release Notes
 
+<a name="jec-commons-1.0.0"></a>
+## **1.0.0** (2017-05-14)
+
+### Bug Fixes
+
+- **Module Caching Caveats:** the JCAD registry API has been redesigned to prevent singleton issues due to the [Node.js Module Caching Caveats](https://nodejs.org/api/modules.html#modules_module_caching_caveats)
+
+### Features
+
+- First stable release
+
 <a name="jec-commons-0.9.0"></a>
 ## **0.9.0** (2017-05-14)
 

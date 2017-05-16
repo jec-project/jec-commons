@@ -32,7 +32,7 @@ export class JcadContextManager {
    * Creates a new <code>JcadContextManager</code> instance.
    */
   constructor() {
-    if(JcadContextManager._locked || JcadContextManager.INSTANCE) {
+    if(JcadContextManager._locked || global["__JcadContextManager__"]) {
       throw new SingletonError(JcadContextManager);
     }
     JcadContextManager._locked = true;
@@ -42,11 +42,6 @@ export class JcadContextManager {
   //////////////////////////////////////////////////////////////////////////////
   // Singleton managment
   //////////////////////////////////////////////////////////////////////////////
-
-  /**
-   * The <code>JcadContextManager</code> singleton instance reference.
-   */
-  private static INSTANCE:JcadContextManager = null;
 
   /**
    * Prevents <code>JcadContextManager</code> illegal instanciations.
@@ -60,11 +55,11 @@ export class JcadContextManager {
    *                              <code>JcadContextManager<code> singleton.
    */
   public static getInstance():JcadContextManager{
-    if(JcadContextManager.INSTANCE === null) {
+    if(global["__JcadContextManager__"] === undefined) {
       JcadContextManager._locked = false;
-      JcadContextManager.INSTANCE = new JcadContextManager();
+      global["__JcadContextManager__"] = new JcadContextManager();
     }
-    return JcadContextManager.INSTANCE;
+    return global["__JcadContextManager__"];
   }
   
   //////////////////////////////////////////////////////////////////////////////

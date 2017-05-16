@@ -5,9 +5,9 @@
  * This is a part of the JEC Projects: <https://github.com/pechemann/JEC>
  */
 
-import * as fs from "fs";
-
 declare module "jec-commons" {
+
+import * as fs from "fs";
 
 /*PLACEHOLDER*/
 

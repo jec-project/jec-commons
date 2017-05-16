@@ -2,7 +2,7 @@
 
 JEC Commons is a [JavaScript Entreprise Container][jec-url] project focused on all aspects of reusable JEC components.
 
-[![][jec-commons-logo]][jec-url]
+[![][jec-logo]][jec-url]
 
 JEC Commons contains core and utility APIs including:
 
@@ -32,11 +32,14 @@ $ npm install jec-commons --save
 All JEC Commons components have to be imported with the ES6 syntax:
 
 ```javascript
-import { HttpStatusCode, HttpMethods } from "jec-commons";
+import { HttpStatusCode, HttpMethod } from "jec-commons";
 
 const NO_CONTENT:number = HttpStatusCode.NO_CONTENT;
+const GET:number = HttpMethod.GET;
 console.log(NO_CONTENT);
 //204
+console.log(GET);
+//GET
 ```
 
 For a complete list of available components, please refer to the [API Reference](#api-reference) documentation.
@@ -64,9 +67,9 @@ The documentation generator is [TypeDoc](http://typedoc.org/)
 
 ## Update Release Notes
 
-**Current stable release:** [1.0.0](CHANGELOG#jec-commons-0.9.0)
+**Current stable release:** [1.0.0](CHANGELOG.md#jec-commons-1.0.0)
  
-For a complete listing of release notes for all JEC Commons update releases, see the [CHANGELOG](CHANGELOG) file. 
+For a complete listing of release notes for all JEC Commons update releases, see the [CHANGELOG](CHANGELOG.md) file. 
 
 ## License
 This JEC Commons Project is licensed under Apache 2.0. Full license text is available in [LICENSE](LICENSE).
@@ -88,4 +91,4 @@ limitations under the License.
 ```
 
 [jec-url]: https://github.com/pechemann/JEC
-[jec-commons-logo]: https://raw.githubusercontent.com/pechemann/JEC/master/assets/jec-logos/jec-logo.png
+[jec-logo]: https://raw.githubusercontent.com/pechemann/JEC/master/assets/jec-logos/jec-logo.png
