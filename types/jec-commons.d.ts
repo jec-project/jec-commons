@@ -124,19 +124,21 @@ export abstract class AbstractDecoratorConnector implements DecoratorConnector {
     getDecorator(): Decorator;
 }
 
-export class DecoratorConnectorManager {
+export class DecoratorConnectorManager implements Singleton {
     constructor();
-    private static INSTANCE;
     private static _locked;
     static getInstance(): DecoratorConnectorManager;
     private static readonly PIPE;
     private _connectorMap;
+    private _id;
     private initObj();
     private buildRef(jcadRef, contextId);
     addConnector(connector: DecoratorConnector, context: JcadContext): string;
     getConnector(jcadReference: string, context: JcadContext): DecoratorConnector;
+    hasConnector(jcadReference: string, context: JcadContext): boolean;
     getDecorator(jcadReference: string, context: JcadContext): Decorator;
     removeConnector(jcadReference: string, context: JcadContext): boolean;
+    getId(): string;
 }
 
 export class JcadContextFactory {
@@ -151,16 +153,18 @@ export class JcadContextImpl implements JcadContext {
     getId(): string;
 }
 
-export class JcadContextManager {
+export class JcadContextManager implements Singleton {
     constructor();
-    private static INSTANCE;
     private static _locked;
     static getInstance(): JcadContextManager;
     private _jcadContextMap;
+    private _id;
     private initObj();
     getContext(jcadReference: string): JcadContext;
     addContext(jcadReference: string, context: JcadContext): void;
+    hasContext(jcadReference: string): boolean;
     removeContext(jcadReference: string): JcadContext;
+    getId(): string;
 }
 
 export interface Decorator {
