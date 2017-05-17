@@ -16,20 +16,20 @@
 
 import "mocha";
 import {expect} from "chai";
-import {GuidTestUtils} from "../../../../../../utils/test-utils/guid-utils/GuidTestUtils";
+import {GuidTestUtils} from "../../../../../utils/test-utils/guid-utils/GuidTestUtils";
 
 // Class to test:
-import {JcadContextImpl} from "../../../../../../src/com/jec/commons/jcad/spi/JcadContextImpl";
+import {GuidGenerator} from "../../../../../src/com/jec/commons/lang/GuidGenerator";
 
 // Test:
-describe("JcadContextImpl", ()=> {
+describe("GuidGenerator", ()=> {
 
-  describe("#getId()", ()=> {
+  describe("#generate", ()=> {
     it("should return a valid GUID V4", function() {
-      let ctx:JcadContextImpl = new JcadContextImpl();
-      let id:string = ctx.getId();
-      expect(id).to.be.a("string");
-      expect(GuidTestUtils.GUID_VALIDATOR.test(id)).to.equal(true);
+      let generator:GuidGenerator = new GuidGenerator();
+      let guid:string = generator.generate();
+      expect(guid).to.be.a("string");
+      expect(GuidTestUtils.GUID_VALIDATOR.test(guid)).to.equal(true);
     });
   });
 });

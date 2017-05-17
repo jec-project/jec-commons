@@ -14,22 +14,18 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import "mocha";
-import {expect} from "chai";
-import {GuidTestUtils} from "../../../../../../utils/test-utils/guid-utils/GuidTestUtils";
+/**
+ * A utility class that contains static members for testing Globally Unique
+ * Identifiers (GUID).
+ */
+export class GuidTestUtils {
 
-// Class to test:
-import {JcadContextImpl} from "../../../../../../src/com/jec/commons/jcad/spi/JcadContextImpl";
+  ////////////////////////////////////////////////////////////////////////////
+  // Public constants
+  ////////////////////////////////////////////////////////////////////////////
 
-// Test:
-describe("JcadContextImpl", ()=> {
-
-  describe("#getId()", ()=> {
-    it("should return a valid GUID V4", function() {
-      let ctx:JcadContextImpl = new JcadContextImpl();
-      let id:string = ctx.getId();
-      expect(id).to.be.a("string");
-      expect(GuidTestUtils.GUID_VALIDATOR.test(id)).to.equal(true);
-    });
-  });
-});
+  /**
+   * A regular expression that allows to test GUID strings.
+   */
+  public static readonly GUID_VALIDATOR:RegExp = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+}

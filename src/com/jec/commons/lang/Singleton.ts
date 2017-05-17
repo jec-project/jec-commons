@@ -14,22 +14,17 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import "mocha";
-import {expect} from "chai";
-import {GuidTestUtils} from "../../../../../../utils/test-utils/guid-utils/GuidTestUtils";
+/**
+ * The <code>Singleton</code> interface provides the API that you must implement
+ * to create testable singletons in a JEC module.
+ */
+export interface Singleton {
 
-// Class to test:
-import {JcadContextImpl} from "../../../../../../src/com/jec/commons/jcad/spi/JcadContextImpl";
-
-// Test:
-describe("JcadContextImpl", ()=> {
-
-  describe("#getId()", ()=> {
-    it("should return a valid GUID V4", function() {
-      let ctx:JcadContextImpl = new JcadContextImpl();
-      let id:string = ctx.getId();
-      expect(id).to.be.a("string");
-      expect(GuidTestUtils.GUID_VALIDATOR.test(id)).to.equal(true);
-    });
-  });
-});
+  /**
+   * Must return a Globally Unique Identifiers (GUID) for this
+   * <code>Singleton</code> instance.
+   * 
+   * @return {string} the GUID. for this <code>Singleton</code> instance.
+   */
+  getId():string;
+};

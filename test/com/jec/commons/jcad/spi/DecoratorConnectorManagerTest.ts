@@ -21,7 +21,8 @@ import {AbstractDecoratorConnector} from "../../../../../../src/com/jec/commons/
 import {DecoratorConnector} from "../../../../../../src/com/jec/commons/jcad/DecoratorConnector";
 import {Decorator} from "../../../../../../src/com/jec/commons/jcad/Decorator";
 import {JcadContextFactory} from "../../../../../../src/com/jec/commons/jcad/spi/JcadContextFactory"; 
-import {JcadContext} from "../../../../../../src/com/jec/commons/jcad/JcadContext"; 
+import {JcadContext} from "../../../../../../src/com/jec/commons/jcad/JcadContext";
+import {GuidTestUtils} from "../../../../../../utils/test-utils/guid-utils/GuidTestUtils";
 
 // Utilities:
 class AbstractDecoratorConnectorImpl extends AbstractDecoratorConnector {}
@@ -59,6 +60,15 @@ describe("DecoratorConnectorManager", ()=> {
   describe("#getInstance()", ()=> {
     it("should return the reference to the singleton instance", function() {
       expect(DecoratorConnectorManager.getInstance()).to.be.instanceOf(DecoratorConnectorManager);
+    });
+  });
+
+  describe("#getId()", ()=> {
+    it("should always return a valid GUID", function() {
+      this.retries(10);
+      let guid:string = DecoratorConnectorManager.getInstance().getId();
+      expect(guid).to.be.a("string");
+      expect(GuidTestUtils.GUID_VALIDATOR.test(guid)).to.equal(true);
     });
   });
 

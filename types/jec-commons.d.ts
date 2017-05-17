@@ -189,6 +189,11 @@ export class EncodingFormat {
     static readonly HEX: any;
 }
 
+export class GuidGenerator {
+    constructor();
+    generate(): string;
+}
+
 export class JsonLoader {
     constructor();
     encodingFormat: string;
@@ -198,6 +203,10 @@ export class JsonLoader {
 
 export class JsonLoaderError extends Error {
     constructor(message: string);
+}
+
+export interface Singleton {
+    getId(): string;
 }
 
 export interface LoggerProxy {

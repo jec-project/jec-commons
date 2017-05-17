@@ -59,7 +59,7 @@ export class ImportRefParser {
    * Parses the specified file and returns the list of imports it contains.
    * 
    * @param {string} file the file to parse.
-   * @return {Array<Object>} the list of imports for the specified file.
+   * @return {Array<ImportRef>} the list of imports for the specified file.
    */
   public getImports(file:string):ImportRef[] {
     let imports:ImportRef[] = new Array<ImportRef>();

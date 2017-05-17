@@ -20,6 +20,7 @@ import {SingletonError} from "../../../../../../src/com/jec/commons/exceptions/S
 import {JcadContextFactory} from "../../../../../../src/com/jec/commons/jcad/spi/JcadContextFactory"; 
 import {JcadContext} from "../../../../../../src/com/jec/commons/jcad/JcadContext"; 
 import {JcadContextError} from "../../../../../../src/com/jec/commons/jcad/exceptions/JcadContextError";
+import {GuidTestUtils} from "../../../../../../utils/test-utils/guid-utils/GuidTestUtils";
 
 // Class to test:
 import {JcadContextManager} from "../../../../../../src/com/jec/commons/jcad/spi/JcadContextManager";
@@ -39,6 +40,15 @@ describe("JcadContextManager", ()=> {
   describe("#getInstance()", ()=> {
     it("should return the reference to the singleton instance", function() {
       expect(JcadContextManager.getInstance()).to.be.instanceOf(JcadContextManager);
+    });
+  });
+
+  describe("#getId()", ()=> {
+    it("should always return a valid GUID", function() {
+      this.retries(10);
+      let guid:string = JcadContextManager.getInstance().getId();
+      expect(guid).to.be.a("string");
+      expect(GuidTestUtils.GUID_VALIDATOR.test(guid)).to.equal(true);
     });
   });
 

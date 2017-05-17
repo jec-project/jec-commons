@@ -24,7 +24,7 @@ export interface LogFormatter {
    * Formats and returns the marker with the specified level information.
    *
    * @param {string} level the current level information.
-   * @param {Object} marker the marker object to format.
+   * @param {any} marker the marker object to format.
    * @param {boolean} useAppender indicates whether to add a new line charater
    *                              at the end of the message (<code>true</code>), 
    *                              or not (<code>false</code>). Default value is

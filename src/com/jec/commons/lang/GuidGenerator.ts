@@ -14,54 +14,32 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {JcadContext} from "../JcadContext";
-import {GuidGenerator} from "../../lang/GuidGenerator";
+import * as uuid from "uuid";
 
 /**
- * The default implementation of the <code>JcadContext</code> interface.
+ * A helper class that generates Globally Unique Identifiers (GUID). 
  */
-export class JcadContextImpl implements JcadContext {
+export class GuidGenerator {
 
   //////////////////////////////////////////////////////////////////////////////
   // Constructor function
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Creates a new <code>JcadContextImpl</code> instance.
+   * Creates a new <code>GuidGenerator</code> instance.
    */
-  constructor() {
-    this.initObj();
-  }
-
-  //////////////////////////////////////////////////////////////////////////////
-  // Private properties
-  //////////////////////////////////////////////////////////////////////////////
-
-  /**
-   * The GUID for this <code>JcadContext</code> object.
-   */
-  private _id:string = null;
+  constructor() {}
 
   //////////////////////////////////////////////////////////////////////////////
   // Private methods
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Initializes this object.
+   * Generates and returns a new GUID.
+   * 
+   * @return {string} a string that represents a new GUID.
    */
-  private initObj():void {
-    let generator:GuidGenerator = new GuidGenerator();
-    this._id = generator.generate();
-  }
-
-  //////////////////////////////////////////////////////////////////////////////
-  // Public methods
-  //////////////////////////////////////////////////////////////////////////////
-  
-  /**
-   * @inheritDoc
-   */
-  public getId():string {
-    return this._id;
+  public generate():string {
+    return uuid.v4();
   }
 }

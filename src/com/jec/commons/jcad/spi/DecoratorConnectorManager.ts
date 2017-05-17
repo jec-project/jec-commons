@@ -15,6 +15,8 @@
 //   limitations under the License.
 
 import {SingletonError} from "../../exceptions/SingletonError";
+import {Singleton} from "../../lang/Singleton";
+import {GuidGenerator} from "../../lang/GuidGenerator";
 import {DecoratorConnector} from "../DecoratorConnector";
 import {Decorator} from "../Decorator";
 import {JcadContext} from "../JcadContext";
@@ -23,7 +25,7 @@ import {JcadContext} from "../JcadContext";
  * This singleton contains methods for creating context objects and objects 
  * referred to by naming information in the decorators connectors service.
  */
-export class DecoratorConnectorManager {
+export class DecoratorConnectorManager implements Singleton {
 
   //////////////////////////////////////////////////////////////////////////////
   // Constructor function
@@ -79,6 +81,11 @@ export class DecoratorConnectorManager {
    */
   private _connectorMap:Map<string, DecoratorConnector> = null;
 
+  /**
+   * The Globally Unique Identifier for this singleton.
+   */
+  private _id:string = null;
+
   //////////////////////////////////////////////////////////////////////////////
   // Private methods
   //////////////////////////////////////////////////////////////////////////////
@@ -87,6 +94,8 @@ export class DecoratorConnectorManager {
    * Initializes this object.
    */
   private initObj():void {
+    let generator:GuidGenerator = new GuidGenerator();
+    this._id = generator.generate();
     this._connectorMap = new Map<string, DecoratorConnector>();
   }
 
@@ -186,5 +195,12 @@ export class DecoratorConnectorManager {
   public removeConnector(jcadReference:string, context:JcadContext):boolean {
     let ref:string = this.buildRef(jcadReference, context.getId());
     return this._connectorMap.delete(ref);
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public getId():string {
+    return this._id;
   }
 }

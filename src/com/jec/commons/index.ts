@@ -47,8 +47,10 @@ export {JcadContext} from "./jcad/JcadContext";
 //--> com/jec/commons/lang
 export {ClassLoader} from "./lang/ClassLoader";
 export {EncodingFormat} from "./lang/EncodingFormat";
+export {GuidGenerator} from "./lang/GuidGenerator";
 export {JsonLoader} from "./lang/JsonLoader";
 export {JsonLoaderError} from "./lang/JsonLoaderError";
+export {Singleton} from "./lang/Singleton";
 //--> com/jec/commons/logging/proxy
 export {AbstractLoggerProxy} from "./logging/proxy/AbstractLoggerProxy";
 export {LoggerProxy} from "./logging/proxy/LoggerProxy";

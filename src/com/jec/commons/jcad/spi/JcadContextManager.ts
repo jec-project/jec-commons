@@ -16,13 +16,15 @@
 
 import {JcadContextError} from "../exceptions/JcadContextError";
 import {SingletonError} from "../../exceptions/SingletonError";
+import {Singleton} from "../../lang/Singleton";
+import {GuidGenerator} from "../../lang/GuidGenerator";
 import {JcadContext} from "../JcadContext";
 
 /**
  * This singleton contains methods for managing context objects in the
  * decorators connectors service.
  */
-export class JcadContextManager {
+export class JcadContextManager implements Singleton {
 
   //////////////////////////////////////////////////////////////////////////////
   // Constructor function
@@ -71,6 +73,11 @@ export class JcadContextManager {
    */
   private _jcadContextMap:Map<string, JcadContext> = null;
 
+  /**
+   * The Globally Unique Identifier for this singleton.
+   */
+  private _id:string = null;
+
   //////////////////////////////////////////////////////////////////////////////
   // Private methods
   //////////////////////////////////////////////////////////////////////////////
@@ -79,6 +86,8 @@ export class JcadContextManager {
    * Initializes this object.
    */
   private initObj():void {
+    let generator:GuidGenerator = new GuidGenerator();
+    this._id = generator.generate();
     this._jcadContextMap = new Map<string, JcadContext>();
   }
 
@@ -137,5 +146,12 @@ export class JcadContextManager {
     let context:JcadContext = this._jcadContextMap.get(jcadReference);
     this._jcadContextMap.delete(jcadReference);
     return context;
+  }
+  
+  /**
+   * @inheritDoc
+   */
+  public getId():string {
+    return this._id;
   }
 }

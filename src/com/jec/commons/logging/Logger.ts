@@ -54,7 +54,7 @@ export interface Logger {
   /**
    * Logs a message with the specific marker at the <code>DEBUG</code> level.
    *
-   * @param {Object} marker the marker to log.
+   * @param {any} marker the marker to log.
    * @param {string} context an optional context information whis is added to
    *                         the log message.
    */
@@ -63,7 +63,7 @@ export interface Logger {
   /**
    * Logs a message with the specific marker at the <code>ERROR</code> level.
    * 
-   * @param {Object} marker the marker to log.
+   * @param {any} marker the marker to log.
    * @param {string} context an optional context information whis is added to
    *                         the log message.
    */
@@ -72,7 +72,7 @@ export interface Logger {
   /**
    * Logs a message with the specific marker at the <code>INFO</code> level.
    *
-   * @param {Object} marker the marker to log.
+   * @param {any} marker the marker to log.
    * @param {string} context an optional context information whis is added to
    *                         the log message.
    */
@@ -81,7 +81,7 @@ export interface Logger {
   /**
    * Logs a message with the specific marker at the <code>TRACE</code> level.
    * 
-   * @param {Object} marker the marker to log.
+   * @param {any} marker the marker to log.
    * @param {string} context an optional context information whis is added to
    *                         the log message.
    */
@@ -90,7 +90,7 @@ export interface Logger {
   /**
    * Logs a message with the specific marker at the <code>WARN</code> level.
    * 
-   * @param {Object} marker the marker to log.
+   * @param {any} marker the marker to log.
    * @param {string} context an optional context information whis is added to
    *                         the log message.
    */

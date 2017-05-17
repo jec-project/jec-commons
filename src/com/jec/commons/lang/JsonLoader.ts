@@ -51,11 +51,11 @@ export class JsonLoader {
    * from this file.
    *
    * @param {string} path the path to the file to load.
-   * @return {Object} the JSON object parsed from the loaded file.
+   * @return {any} the JSON object parsed from the loaded file.
    */
-  public loadSync(path:string):Object {
+  public loadSync(path:string):any {
     let loadedString:string = null;
-    let json:Object = null;
+    let json:any = null;
     try {
       loadedString = fs.readFileSync(path, this.encodingFormat);
       json = JSON.parse(loadedString);

@@ -36,7 +36,7 @@ export class ClassLoader {
    * Loads the class from the specified location. Loading is synchronous.
    * 
    * @param {string} path the location of the class to load.
-   * @return {Object} the constructor for the loaded class.
+   * @return {any} the constructor for the loaded class.
    */
   public loadClass(path:string):any {
     let classRef:any = require(path);
