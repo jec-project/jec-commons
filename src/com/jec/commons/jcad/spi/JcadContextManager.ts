@@ -34,7 +34,7 @@ export class JcadContextManager implements Singleton {
    * Creates a new <code>JcadContextManager</code> instance.
    */
   constructor() {
-    if(JcadContextManager._locked || global["__JcadContextManager__"]) {
+    if(JcadContextManager._locked || global[JcadContextManager.GLOBAL_REF]) {
       throw new SingletonError(JcadContextManager);
     }
     JcadContextManager._locked = true;
@@ -51,17 +51,32 @@ export class JcadContextManager implements Singleton {
   private static _locked:boolean = true;
 
   /**
+   * The reference used to create the singleton over the global scope.
+   */
+  private static readonly GLOBAL_REF:string = "__JcadContextManager__";
+
+  /**
    * Returns a reference to the <code>JcadContextManager</code> singleton.
    *
    * @return {JcadContextManager} a reference to the 
    *                              <code>JcadContextManager<code> singleton.
    */
   public static getInstance():JcadContextManager{
-    if(global["__JcadContextManager__"] === undefined) {
+    if(global[JcadContextManager.GLOBAL_REF] === undefined) {
       JcadContextManager._locked = false;
-      global["__JcadContextManager__"] = new JcadContextManager();
+      let ctx:JcadContextManager = new JcadContextManager();
+      Object.defineProperty(
+        global,
+        JcadContextManager.GLOBAL_REF,
+        {
+          value: ctx,
+          writable: false,
+          enumerable: false,
+          configurable: false
+        }
+      )
     }
-    return global["__JcadContextManager__"];
+    return global[JcadContextManager.GLOBAL_REF];
   }
   
   //////////////////////////////////////////////////////////////////////////////

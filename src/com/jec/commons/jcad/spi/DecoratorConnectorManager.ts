@@ -36,7 +36,7 @@ export class DecoratorConnectorManager implements Singleton {
    */
   constructor() {
     if(DecoratorConnectorManager._locked ||
-                                      global["__DecoratorConnectorManager__"]) {
+                                 global[DecoratorConnectorManager.GLOBAL_REF]) {
       throw new SingletonError(DecoratorConnectorManager);
     }
     DecoratorConnectorManager._locked = true;
@@ -53,19 +53,36 @@ export class DecoratorConnectorManager implements Singleton {
   private static _locked:boolean = true;
 
   /**
-   * Returns a reference to the <code>DecoratorConnectorManager</code> singleton.
-   * @return {DecoratorConnectorManager} a reference to the
-   *                                    <code>DecoratorConnectorManager</code>
-   *                                    singleton.
+   * The reference used to create the singleton over the global scope.
+   */
+  private static readonly GLOBAL_REF:string = "__DecoratorConnectorManager__";
+
+  /**
+   * Returns a reference to the <code>DecoratorConnectorManager</code>
+   * singleton.
+   *
+   * @return {DecoratorConnectorManager} a reference to the 
+   *                                     <code>DecoratorConnectorManager<code>
+   *                                     singleton.
    */
   public static getInstance():DecoratorConnectorManager{
-    if(global["__DecoratorConnectorManager__"] === undefined) {
+    if(global[DecoratorConnectorManager.GLOBAL_REF] === undefined) {
       DecoratorConnectorManager._locked = false;
-      global["__DecoratorConnectorManager__"] = new DecoratorConnectorManager();
+      let ctx:DecoratorConnectorManager = new DecoratorConnectorManager();
+      Object.defineProperty(
+        global,
+        DecoratorConnectorManager.GLOBAL_REF,
+        {
+          value: ctx,
+          writable: false,
+          enumerable: false,
+          configurable: false
+        }
+      )
     }
-    return global["__DecoratorConnectorManager__"];
+    return global[DecoratorConnectorManager.GLOBAL_REF];
   }
-  
+
   //////////////////////////////////////////////////////////////////////////////
   // Private properties
   //////////////////////////////////////////////////////////////////////////////
