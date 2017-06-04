@@ -22,16 +22,16 @@ export {BasicFileProperties} from "./files/reflect/impl/BasicFileProperties";
 //--> com/jec/commons/files/reflect/utils
 export {DecoratorParser} from "./files/reflect/utils/DecoratorParser";
 export {DecoratorPropertiesBuilder} from "./files/reflect/utils/DecoratorPropertiesBuilder";
-export {FilePropertiesBuilder} from "./files/reflect/utils/FilePropertiesBuilder";
 export {ImportRef} from "./files/reflect/utils/ImportRef";
 export {ImportRefParser} from "./files/reflect/utils/ImportRefParser";
 export {PathStats} from "./files/reflect/utils/PathStats";
-export {WalkPathUtil} from "./files/reflect/utils/WalkPathUtil";
 //--> com/jec/commons/files/reflect
 export {DecoratorProperties} from "./files/reflect/DecoratorProperties";
 export {FilePreProcessor} from "./files/reflect/FilePreProcessor";
 export {FileProperties} from "./files/reflect/FileProperties";
 export {SourceFileInspector} from "./files/reflect/SourceFileInspector";
+//--> com/jec/commons/files
+export {FileStats} from "./files/FileStats";
 //--> com/jec/commons/jcad/spi
 export {AbstractDecoratorConnector} from "./jcad/spi/AbstractDecoratorConnector";
 import {DecoratorConnectorManager} from "./jcad/spi/DecoratorConnectorManager";

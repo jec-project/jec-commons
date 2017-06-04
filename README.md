@@ -15,7 +15,6 @@ JEC Commons contains core and utility APIs including:
 
 JEC Commons needs the following system parameters in order to work correctly:
 
-- Node 6+
 - npm 3+
 - TypeScript 2+
 

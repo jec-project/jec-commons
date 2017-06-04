@@ -14,7 +14,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import * as fs from "fs";
+import {FileStats} from "../FileStats";
 import {DecoratorProperties} from "./DecoratorProperties";
 
 /**
@@ -43,9 +43,9 @@ export interface FileProperties {
   extension:string;
 
   /**
-   * The <code>Stats</code> instance associated with this file.
+   * The <code>FileStats</code> instance associated with this file.
    */
-  stats:fs.Stats;
+  stats:FileStats;
 
   /**
    * The content of the file as a string.

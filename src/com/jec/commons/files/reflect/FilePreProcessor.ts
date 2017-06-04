@@ -20,8 +20,6 @@ import {FileProperties} from "./FileProperties";
  * The <code>FilePreProcessor<code> interface defines the default set of APIs 
  * that must be implemented for preprocessing source files before they are 
  * loaded within a JEC application.
- *
- * @interface FilePreProcessor
  */
 export interface FilePreProcessor {
 
@@ -32,7 +30,7 @@ export interface FilePreProcessor {
    * @param {string} sourcePath the directory path where the file preprocessing
    *                            will be performed.
    */
-  processStart(watcher:any, sourcePath:string);
+  processStart(watcher:any, sourcePath:string):void;
 
   /**
    * Processes the specified file.

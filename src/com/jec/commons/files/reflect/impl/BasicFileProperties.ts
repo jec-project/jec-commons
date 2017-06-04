@@ -14,9 +14,9 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import * as fs from "fs";
+import {FileStats} from "../../FileStats";
 import {FileProperties} from "../FileProperties";
-import {DecoratorProperties} from "..//DecoratorProperties";
+import {DecoratorProperties} from "../DecoratorProperties";
 
 /**
  * A Data Transfert Object that defines all properties of a file loaded whithin
@@ -55,7 +55,7 @@ export class BasicFileProperties implements FileProperties{
   /**
    * @inheritDoc
    */
-  public stats:fs.Stats = null;
+  public stats:FileStats = null;
 
   /**
    * @inheritDoc

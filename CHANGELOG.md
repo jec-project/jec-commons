@@ -1,6 +1,19 @@
 # JEC Commons Project: Update Release Notes
 
-<a name="jec-commons-1.0.2"></a>
+<a name="jec-commons-1.0.4"></a>
+## **1.0.4** (2017-06-03)
+
+### Bug Fixes
+
+### Features
+
+This is an important release which definitely breaks dependency with the Node.js API.
+
+- **FileStats:** the `fs.Stats` interface has been removed an replaced by the new `FileStats` interface
+- **FilePropertiesBuilder:** the `com.jec.commons.files.reflec.utils.FilePropertiesBuilder` class has been removed and is now a part of the `jec-commons-node` module
+- **WalkPathUtil:** the `com.jec.commons.files.reflec.utils.WalkPathUtil` class has been removed and is now a part of the `jec-commons-node` module
+
+<a name="jec-commons-1.0.3"></a>
 ## **1.0.3** (2017-05-20)
 
 ### Bug Fixes

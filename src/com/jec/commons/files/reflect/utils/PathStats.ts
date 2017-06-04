@@ -15,7 +15,6 @@
 //   limitations under the License.
 
 import {FileProperties} from "../FileProperties";
-import {FilePropertiesBuilder} from "./FilePropertiesBuilder";
 import {JecStringsEnum} from "../../../util/JecStringsEnum";
 import {UrlStringsEnum} from "../../../util/UrlStringsEnum";
 import * as fs from "fs";

@@ -7,8 +7,6 @@
 
 declare module "jec-commons" {
 
-import * as fs from "fs";
-
 /*PLACEHOLDER*/
 
 }

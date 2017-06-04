@@ -6,8 +6,6 @@
 
 declare module "jec-commons" {
 
-import * as fs from "fs";
-
 export class SingletonError extends Error {
   constructor(classRef:any);
   getClassRef():any;
@@ -25,7 +23,7 @@ export class BasicFileProperties implements FileProperties {
     name: string;
     path: string;
     extension: string;
-    stats: fs.Stats;
+    stats: FileStats;
     content: string;
     decorators: DecoratorProperties[];
 }
@@ -46,11 +44,6 @@ export class DecoratorPropertiesBuilder {
     private static readonly OPEN_PARENTHESIS;
     private static readonly NEW_LINE;
     build(decorator: string, file: string, imports: ImportRef[]): DecoratorProperties;
-}
-
-export class FilePropertiesBuilder {
-    constructor();
-    build(file: string, path: string, stats: fs.Stats): FileProperties;
 }
 
 export class ImportRef {
@@ -74,12 +67,8 @@ export class PathStats {
     private initObj(path);
     directoriesNum: number;
     filesNum: number;
+    processedFilesNum: number;
     getPath(): string;
-}
-
-export class WalkPathUtil {
-    constructor();
-    walkSync(path: string, process: (file: FileProperties) => void): void;
 }
 
 export interface DecoratorProperties {
@@ -98,7 +87,7 @@ export interface FileProperties {
     name: string;
     path: string;
     extension: string;
-    stats: fs.Stats;
+    stats: FileStats;
     content: string;
     decorators: DecoratorProperties[];
 }
@@ -109,6 +98,16 @@ export interface SourceFileInspector {
     addProcessor(processor: FilePreProcessor): void;
     addSourcePath(path: string): void;
     inspect(): void;
+}
+
+export interface FileStats {
+    isFile(): boolean;
+    isDirectory(): boolean;
+    isBlockDevice(): boolean;
+    isCharacterDevice(): boolean;
+    isSymbolicLink(): boolean;
+    isFIFO(): boolean;
+    isSocket(): boolean;
 }
 
 export class JcadContextError extends Error {

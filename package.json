@@ -1,6 +1,6 @@
 {
   "name": "jec-commons",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "JEC Commons - Provides developers reusable components used by JEC implementations.",
   "main": "lib/com/jec/commons/index",
   "types": "types/jec-commons.d.ts",
