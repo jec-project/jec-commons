@@ -14,27 +14,10 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import "mocha";
-import {expect} from "chai";
-
-// Class to test:
-import {HttpHeader} from "../../../../../../src/com/jec/commons/net/http/HttpHeader";
+/*!
+ * This module constains utilities used by the ConsoleLoggerTest test suite.
+ */
 
 // Utilities:
-import * as utils from "../../../../../../utils/test-utils/utilities/HttpHeaderTestUtils";
-
-// Test:
-describe("HttpHeader", ()=> {
-
-  describe("#ACCEPT", ()=> {
-    it("ACCEPT should return 'Accept'", function() {
-      expect(HttpHeader.ACCEPT).to.equal(utils.ACCEPT);
-    });
-  });
-
-  describe("#CONTENT_TYPE", ()=> {
-    it("CONTENT_TYPE should return 'Content-Type'", function() {
-      expect(HttpHeader.CONTENT_TYPE).to.equal(utils.CONTENT_TYPE);
-    });
-  });
-});
+export const MESSAGE:string = "message";
+export const CONTEXT:string = "[CONTEXT]";

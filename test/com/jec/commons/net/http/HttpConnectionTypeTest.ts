@@ -20,23 +20,21 @@ import {expect} from "chai";
 // Class to test:
 import {HttpConnectionType} from "../../../../../../src/com/jec/commons/net/http/HttpConnectionType";
 
+// Utilities:
+import * as utils from "../../../../../../utils/test-utils/utilities/HttpConnectionTypeTestUtils";
+
 // Test:
 describe("HttpConnectionType", ()=> {
 
   describe("#HTTP", ()=> {
     it("HTTP should return 'http'", function() {
-      expect(HttpConnectionType.HTTP).to.equal(HTTP);
+      expect(HttpConnectionType.HTTP).to.equal(utils.HTTP);
     });
   });
 
   describe("#HTTPS", ()=> {
     it("HTTPS should return 'https'", function() {
-      expect(HttpConnectionType.HTTPS).to.equal(HTTPS);
+      expect(HttpConnectionType.HTTPS).to.equal(utils.HTTPS);
     });
   });
 });
-
-// Utilities:
-// We store constants that should be defined by the HttpConnectionType class:
-const HTTP:string = "http";
-const HTTPS:string = "https";

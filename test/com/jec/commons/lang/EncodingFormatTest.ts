@@ -20,45 +20,39 @@ import {expect} from "chai";
 // Class to test:
 import {EncodingFormat} from "../../../../../src/com/jec/commons/lang/EncodingFormat";
 
+// Utilities:
+import * as utils from "../../../../../utils/test-utils/utilities/EncodingFormatTestUtils";
+
 // Test:
 describe("EncodingFormat", ()=> {
 
   describe("#UTF8", ()=> {
     it("UTF8 should return 'utf8'", function() {
-      expect(EncodingFormat.UTF8).to.equal(UTF8);
+      expect(EncodingFormat.UTF8).to.equal(utils.UTF8);
     });
   });
 
   describe("#ASCII", ()=> {
     it("ASCII should return 'ascii'", function() {
-      expect(EncodingFormat.ASCII).to.equal(ASCII);
+      expect(EncodingFormat.ASCII).to.equal(utils.ASCII);
     });
   });
 
   describe("#LATIN1", ()=> {
     it("LATIN1 should return 'latin1'", function() {
-      expect(EncodingFormat.LATIN1).to.equal(LATIN1);
+      expect(EncodingFormat.LATIN1).to.equal(utils.LATIN1);
     });
   });
 
   describe("#BASE64", ()=> {
     it("BASE64 should return 'base64'", function() {
-      expect(EncodingFormat.BASE64).to.equal(BASE64);
+      expect(EncodingFormat.BASE64).to.equal(utils.BASE64);
     });
   });
 
   describe("#HEX", ()=> {
     it("HEX should return 'hex'", function() {
-      expect(EncodingFormat.HEX).to.equal(HEX);
+      expect(EncodingFormat.HEX).to.equal(utils.HEX);
     });
   });
-
 });
-
-// Utilities:
-// We store constants that should be defined by the JecStringsEnum class:
-const UTF8:any = "utf8";
-const ASCII:any = "ascii";
-const LATIN1:any = "latin1";
-const BASE64:any = "base64";
-const HEX:any = "hex";

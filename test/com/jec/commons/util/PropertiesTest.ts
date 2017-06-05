@@ -20,12 +20,24 @@ import {expect} from "chai";
 // Class to test:
 import {Properties} from "../../../../../src/com/jec/commons/util/Properties";
 
+// Utilities:
+import * as utils from "../../../../../utils/test-utils/utilities/PropertiesTestUtils";
+
 // Test:
 describe("Properties", ()=> {
 
+  let props:Properties = null;
+
+  beforeEach(()=> {
+    props = new Properties();
+  });
+  
+  afterEach(()=> {
+    props = new Properties();
+  });
+  
   describe("new Property()", ()=> {
     it("the properties names array should be empty", function() {
-      let props:Properties = new Properties();
       let propsNames:string[] = props.propertyNames();
       expect(propsNames.length).to.equal(0);
     });
@@ -33,40 +45,31 @@ describe("Properties", ()=> {
 
   describe("#setProperty(KEY, VALUE) => #getProperty(KEY)", ()=> {
     it("a Properties instance should refer the registered properties", function() {
-      let props:Properties = new Properties();
-      props.setProperty(KEY, VALUE);
-      expect(props.getProperty(KEY)).to.equal(VALUE);
+      props.setProperty(utils.KEY, utils.VALUE);
+      expect(props.getProperty(utils.KEY)).to.equal(utils.VALUE);
     });
   });
 
   describe("#getProperty() === undefined", ()=> {
     it("not defined keys should return 'undefined'", function() {
-      let props:Properties = new Properties();
-      expect(props.getProperty(UNDEFINED)).to.equal(undefined);
+      expect(props.getProperty(utils.UNDEFINED)).to.equal(undefined);
     });
   });
 
   describe("#propertiesNames()", ()=> {
     it("a Properties instance should expose the registered key names", function() {
-      let props:Properties = new Properties();
-      props.setProperty(KEY, VALUE);
+      props.setProperty(utils.KEY, utils.VALUE);
       let propsNames:string[] = props.propertyNames();
       expect(propsNames.length).to.equal(1);
-      expect(propsNames).to.include(KEY);
+      expect(propsNames).to.include(utils.KEY);
     });
   });
 
   describe("new Property(properties:Property)", ()=> {
     it("a Properties instance should refer default properties", function() {
-      let defaultProps:Properties = new Properties();
-      defaultProps.setProperty(KEY, VALUE);
-      let props:Properties = new Properties(defaultProps);
-      expect(props.getProperty(KEY)).to.equal(VALUE);
+      props.setProperty(utils.KEY, utils.VALUE);
+      let proxy:Properties = new Properties(props);
+      expect(proxy.getProperty(utils.KEY)).to.equal(utils.VALUE);
     });
   });
 });
-
-// Utilities:
-const KEY:string = "key";
-const UNDEFINED:string = "undefined";
-const VALUE:string = "value";

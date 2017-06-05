@@ -14,27 +14,19 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import "mocha";
-import {expect} from "chai";
-
-// Class to test:
-import {HttpHeader} from "../../../../../../src/com/jec/commons/net/http/HttpHeader";
+/*!
+ * This module constains utilities used by the UrlStringsEnumTest test  suite.
+ */
 
 // Utilities:
-import * as utils from "../../../../../../utils/test-utils/utilities/HttpHeaderTestUtils";
-
-// Test:
-describe("HttpHeader", ()=> {
-
-  describe("#ACCEPT", ()=> {
-    it("ACCEPT should return 'Accept'", function() {
-      expect(HttpHeader.ACCEPT).to.equal(utils.ACCEPT);
-    });
-  });
-
-  describe("#CONTENT_TYPE", ()=> {
-    it("CONTENT_TYPE should return 'Content-Type'", function() {
-      expect(HttpHeader.CONTENT_TYPE).to.equal(utils.CONTENT_TYPE);
-    });
-  });
-});
+// We store constants that should be defined by the UrlStringsEnum class:
+export const PERM_MARK:string = "/*";
+export const ASTERISK:string = "*";
+export const MARK:string = "?";
+export const ANCHOR:string = "#";
+export const SLASH:string = "/";
+export const SCHEME_DELIMITER:string = "://";
+export const COLON:string = ":";
+export const DOT:string = ".";
+export const EMPTY_STRING:string = "";
+export const RELATIVE_PATH:string = "../";

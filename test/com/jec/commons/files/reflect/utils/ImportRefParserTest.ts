@@ -21,45 +21,50 @@ import {ImportRef} from "../../../../../../../src/com/jec/commons/files/reflect/
 // Class to test:
 import {ImportRefParser} from "../../../../../../../src/com/jec/commons/files/reflect/utils/ImportRefParser";
 
+// Utilities:
+import * as utils from "../../../../../../../utils/test-utils/utilities/ImportRefParserTestUtils";
+
 // Test:
 describe("ImportRefParser", ()=> {
 
+  let parser:ImportRefParser = null;
+
+  beforeEach(()=> {
+    parser = new ImportRefParser();
+  });
+
+  afterEach(()=> {
+    parser = null;
+  });
+
   describe("#getImports()", ()=> {
-    it("should return an array that contains decorator import references for the specified file", function() {
-      let parser:ImportRefParser = new ImportRefParser();
-      let importRefs:ImportRef[] = parser.getImports(FILE);
-      let importRef:ImportRef = null
-      expect(importRefs).to.have.lengthOf(1);
-      importRef = importRefs[0];
-      expect(importRef.ref).to.equal("SampleDecorator_1");
-      expect(importRef.classPath).to.equal("./SampleDecorator");
-      expect(importRef.content).to.equal('const SampleDecorator_1 = require("./SampleDecorator");');
+    
+    it("should return an empty array when the specified file does not contain decorator import references", function() {
+      let importRefs:ImportRef[] = parser.getImports(utils.EMPTY_FILE);
+      expect(importRefs).to.have.lengthOf(0);
     });
 
-    it("should return an empty array when the specified file does not contain decorator import references", function() {
-      let parser:ImportRefParser = new ImportRefParser();
-      let importRefs:ImportRef[] = parser.getImports(EMPTY_FILE);
-      expect(importRefs).to.have.lengthOf(0);
+    it("should return an array that contains decorator import references for the specified file", function() {
+      let importRefs:ImportRef[] = parser.getImports(utils.FILE);
+      expect(importRefs).to.have.lengthOf(1);
+    });
+    
+    it("should return an ImportRef object with the right 'ref' vlaue ", function() {
+      let importRefs:ImportRef[] = parser.getImports(utils.FILE);
+      let importRef:ImportRef = importRefs[0];
+      expect(importRef.ref).to.equal(utils.REF);
+    });
+    
+    it("should return an ImportRef object with the right 'classPath' vlaue ", function() {
+      let importRefs:ImportRef[] = parser.getImports(utils.FILE);
+       let importRef:ImportRef = importRefs[0];
+      expect(importRef.classPath).to.equal(utils.CLASS_PATH);
+    });
+    
+    it("should return an ImportRef object with the right 'content' vlaue ", function() {
+      let importRefs:ImportRef[] = parser.getImports(utils.FILE);
+       let importRef:ImportRef = importRefs[0];
+      expect(importRef.content).to.equal(utils.CONTENT);
     });
   });
 });
-
-// Utilities:
-const EMPTY_FILE:string = "";
-const FILE:string =
-`"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const SampleDecorator_1 = require("./SampleDecorator");
-let SampleFile = class SampleFile {
-};
-SampleFile = __decorate([
-    SampleDecorator_1.SampleDecorator()
-], SampleFile);
-exports.SampleFile = SampleFile;
-`;

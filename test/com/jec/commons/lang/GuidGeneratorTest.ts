@@ -16,10 +16,12 @@
 
 import "mocha";
 import {expect} from "chai";
-import {GuidTestUtils} from "../../../../../utils/test-utils/guid-utils/GuidTestUtils";
 
 // Class to test:
 import {GuidGenerator} from "../../../../../src/com/jec/commons/lang/GuidGenerator";
+
+// Utilities:
+import {GuidTestUtils} from "../../../../../utils/test-utils/utilities/GuidTestUtils";
 
 // Test:
 describe("GuidGenerator", ()=> {
@@ -28,7 +30,6 @@ describe("GuidGenerator", ()=> {
     it("should return a valid GUID V4", function() {
       let generator:GuidGenerator = new GuidGenerator();
       let guid:string = generator.generate();
-      expect(guid).to.be.a("string");
       expect(GuidTestUtils.GUID_VALIDATOR.test(guid)).to.equal(true);
     });
   });

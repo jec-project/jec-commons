@@ -14,27 +14,13 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import "mocha";
-import {expect} from "chai";
-
-// Class to test:
-import {HttpHeader} from "../../../../../../src/com/jec/commons/net/http/HttpHeader";
+/*!
+ * This module constains utilities used by the HttpStatusCodeTest test  suite.
+ */
 
 // Utilities:
-import * as utils from "../../../../../../utils/test-utils/utilities/HttpHeaderTestUtils";
-
-// Test:
-describe("HttpHeader", ()=> {
-
-  describe("#ACCEPT", ()=> {
-    it("ACCEPT should return 'Accept'", function() {
-      expect(HttpHeader.ACCEPT).to.equal(utils.ACCEPT);
-    });
-  });
-
-  describe("#CONTENT_TYPE", ()=> {
-    it("CONTENT_TYPE should return 'Content-Type'", function() {
-      expect(HttpHeader.CONTENT_TYPE).to.equal(utils.CONTENT_TYPE);
-    });
-  });
-});
+// We store constants that should be defined by the JecStringsEnum class:
+export const SRC:string = "/src/";
+export const WEB_APP:string = "/webapp/";
+export const TS_EXTENSION:string = "ts";
+export const JS_EXTENSION:string = "js";

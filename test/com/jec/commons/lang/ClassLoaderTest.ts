@@ -20,13 +20,16 @@ import {expect, assert} from "chai";
 // Class to test:
 import {ClassLoader} from "../../../../../src/com/jec/commons/lang/ClassLoader";
 
+// Utilities:
+import * as utils from "../../../../../utils/test-utils/utilities/ClassLoaderTestUtils";
+
 // Test:
 describe("ClassLoader", ()=> {
 
   describe("#loadClass()", ()=> {
     it("should return a valid class constructor", function() {
       let loader:ClassLoader = new ClassLoader();
-      let Contructor:any = loader.loadClass(VALID_CLASS);
+      let Contructor:any = loader.loadClass(utils.VALID_CLASS);
       let obj:any = new Contructor();
       expect(obj).not.to.be.null;
       expect(obj).to.be.an('object');
@@ -35,22 +38,20 @@ describe("ClassLoader", ()=> {
     it("should throw an error when the path to class is not valid", function() {
       let loader:ClassLoader = new ClassLoader();
       let loadInvalidClassPath:Function = function():void {
-        loader.loadClass(INVALID_CLASS_PATH);
+        loader.loadClass(utils.INVALID_CLASS_PATH);
       };
       assert.throws(loadInvalidClassPath, Error);
     });
 
-    it("should throw an error when the loaded file is not a class", function() {
+    it("should throw a TypeError when the loaded file is not a class", function() {
       let loader:ClassLoader = new ClassLoader();
-      let loadInvalidClassFile:Function = function():void {
-        loader.loadClass(INVALID_CLASS_FILE);
-      };
-      assert.throws(loadInvalidClassFile, Error);
+      let Contructor:any = loader.loadClass(utils.INVALID_CLASS_FILE);
+      try {
+        new Contructor();
+        assert.fail("ok", "ko", "Exception not thrown");
+      } catch(e) {
+        expect(e).to.be.an.instanceOf(TypeError);
+      }
     });
   });
 });
-
-// Utilities:
-const VALID_CLASS:string = "../../../../../lib/com/jec/commons/lang/JsonLoader";
-const INVALID_CLASS_PATH:string = "invalid/path/to/module";
-const INVALID_CLASS_FILE:string = "../../../../../utils/test-utils/invalid-class-file";

@@ -18,10 +18,12 @@ import "mocha";
 import {expect} from "chai";
 import {LogLevel} from "../../../../../src/com/jec/commons/logging/LogLevel";
 import {LogLevelUtil} from "../../../../../src/com/jec/commons/logging/LogLevelUtil";
-import * as moment from "moment";
 
 // Class to test:
 import {DefaultLogFormatter} from "../../../../../src/com/jec/commons/logging/DefaultLogFormatter";
+
+// Utilities:
+import * as utils from "../../../../../utils/test-utils/utilities/DefaultLogFormatterTestUtils";
 
 // Test:
 describe("DefaultLogFormatter", ()=> {
@@ -31,21 +33,11 @@ describe("DefaultLogFormatter", ()=> {
       let logLevelUtil:LogLevelUtil = new LogLevelUtil();
       let level:string = logLevelUtil.logLevelToString(LogLevel.INFO);
       let formatter:DefaultLogFormatter = new DefaultLogFormatter();
-      formatter.timeFormat = TIME_FORMAT;
+      formatter.timeFormat = utils.TIME_FORMAT;
       expect(
-        formatter.format(level, MESSAGE, false, CONTEXT)
-      ).to.equal(buildExpectedMessage(level));
+        formatter.format(level, utils.MESSAGE, false, utils.CONTEXT)
+      ).to.equal(utils.buildExpectedMessage(level));
     });
   });
 
 });
-
-// Utilities:
-const TIME_FORMAT:string = "MM/DD/YY";
-const MESSAGE:string = "message";
-const CONTEXT:string = "[CONTEXT]";
-const buildExpectedMessage = function(level:string):string {
-  let time:string =  moment().format(TIME_FORMAT);
-  let result:string = `[${time}]${CONTEXT} ${level}: ${MESSAGE}`;
-  return result;
-}

@@ -20,79 +20,69 @@ import {expect} from "chai";
 // Class to test:
 import {UrlStringsEnum} from "../../../../../src/com/jec/commons/util/UrlStringsEnum";
 
+// Utilities:
+import * as utils from "../../../../../utils/test-utils/utilities/UrlStringsEnumTestUtils";
+
 // Test:
 describe("UrlStringsEnum", ()=> {
 
   describe("#PERM_MARK", ()=> {
     it("PERM_MARK should return '/*'", function() {
-      expect(UrlStringsEnum.PERM_MARK).to.equal(PERM_MARK);
+      expect(UrlStringsEnum.PERM_MARK).to.equal(utils.PERM_MARK);
     });
   });
 
   describe("#ASTERISK", ()=> {
     it("ASTERISK should return '*'", function() {
-      expect(UrlStringsEnum.ASTERISK).to.equal(ASTERISK);
+      expect(UrlStringsEnum.ASTERISK).to.equal(utils.ASTERISK);
     });
   });
 
   describe("#MARK", ()=> {
     it("MARK should return '?'", function() {
-      expect(UrlStringsEnum.MARK).to.equal(MARK);
+      expect(UrlStringsEnum.MARK).to.equal(utils.MARK);
     });
   });
 
   describe("#ANCHOR", ()=> {
     it("ANCHOR should return '#'", function() {
-      expect(UrlStringsEnum.ANCHOR).to.equal(ANCHOR);
+      expect(UrlStringsEnum.ANCHOR).to.equal(utils.ANCHOR);
     });
   });
 
   describe("#SLASH", ()=> {
     it("SLASH should return '/'", function() {
-      expect(UrlStringsEnum.SLASH).to.equal(SLASH);
+      expect(UrlStringsEnum.SLASH).to.equal(utils.SLASH);
     });
   });
 
   describe("#SCHEME_DELIMITER", ()=> {
     it("SCHEME_DELIMITER should return '://'", function() {
-      expect(UrlStringsEnum.SCHEME_DELIMITER).to.equal(SCHEME_DELIMITER);
+      expect(UrlStringsEnum.SCHEME_DELIMITER).to.equal(utils.SCHEME_DELIMITER);
     });
   });
 
   describe("#COLON", ()=> {
     it("COLON should return ':'", function() {
-      expect(UrlStringsEnum.COLON).to.equal(COLON);
+      expect(UrlStringsEnum.COLON).to.equal(utils.COLON);
     });
   });
 
   describe("#DOT", ()=> {
     it("DOT should return '.'", function() {
-      expect(UrlStringsEnum.DOT).to.equal(DOT);
+      expect(UrlStringsEnum.DOT).to.equal(utils.DOT);
     });
   });
 
   describe("#EMPTY_STRING", ()=> {
     it("EMPTY_STRING should return an empty string", function() {
-      expect(UrlStringsEnum.EMPTY_STRING).to.equal(EMPTY_STRING);
+      expect(UrlStringsEnum.EMPTY_STRING).to.equal(utils.EMPTY_STRING);
     });
   });
 
   describe("#RELATIVE_PATH", ()=> {
     it("RELATIVE_PATH should return '../'", function() {
-      expect(UrlStringsEnum.RELATIVE_PATH).to.equal(RELATIVE_PATH);
+      expect(UrlStringsEnum.RELATIVE_PATH).to.equal(utils.RELATIVE_PATH);
     });
   });
 });
-
-// Utilities:
-// We store constants that should be defined by the UrlStringsEnum class:
-const PERM_MARK:string = "/*";
-const ASTERISK:string = "*";
-const MARK:string = "?";
-const ANCHOR:string = "#";
-const SLASH:string = "/";
-const SCHEME_DELIMITER:string = "://";
-const COLON:string = ":";
-const DOT:string = ".";
-const EMPTY_STRING:string = "";
-const RELATIVE_PATH:string = "../";

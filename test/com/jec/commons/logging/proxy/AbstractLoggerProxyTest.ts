@@ -20,33 +20,28 @@ import * as spies from "chai-spies";
 import {Logger} from "../../../../../../src/com/jec/commons/logging/Logger";
 import {ConsoleLogger} from "../../../../../../src/com/jec/commons/logging/ConsoleLogger";
 
-const expect = chai.expect;
-chai.use(spies);
-
 // Class to test:
 import {AbstractLoggerProxy} from "../../../../../../src/com/jec/commons/logging/proxy/AbstractLoggerProxy";
 
 // Utilities:
-class AbstractLoggerProxyImpl extends AbstractLoggerProxy {}
-const buildAbstractLoggerProxy:Function = function():AbstractLoggerProxy {
-  let loggerProxy:AbstractLoggerProxy = new AbstractLoggerProxyImpl(LOG_CONTEXT);
-  return loggerProxy;
-};
-const LOG_CONTEXT:string = "[CONTEXT]";
-const MESSAGE:string = "message";
+import * as utils from "../../../../../../utils/test-utils/utilities/AbstractLoggerProxyTestUtils";
+
+// Chai declarations:
+const expect = chai.expect;
+chai.use(spies);
 
 // Test:
 describe("AbstractLoggerProxy", ()=> {
 
   describe("#getLogContext()", ()=> {
-    let loggerProxy:AbstractLoggerProxy = buildAbstractLoggerProxy();
+    let loggerProxy:AbstractLoggerProxy = utils.buildAbstractLoggerProxy();
     it("should return the specified context", function() {
-      expect(loggerProxy.getLogContext()).to.equal(LOG_CONTEXT);
+      expect(loggerProxy.getLogContext()).to.equal(utils.LOG_CONTEXT);
     });
   });
   
   describe("#getLogger()", ()=> {
-    let loggerProxy:AbstractLoggerProxy = buildAbstractLoggerProxy();
+    let loggerProxy:AbstractLoggerProxy = utils.buildAbstractLoggerProxy();
     let logger:Logger = new ConsoleLogger();
     it("should retrieve the same value as passed to the setLogger() method", function() {
       loggerProxy.setLogger(logger);
@@ -55,11 +50,11 @@ describe("AbstractLoggerProxy", ()=> {
   });
   
   describe("#log()", ()=> {
-    let loggerProxy:AbstractLoggerProxy = buildAbstractLoggerProxy();
+    let loggerProxy:AbstractLoggerProxy = utils.buildAbstractLoggerProxy();
     it("should be called with the specified parameters", function() {
       let spy:any = chai.spy.on(loggerProxy, "log");
-      loggerProxy.log(MESSAGE, null);
-      expect(spy).to.have.been.called.with(MESSAGE, null);
+      loggerProxy.log(utils.MESSAGE, null);
+      expect(spy).to.have.been.called.with(utils.MESSAGE, null);
     });
   });
 });

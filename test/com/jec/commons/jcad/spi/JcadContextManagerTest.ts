@@ -17,13 +17,15 @@
 import "mocha";
 import {expect, assert} from "chai";
 import {SingletonError} from "../../../../../../src/com/jec/commons/exceptions/SingletonError";
-import {JcadContextFactory} from "../../../../../../src/com/jec/commons/jcad/spi/JcadContextFactory"; 
 import {JcadContext} from "../../../../../../src/com/jec/commons/jcad/JcadContext"; 
 import {JcadContextError} from "../../../../../../src/com/jec/commons/jcad/exceptions/JcadContextError";
-import {GuidTestUtils} from "../../../../../../utils/test-utils/guid-utils/GuidTestUtils";
 
 // Class to test:
 import {JcadContextManager} from "../../../../../../src/com/jec/commons/jcad/spi/JcadContextManager";
+
+// Utilities:
+import * as utils from "../../../../../../utils/test-utils/utilities/JcadContextManagerTestUtils";
+import {GuidTestUtils} from "../../../../../../utils/test-utils/utilities/GuidTestUtils";
 
 // Test:
 describe("JcadContextManager", ()=> {
@@ -55,51 +57,44 @@ describe("JcadContextManager", ()=> {
   describe("#getContext()", ()=> {
     it("should retrieve the same value as passed to the setContext() method", function() {
       let manager:JcadContextManager = JcadContextManager.getInstance();
-      let context:JcadContext = buildContext();
-      manager.addContext(JCAD_REFERENCE, context);
-      expect(manager.getContext(JCAD_REFERENCE)).to.equal(context);
+      let context:JcadContext = utils.buildContext();
+      manager.addContext(utils.JCAD_REFERENCE, context);
+      expect(manager.getContext(utils.JCAD_REFERENCE)).to.equal(context);
     });
   });
   
   describe("#hasContext()", ()=> {
     it("should return true when context is registered", function() {
       let manager:JcadContextManager = JcadContextManager.getInstance();
-      expect(manager.hasContext(JCAD_REFERENCE)).to.equal(true);
+      expect(manager.hasContext(utils.JCAD_REFERENCE)).to.equal(true);
     });
   });
 
   describe("#removeContext()", ()=> {
     it("should remove already registered contexts", function() {
       let manager:JcadContextManager = JcadContextManager.getInstance();
-      let context:JcadContext = manager.removeContext(JCAD_REFERENCE);
+      let context:JcadContext = manager.removeContext(utils.JCAD_REFERENCE);
       expect(context).not.to.be.null;
-      expect(manager.getContext(JCAD_REFERENCE)).to.equal(undefined);
+      expect(manager.getContext(utils.JCAD_REFERENCE)).to.equal(undefined);
     });
   });
 
   describe("#hasContext()", ()=> {
     it("should return false when context is not registered", function() {
       let manager:JcadContextManager = JcadContextManager.getInstance();
-      expect(manager.hasContext(JCAD_REFERENCE)).to.equal(false);
+      expect(manager.hasContext(utils.JCAD_REFERENCE)).to.equal(false);
     });
   });
 
   describe("#addContext()", ()=> {
     it("should throw an error when a context reference already exixts", function() {
       let manager:JcadContextManager = JcadContextManager.getInstance();
-      let context:JcadContext = buildContext();
+      let context:JcadContext = utils.buildContext();
       let addExistingContextReference:Function = function():void {
-        manager.addContext(JCAD_REFERENCE, null);
+        manager.addContext(utils.JCAD_REFERENCE, null);
       };
-      manager.addContext(JCAD_REFERENCE, context);
+      manager.addContext(utils.JCAD_REFERENCE, context);
       assert.throws(addExistingContextReference, JcadContextError);
     });
   });
 });
-
-// Utilities:
-const JCAD_REFERENCE:string = "jcad-test-ref";
-const buildContext:Function = function():JcadContext {
-  let factory:JcadContextFactory = new JcadContextFactory();
-  return factory.create();
-};

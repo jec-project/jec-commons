@@ -20,51 +20,45 @@ import {expect} from "chai";
 // Class to test:
 import {LogLevel} from "../../../../../src/com/jec/commons/logging/LogLevel";
 
+// Utilities:
+import * as utils from "../../../../../utils/test-utils/utilities/LogLevelTestUtils";
+
 // Test:
 describe("LogLevel", ()=> {
 
   describe("#TRACE", ()=> {
     it("TRACE should return '0'", function() {
-      expect(LogLevel.TRACE).to.equal(TRACE);
+      expect(LogLevel.TRACE).to.equal(utils.TRACE);
     });
   });
 
   describe("#DEBUG", ()=> {
     it("DEBUG should return '1'", function() {
-      expect(LogLevel.DEBUG).to.equal(DEBUG);
+      expect(LogLevel.DEBUG).to.equal(utils.DEBUG);
     });
   });
   
   describe("#INFO", ()=> {
     it("INFO should return '2'", function() {
-      expect(LogLevel.INFO).to.equal(INFO);
+      expect(LogLevel.INFO).to.equal(utils.INFO);
     });
   });
   
   describe("#WARN", ()=> {
     it("WARN should return '3'", function() {
-      expect(LogLevel.WARN).to.equal(WARN);
+      expect(LogLevel.WARN).to.equal(utils.WARN);
     });
   });
   
   describe("#ERROR", ()=> {
     it("ERROR should return '4'", function() {
-      expect(LogLevel.ERROR).to.equal(ERROR);
+      expect(LogLevel.ERROR).to.equal(utils.ERROR);
     });
   });
 
   describe("#OFF", ()=> {
     it("OFF should return '5'", function() {
-      expect(LogLevel.OFF).to.equal(OFF);
+      expect(LogLevel.OFF).to.equal(utils.OFF);
     });
   });
 });
-
-// Utilities:
-// We store constants that should be defined by the LogLevel class:
-const TRACE:number = 0;
-const DEBUG:number = 1;
-const INFO:number = 2;
-const WARN:number = 3;
-const ERROR:number = 4;
-const OFF:number = 5;

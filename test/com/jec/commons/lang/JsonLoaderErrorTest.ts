@@ -20,23 +20,23 @@ import {expect} from "chai";
 // Class to test:
 import {JsonLoaderError} from "../../../../../src/com/jec/commons/lang/JsonLoaderError";
 
+// Utilities:
+import * as utils from "../../../../../utils/test-utils/utilities/JsonLoaderErrorTestUtils";
+
 // Test:
 describe("JsonLoaderError", ()=> {
 
   describe("instanceOf(Error)", ()=> {
     it("JsonLoaderError should extend Error", function() {
-      let error:JsonLoaderError = new JsonLoaderError(ERROR);
+      let error:JsonLoaderError = new JsonLoaderError(utils.ERROR_MSG);
       expect(error).to.be.instanceOf(Error);
     });
   });
 
   describe("#message", ()=> {
     it("should return the same message as passed in the class constructor", function() {
-      let error:JsonLoaderError = new JsonLoaderError(ERROR);
-      expect(error.message).to.have.string(ERROR);
+      let error:JsonLoaderError = new JsonLoaderError(utils.ERROR_MSG);
+      expect(error.message).to.have.string(utils.ERROR_MSG);
     });
   });
 });
-
-// Utilities:
-const ERROR:string = "error message";

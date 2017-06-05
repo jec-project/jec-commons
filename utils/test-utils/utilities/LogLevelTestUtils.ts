@@ -14,27 +14,15 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import "mocha";
-import {expect} from "chai";
-
-// Class to test:
-import {HttpHeader} from "../../../../../../src/com/jec/commons/net/http/HttpHeader";
+/*!
+ * This module constains utilities used by the LogLevelTest test suite.
+ */
 
 // Utilities:
-import * as utils from "../../../../../../utils/test-utils/utilities/HttpHeaderTestUtils";
-
-// Test:
-describe("HttpHeader", ()=> {
-
-  describe("#ACCEPT", ()=> {
-    it("ACCEPT should return 'Accept'", function() {
-      expect(HttpHeader.ACCEPT).to.equal(utils.ACCEPT);
-    });
-  });
-
-  describe("#CONTENT_TYPE", ()=> {
-    it("CONTENT_TYPE should return 'Content-Type'", function() {
-      expect(HttpHeader.CONTENT_TYPE).to.equal(utils.CONTENT_TYPE);
-    });
-  });
-});
+// We store constants that should be defined by the LogLevel class:
+export const TRACE:number = 0;
+export const DEBUG:number = 1;
+export const INFO:number = 2;
+export const WARN:number = 3;
+export const ERROR:number = 4;
+export const OFF:number = 5;

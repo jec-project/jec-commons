@@ -15,11 +15,14 @@
 //   limitations under the License.
 
 import "mocha";
-import {expect, assert, fail} from "chai";
+import {expect, assert} from "chai";
 import {JsonLoaderError} from "../../../../../src/com/jec/commons/lang/JsonLoaderError";
 
 // Class to test:
 import {JsonLoader} from "../../../../../src/com/jec/commons/lang/JsonLoader";
+
+// Utilities:
+import * as utils from "../../../../../utils/test-utils/utilities/JsonLoaderTestUtils";
 
 // Test:
 describe("JsonLoader", ()=> {
@@ -27,19 +30,19 @@ describe("JsonLoader", ()=> {
   describe("#loadSync()", ()=> {
     it("should return a valid JavaScript Object", function() {
       let loader:JsonLoader = new JsonLoader();
-      let result:any = loader.loadSync(VALID_FILE);
-      expect(result).to.have.property(J_STRING, STRING);
-      expect(result).to.have.property(J_NUMBER, NUMBER);
-      expect(result).to.have.property(J_OBJECT).that.is.an("object").that.deep.equals(OBJECT);
-      expect(result).to.have.property(J_ARRAY).that.is.an("array").that.deep.equals(ARRAY);
-      expect(result).to.have.property(J_BOOLEAN, BOOLEAN);
-      expect(result).to.have.property(J_NULL, null);
+      let result:any = loader.loadSync(utils.VALID_FILE);
+      expect(result).to.have.property(utils.J_STRING, utils.STRING);
+      expect(result).to.have.property(utils.J_NUMBER, utils.NUMBER);
+      expect(result).to.have.property(utils.J_OBJECT).that.is.an("object").that.deep.equals(utils.OBJECT);
+      expect(result).to.have.property(utils.J_ARRAY).that.is.an("array").that.deep.equals(utils.ARRAY);
+      expect(result).to.have.property(utils.J_BOOLEAN, utils.BOOLEAN);
+      expect(result).to.have.property(utils.J_NULL, null);
     });
 
     it("should throw an error when path is not valid", function() {
       let loader:JsonLoader = new JsonLoader();
       let loadInvalidFilePath:Function = function():void {
-        loader.loadSync(INVALID_FILE_PATH);
+        loader.loadSync(utils.INVALID_FILE_PATH);
       };
       assert.throws(loadInvalidFilePath, Error);
     });
@@ -47,7 +50,7 @@ describe("JsonLoader", ()=> {
     it("should throw an error when JSON file is not valid", function() {
       let loader:JsonLoader = new JsonLoader();
       let loadInvalidFile:Function = function():void {
-        loader.loadSync(INVALID_FILE);
+        loader.loadSync(utils.INVALID_FILE);
       };
       assert.throws(loadInvalidFile, Error);
     });
@@ -57,18 +60,18 @@ describe("JsonLoader", ()=> {
     it("should return a valid JavaScript Object", function(done:Function) {
       let loader:JsonLoader = new JsonLoader();
       this.timeout(5000);
-      let result:any = loader.load(VALID_FILE,
+      let result:any = loader.load(utils.VALID_FILE,
         (data:any) => {
-          expect(data).to.have.property(J_STRING, STRING);
-          expect(data).to.have.property(J_NUMBER, NUMBER);
-          expect(data).to.have.property(J_OBJECT).that.is.an("object").that.deep.equals(OBJECT);
-          expect(data).to.have.property(J_ARRAY).that.is.an("array").that.deep.equals(ARRAY);
-          expect(data).to.have.property(J_BOOLEAN, BOOLEAN);
-          expect(data).to.have.property(J_NULL, null);
+          expect(data).to.have.property(utils.J_STRING, utils.STRING);
+          expect(data).to.have.property(utils.J_NUMBER, utils.NUMBER);
+          expect(data).to.have.property(utils.J_OBJECT).that.is.an("object").that.deep.equals(utils.OBJECT);
+          expect(data).to.have.property(utils.J_ARRAY).that.is.an("array").that.deep.equals(utils.ARRAY);
+          expect(data).to.have.property(utils.J_BOOLEAN, utils.BOOLEAN);
+          expect(data).to.have.property(utils.J_NULL, null);
           done();
         },
         (err:JsonLoaderError) => {
-          fail("Exception not thrown");
+          assert.fail("ok", "ko", "Exception not thrown");
         }
       );
     });
@@ -76,9 +79,9 @@ describe("JsonLoader", ()=> {
     it("should throw an error when path is not valid", function(done:Function) {
       let loader:JsonLoader = new JsonLoader();
       this.timeout(5000);
-      let result:any = loader.load(INVALID_FILE_PATH,
+      let result:any = loader.load(utils.INVALID_FILE_PATH,
         (data:any) => {
-          fail("Exception not thrown");
+          assert.fail("ok", "ko", "Exception not thrown");
         },
         (err:JsonLoaderError) => {
           expect(err).to.not.be.null;
@@ -90,9 +93,9 @@ describe("JsonLoader", ()=> {
     it("should throw an error when JSON file is not valid", function(done:Function) {
       let loader:JsonLoader = new JsonLoader();
       this.timeout(5000);
-      let result:any = loader.load(INVALID_FILE,
+      let result:any = loader.load(utils.INVALID_FILE,
         (data:any) => {
-          fail("Exception not thrown");
+          assert.fail("ok", "ko", "Exception not thrown");
         },
         (err:JsonLoaderError) => {
           expect(err).to.not.be.null;
@@ -102,19 +105,3 @@ describe("JsonLoader", ()=> {
     });
   });
 });
-
-// Utilities:
-const J_STRING:string = "jstring";
-const J_NUMBER:string = "jnumber";
-const J_OBJECT:string = "jobject";
-const J_ARRAY:string = "jarray";
-const J_BOOLEAN:string = "jboolean";
-const J_NULL:string = "jnull";
-const STRING:string = "string";
-const OBJECT:any = { foo: "bar" };
-const NUMBER:number = 30;
-const ARRAY:number[] = [0,1];
-const BOOLEAN:boolean = false;
-const VALID_FILE:string = "./utils/test-utils/json-utils/valid-user.json";
-const INVALID_FILE:string = "./utils/test-utils/son-utils/invalid-user.json";
-const INVALID_FILE_PATH:string = "./utils/test-utils/invalid-path.json";

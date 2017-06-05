@@ -20,37 +20,33 @@ import {expect} from "chai";
 // Class to test:
 import {JecStringsEnum} from "../../../../../src/com/jec/commons/util/JecStringsEnum";
 
+// Utilities:
+import * as utils from "../../../../../utils/test-utils/utilities/JecStringsEnumTestUtils";
+
 // Test:
 describe("JecStringsEnum", ()=> {
 
   describe("#SRC", ()=> {
     it("SRC should return '/src/'", function() {
-      expect(JecStringsEnum.SRC).to.equal(SRC);
+      expect(JecStringsEnum.SRC).to.equal(utils.SRC);
     });
   });
 
   describe("#WEB_APP", ()=> {
     it("WEB_APP should return '/webapp/'", function() {
-      expect(JecStringsEnum.WEB_APP).to.equal(WEB_APP);
+      expect(JecStringsEnum.WEB_APP).to.equal(utils.WEB_APP);
     });
   });
 
   describe("#TS_EXTENSION", ()=> {
     it("TS_EXTENSION should return 'ts'", function() {
-      expect(JecStringsEnum.TS_EXTENSION).to.equal(TS_EXTENSION);
+      expect(JecStringsEnum.TS_EXTENSION).to.equal(utils.TS_EXTENSION);
     });
   });
 
   describe("#JS_EXTENSION", ()=> {
     it("JS_EXTENSION should return 'js'", function() {
-      expect(JecStringsEnum.JS_EXTENSION).to.equal(JS_EXTENSION);
+      expect(JecStringsEnum.JS_EXTENSION).to.equal(utils.JS_EXTENSION);
     });
   });
 });
-
-// Utilities:
-// We store constants that should be defined by the JecStringsEnum class:
-const SRC:string = "/src/";
-const WEB_APP:string = "/webapp/";
-const TS_EXTENSION:string = "ts";
-const JS_EXTENSION:string = "js";

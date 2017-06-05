@@ -20,65 +20,57 @@ import {expect} from "chai";
 // Class to test:
 import {HttpMethod} from "../../../../../../src/com/jec/commons/net/http/HttpMethod";
 
+// Utilities:
+import * as utils from "../../../../../../utils/test-utils/utilities/HttpMethodTestUtils";
+
 // Test:
 describe("HttpMethod", ()=> {
 
   describe("#GET", ()=> {
     it("GET should return 'GET'", function() {
-      expect(HttpMethod.GET).to.equal(GET);
+      expect(HttpMethod.GET).to.equal(utils.GET);
     });
   });
 
   describe("#POST", ()=> {
     it("POST should return 'POST'", function() {
-      expect(HttpMethod.POST).to.equal(POST);
+      expect(HttpMethod.POST).to.equal(utils.POST);
     });
   });
 
   describe("#PUT", ()=> {
     it("PUT should return 'PUT'", function() {
-      expect(HttpMethod.PUT).to.equal(PUT);
+      expect(HttpMethod.PUT).to.equal(utils.PUT);
     });
   });
 
   describe("#DELETE", ()=> {
     it("DELETE should return 'DELETE'", function() {
-      expect(HttpMethod.DELETE).to.equal(DELETE);
+      expect(HttpMethod.DELETE).to.equal(utils.DELETE);
     });
   });
 
   describe("#HEAD", ()=> {
     it("HEAD should return 'HEAD'", function() {
-      expect(HttpMethod.HEAD).to.equal(HEAD);
+      expect(HttpMethod.HEAD).to.equal(utils.HEAD);
     });
   });
 
   describe("#OPTIONS", ()=> {
     it("OPTIONS should return 'OPTIONS'", function() {
-      expect(HttpMethod.OPTIONS).to.equal(OPTIONS);
+      expect(HttpMethod.OPTIONS).to.equal(utils.OPTIONS);
     });
   });
 
   describe("#TRACE", ()=> {
     it("TRACE should return 'TRACE'", function() {
-      expect(HttpMethod.TRACE).to.equal(TRACE);
+      expect(HttpMethod.TRACE).to.equal(utils.TRACE);
     });
   });
 
   describe("#CONNECT", ()=> {
     it("CONNECT should return 'CONNECT'", function() {
-      expect(HttpMethod.CONNECT).to.equal(CONNECT);
+      expect(HttpMethod.CONNECT).to.equal(utils.CONNECT);
     });
   });
 });
-
-// Utilities:
-// We store constants that should be defined by the HttpMethod class:
-const GET:string = "GET";
-const POST:string = "POST";
-const PUT:string = "PUT";
-const DELETE:string = "DELETE";
-const HEAD:string = "HEAD";
-const OPTIONS:string = "OPTIONS";
-const TRACE:string = "TRACE";
-const CONNECT:string = "CONNECT";

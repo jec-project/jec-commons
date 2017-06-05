@@ -18,47 +18,44 @@ import "mocha";
 import {expect} from "chai";
 import {DecoratorProperties} from "../../../../../../../src/com/jec/commons/files/reflect/DecoratorProperties";
 import {ImportRef} from "../../../../../../../src/com/jec/commons/files/reflect/utils/ImportRef";
-import {ImportRefParser} from "../../../../../../../src/com/jec/commons/files/reflect/utils/ImportRefParser";
 
 // Class to test:
 import {DecoratorPropertiesBuilder} from "../../../../../../../src/com/jec/commons/files/reflect/utils/DecoratorPropertiesBuilder";
 
+// Utilities:
+import * as utils from "../../../../../../../utils/test-utils/utilities/DecoratorPropertiesBuilderTestUtils";
+
 // Test:
 describe("DecoratorPropertiesBuilder", ()=> {
 
+  let importRefs:ImportRef[] = null;
+  let builder:DecoratorPropertiesBuilder = null;
+  let properties:DecoratorProperties = null;
+
+  beforeEach(()=> {
+    importRefs = utils.buildImportRefs();
+    builder = new DecoratorPropertiesBuilder();
+    properties = builder.build(utils.DECORATOR, utils.FILE, importRefs);
+  });
+
+  afterEach(()=> {
+    importRefs = null;
+    builder = null;
+    properties = null;
+  });
+
   describe("#build()", ()=> {
     
-    it("should return a DecoratorProperties object built from the specified parameters", function() {
-      let importRefs:ImportRef[] = buildImportRefs();
-      let builder:DecoratorPropertiesBuilder = new DecoratorPropertiesBuilder();
-      let properties:DecoratorProperties = builder.build(DECORATOR, FILE, importRefs);
-      expect(properties.classPath).to.equal("./SampleDecorator");
-      expect(properties.name).to.equal("SampleDecorator");
-      expect(properties.value).to.equal(DECORATOR);
+    it("should return a 'classPath' reference built from the specified parameters", function() {
+      expect(properties.classPath).to.equal(utils.CLASS_PATH);
+    });
+    
+    it("should return a 'name' reference built from the specified parameters", function() {
+      expect(properties.name).to.equal(utils.NAME);
+    });
+    
+    it("should return a 'value' reference built from the specified parameters", function() {
+      expect(properties.value).to.equal(utils.DECORATOR);
     });
   });
 });
-
-// Utilities:
-const buildImportRefs:Function = function():ImportRef[] {
-  let parser:ImportRefParser = new ImportRefParser();
-  return parser.getImports(FILE);
-}
-const DECORATOR:string = "__decorate([\r\n    SampleDecorator_1.SampleDecorator()\r\n], SampleFile);";
-const FILE:string =
-`"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const SampleDecorator_1 = require("./SampleDecorator");
-let SampleFile = class SampleFile {
-};
-SampleFile = __decorate([
-    SampleDecorator_1.SampleDecorator()
-], SampleFile);
-exports.SampleFile = SampleFile;
-`;

@@ -21,12 +21,12 @@ import {expect} from "chai";
 import {PathStats} from "../../../../../../../src/com/jec/commons/files/reflect/utils/PathStats";
 
 // Utilities:
-const VALID_PATH:string = "./utils/test-utils/walkpath-test-utils";
+import * as utils from "../../../../../../../utils/test-utils/utilities/PathStatsTestUtils";
 
 // Test:
 describe("PathStats", ()=> {
 
-  let stats:PathStats = new PathStats(VALID_PATH);
+  let stats:PathStats = new PathStats(utils.VALID_PATH);
 
   it("should have a 'directoriesNum' property", function() {
     expect(stats).to.have.property("directoriesNum", 0);
@@ -42,7 +42,7 @@ describe("PathStats", ()=> {
 
   describe("#getPath()", ()=> {
     it("should retreive the same property as passed to the constructor function", function() {
-      expect(stats.getPath()).to.equal(VALID_PATH);
+      expect(stats.getPath()).to.equal(utils.VALID_PATH);
     });
   });
 });

@@ -21,17 +21,20 @@ import {DecoratorProperties} from "../../../../../../../src/com/jec/commons/file
 // Class to test:
 import {DecoratorParser} from "../../../../../../../src/com/jec/commons/files/reflect/utils/DecoratorParser";
 
+// Utilities:
+import * as utils from "../../../../../../../utils/test-utils/utilities/DecoratorParserTestUtils";
+
 // Test:
 describe("DecoratorParser", ()=> {
 
   describe("#findDecorators()", ()=> {
     it("should return an empty array when the file does not contain decorator declarations", function() {
-      let result:DecoratorProperties[] = DecoratorParser.findDecorators(EMPTY_FILE);
+      let result:DecoratorProperties[] = DecoratorParser.findDecorators(utils.EMPTY_FILE);
       expect(result).to.have.lengthOf(0);
     });
 
     it("should return an array composed of decorator properties found in the specified file", function() {
-      let result:DecoratorProperties[] = DecoratorParser.findDecorators(VALID_FILE);
+      let result:DecoratorProperties[] = DecoratorParser.findDecorators(utils.VALID_FILE);
       let props:DecoratorProperties = null;
       expect(result).to.have.lengthOf(1);
       props = result[0];
@@ -40,30 +43,3 @@ describe("DecoratorParser", ()=> {
     });
   });
 });
-
-const EMPTY_FILE:string = "";
-const VALID_FILE:string = `
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const HttpJslet_1 = require("jec-jslet");
-const WebJslet_1 = require("jec-jslet");
-let Welcome = class Welcome extends HttpJslet_1.HttpJslet {
-    doGet(req, res, exit) {
-        exit(req, res, { sayHello: "GlassCat is alive!" });
-    }
-};
-Welcome = __decorate([
-    WebJslet_1.WebJslet({
-        name: "WelcomeJslet",
-        urlPatterns: ["/welcome"],
-        template: "/views/welcome.ejs"
-    })
-], Welcome);
-exports.Welcome = Welcome;
-`;

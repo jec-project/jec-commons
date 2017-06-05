@@ -16,7 +16,7 @@
 
 import "mocha";
 import {expect} from "chai";
-import {GuidTestUtils} from "../../../../../../utils/test-utils/guid-utils/GuidTestUtils";
+import {GuidTestUtils} from "../../../../../../utils/test-utils/utilities/GuidTestUtils";
 
 // Class to test:
 import {JcadContextImpl} from "../../../../../../src/com/jec/commons/jcad/spi/JcadContextImpl";
@@ -28,7 +28,6 @@ describe("JcadContextImpl", ()=> {
     it("should return a valid GUID V4", function() {
       let ctx:JcadContextImpl = new JcadContextImpl();
       let id:string = ctx.getId();
-      expect(id).to.be.a("string");
       expect(GuidTestUtils.GUID_VALIDATOR.test(id)).to.equal(true);
     });
   });

@@ -16,38 +16,27 @@
 
 import "mocha";
 import {expect} from "chai";
-import {Decorator} from "../../../../../../src/com/jec/commons/jcad/Decorator";
 
 // Class to test:
 import {AbstractDecoratorConnector} from "../../../../../../src/com/jec/commons/jcad/spi/AbstractDecoratorConnector";
 
 // Utilities:
-class AbstractDecoratorConnectorImpl extends AbstractDecoratorConnector {}
-class DecoratorMock implements Decorator {
-  public decorate(target:any, ...rest):void {}
-}
-const JCAD_REFERENCE:string = "jcad-test-ref";
-const DECORATOR:Decorator = new DecoratorMock();
-const buildAbstractDecoratorConnector:Function = function():AbstractDecoratorConnector {
-  let connector:AbstractDecoratorConnector =
-                  new AbstractDecoratorConnectorImpl(JCAD_REFERENCE, DECORATOR);
-  return connector;
-};
+import * as utils from "../../../../../../utils/test-utils/utilities/AbstractDecoratorConnectorTestUtils";
 
 // Test:
 describe("AbstractDecoratorConnector", ()=> {
 
   describe("#getJcadReference()", ()=> {
-    let connector:AbstractDecoratorConnector = buildAbstractDecoratorConnector();
+    let connector:AbstractDecoratorConnector = utils.buildAbstractDecoratorConnector();
     it("should retrieve the same value as passed to the constructor parameter", function() {
-      expect(connector.getJcadReference()).to.equal(JCAD_REFERENCE);
+      expect(connector.getJcadReference()).to.equal(utils.JCAD_REFERENCE);
     });
   });
   
   describe("#getDecorator()", ()=> {
-    let connector:AbstractDecoratorConnector = buildAbstractDecoratorConnector();
+    let connector:AbstractDecoratorConnector = utils.buildAbstractDecoratorConnector();
     it("should retrieve the same value as passed to the constructor parameter", function() {
-      expect(connector.getDecorator()).to.equal(DECORATOR);
+      expect(connector.getDecorator()).to.equal(utils.DECORATOR);
     });
   });
 });

@@ -17,33 +17,14 @@
 import "mocha";
 import {expect, assert} from "chai";
 import {SingletonError} from "../../../../../../src/com/jec/commons/exceptions/SingletonError";
-import {AbstractDecoratorConnector} from "../../../../../../src/com/jec/commons/jcad/spi/AbstractDecoratorConnector"; 
 import {DecoratorConnector} from "../../../../../../src/com/jec/commons/jcad/DecoratorConnector";
-import {Decorator} from "../../../../../../src/com/jec/commons/jcad/Decorator";
-import {JcadContextFactory} from "../../../../../../src/com/jec/commons/jcad/spi/JcadContextFactory"; 
-import {JcadContext} from "../../../../../../src/com/jec/commons/jcad/JcadContext";
-import {GuidTestUtils} from "../../../../../../utils/test-utils/guid-utils/GuidTestUtils";
-
-// Utilities:
-class AbstractDecoratorConnectorImpl extends AbstractDecoratorConnector {}
-class DecoratorMock implements Decorator {
-  public decorate(target:any, ...rest):void {}
-}
-const JCAD_REFERENCE:string = "jcad-test-ref";
-const buildDecoratorConnector:Function = function():AbstractDecoratorConnector {
-  let decorator:Decorator = new DecoratorMock();
-  let connector:AbstractDecoratorConnector = 
-                  new AbstractDecoratorConnectorImpl(JCAD_REFERENCE, decorator);
-  return connector;
-};
-const buildContext:Function = function():JcadContext {
-  let factory:JcadContextFactory = new JcadContextFactory();
-  return factory.create();
-};
-const CONTEXT:JcadContext = buildContext();
 
 // Class to test:
 import {DecoratorConnectorManager} from "../../../../../../src/com/jec/commons/jcad/spi/DecoratorConnectorManager";
+
+// Utilities:
+import * as utils from "../../../../../../utils/test-utils/utilities/DecoratorConnectorManagerTestUtils";
+import {GuidTestUtils} from "../../../../../../utils/test-utils/utilities/GuidTestUtils";
 
 // Test:
 describe("DecoratorConnectorManager", ()=> {
@@ -75,32 +56,32 @@ describe("DecoratorConnectorManager", ()=> {
   describe("#getConnector()", ()=> {
     it("should retrieve the same value as passed to the addConnector() method", function() {
       let manager:DecoratorConnectorManager = DecoratorConnectorManager.getInstance();
-      let connector:DecoratorConnector = buildDecoratorConnector();
-      manager.addConnector(connector, CONTEXT);
-      expect(manager.getConnector(JCAD_REFERENCE, CONTEXT)).to.equal(connector);
+      let connector:DecoratorConnector = utils.buildDecoratorConnector();
+      manager.addConnector(connector, utils.CONTEXT);
+      expect(manager.getConnector(utils.JCAD_REFERENCE, utils.CONTEXT)).to.equal(connector);
     });
   });
   
   describe("#hasConnector()", ()=> {
     it("should return true when connector is registered", function() {
       let manager:DecoratorConnectorManager = DecoratorConnectorManager.getInstance();
-      expect(manager.hasConnector(JCAD_REFERENCE, CONTEXT)).to.equal(true);
+      expect(manager.hasConnector(utils.JCAD_REFERENCE, utils.CONTEXT)).to.equal(true);
     });
   });
 
   describe("#removeConnector()", ()=> {
     it("should remove already registered connectors", function() {
       let manager:DecoratorConnectorManager = DecoratorConnectorManager.getInstance();
-      let result:boolean = manager.removeConnector(JCAD_REFERENCE, CONTEXT);
+      let result:boolean = manager.removeConnector(utils.JCAD_REFERENCE, utils.CONTEXT);
       expect(result).to.equal(true);
-      expect(manager.getConnector(JCAD_REFERENCE, CONTEXT)).to.equal(undefined);
+      expect(manager.getConnector(utils.JCAD_REFERENCE, utils.CONTEXT)).to.equal(undefined);
     });
   });
 
   describe("#hasConnector()", ()=> {
     it("should return false when connector is not registered", function() {
       let manager:DecoratorConnectorManager = DecoratorConnectorManager.getInstance();
-      expect(manager.hasConnector(JCAD_REFERENCE, CONTEXT)).to.equal(false);
+      expect(manager.hasConnector(utils.JCAD_REFERENCE, utils.CONTEXT)).to.equal(false);
     });
   });
 });

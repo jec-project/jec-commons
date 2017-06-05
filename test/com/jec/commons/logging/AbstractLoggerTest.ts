@@ -19,26 +19,21 @@ import * as chai from "chai";
 import * as spies from "chai-spies";
 import {LogLevel} from "../../../../../src/com/jec/commons/logging/LogLevel";
 
-const expect = chai.expect;
-chai.use(spies);
-
 // Class to test:
 import {AbstractLogger} from "../../../../../src/com/jec/commons/logging/AbstractLogger";
 
 // Utilities:
-class AbstractLoggerImpl extends AbstractLogger {}
-const buildAbstractLogger:Function = function():AbstractLogger {
-  let logger:AbstractLogger = new AbstractLoggerImpl();
-  return logger;
-};
-const NAME:string = "name";
-const MESSAGE:string = "message";
+import * as utils from "../../../../../utils/test-utils/utilities/AbstractLoggerTestUtils";
+
+// Chai declarations:
+const expect = chai.expect;
+chai.use(spies);
 
 // Test:
 describe("AbstractLogger", ()=> {
 
   describe("#getLogLevel()", ()=> {
-    let logger:AbstractLogger = buildAbstractLogger();
+    let logger:AbstractLogger = utils.buildAbstractLogger();
     it("should retrieve the same value as passed to the setLogLevel() method", function() {
       logger.setLogLevel(LogLevel.ERROR);
       expect(logger.getLogLevel()).to.equal(LogLevel.ERROR);
@@ -46,55 +41,55 @@ describe("AbstractLogger", ()=> {
   });
   
   describe("#getName()", ()=> {
-    let logger:AbstractLogger = buildAbstractLogger();
+    let logger:AbstractLogger = utils.buildAbstractLogger();
     it("should retrieve the same value as passed to the setName() method", function() {
-      logger.setName(NAME);
-      expect(logger.getName()).to.equal(NAME);
+      logger.setName(utils.NAME);
+      expect(logger.getName()).to.equal(utils.NAME);
     });
   });
 
   describe("#debug()", ()=> {
-    let logger:AbstractLogger = buildAbstractLogger();
+    let logger:AbstractLogger = utils.buildAbstractLogger();
     it("should be called with the specified parameter", function() {
       let spy:any = chai.spy.on(logger, "debug");
-      logger.debug(MESSAGE);
-      expect(spy).to.have.been.called.with(MESSAGE);
+      logger.debug(utils.MESSAGE);
+      expect(spy).to.have.been.called.with(utils.MESSAGE);
     });
   });
   
   describe("#error()", ()=> {
-    let logger:AbstractLogger = buildAbstractLogger();
+    let logger:AbstractLogger = utils.buildAbstractLogger();
     it("should be called with the specified parameter", function() {
       let spy:any = chai.spy.on(logger, "error");
-      logger.error(MESSAGE);
-      expect(spy).to.have.been.called.with(MESSAGE);
+      logger.error(utils.MESSAGE);
+      expect(spy).to.have.been.called.with(utils.MESSAGE);
     });
   });
   
   describe("#info()", ()=> {
-    let logger:AbstractLogger = buildAbstractLogger();
+    let logger:AbstractLogger = utils.buildAbstractLogger();
     it("should be called with the specified parameter", function() {
       let spy:any = chai.spy.on(logger, "info");
-      logger.info(MESSAGE);
-      expect(spy).to.have.been.called.with(MESSAGE);
+      logger.info(utils.MESSAGE);
+      expect(spy).to.have.been.called.with(utils.MESSAGE);
     });
   });
   
   describe("#trace()", ()=> {
-    let logger:AbstractLogger = buildAbstractLogger();
+    let logger:AbstractLogger = utils.buildAbstractLogger();
     it("should be called with the specified parameter", function() {
       let spy:any = chai.spy.on(logger, "trace");
-      logger.trace(MESSAGE);
-      expect(spy).to.have.been.called.with(MESSAGE);
+      logger.trace(utils.MESSAGE);
+      expect(spy).to.have.been.called.with(utils.MESSAGE);
     });
   });
   
   describe("#warn()", ()=> {
-    let logger:AbstractLogger = buildAbstractLogger();
+    let logger:AbstractLogger = utils.buildAbstractLogger();
     it("should be called with the specified parameter", function() {
       let spy:any = chai.spy.on(logger, "warn");
-      logger.warn(MESSAGE);
-      expect(spy).to.have.been.called.with(MESSAGE);
+      logger.warn(utils.MESSAGE);
+      expect(spy).to.have.been.called.with(utils.MESSAGE);
     });
   });
 });

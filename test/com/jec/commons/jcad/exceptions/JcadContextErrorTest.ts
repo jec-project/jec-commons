@@ -20,23 +20,23 @@ import {expect} from "chai";
 // Class to test:
 import {JcadContextError} from "../../../../../../src/com/jec/commons/jcad/exceptions/JcadContextError";
 
+// Utilities:
+import * as utils from "../../../../../../utils/test-utils/utilities/JcadContextErrorTestUtils";
+
 // Test:
 describe("JcadContextError", ()=> {
 
   describe("instanceOf(Error)", ()=> {
     it("JsonLoaderError should extend Error", function() {
-      let error:JcadContextError = new JcadContextError(ERROR);
+      let error:JcadContextError = new JcadContextError(utils.ERROR_MESSAGE);
       expect(error).to.be.instanceOf(Error);
     });
   });
 
   describe("#message", ()=> {
     it("should return the same message as passed in the class constructor", function() {
-      let error:JcadContextError = new JcadContextError(ERROR);
-      expect(error.message).to.have.string(ERROR);
+      let error:JcadContextError = new JcadContextError(utils.ERROR_MESSAGE);
+      expect(error.message).to.have.string(utils.ERROR_MESSAGE);
     });
   });
 });
-
-// Utilities:
-const ERROR:string = "error message";
