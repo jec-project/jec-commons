@@ -21,6 +21,84 @@
  */
 export interface FileStats {
 
+  //////////////////////////////////////////////////////////////////////////////
+  // Public getter properties
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   * Returns the ID of device containing file.
+   */
+  dev:number;
+
+  /**
+   * Returns the inode number.
+   */
+  ino:number;
+
+  /**
+   * Indicates the protection mode for this file.
+   */
+  mode:number;
+
+  /**
+   * Indicates number of hard links for this file.
+   */
+  nlink:number;
+
+  /**
+   * Returns the user ID of the file owner.
+   */
+  uid:number;
+
+  /**
+   * Returns the group ID of the file owner.
+   */
+  gid:number;
+
+  /**
+   * Returns the device ID (if special file).
+   */
+  rdev:number;
+
+  /**
+   * Returns the total size the file, in bytes.
+   */
+  size:number;
+
+  /**
+   * Returns the blocksize for filesystem I/O.
+   */
+  blksize:number;
+
+  /**
+   * Returns the number of blocks allocated.
+   */
+  blocks:number;
+
+  /**
+   * Returns time when file data last accessed.
+   */
+  atime:Date;
+
+  /**
+   * Returns time when file data last modified.
+   */
+  mtime:Date;
+
+  /**
+   * Returns time when file status was last changed (inode data modification).
+   */
+  ctime:Date;
+  
+  /**
+   * Returns of file creation. Set once when the file is created.
+   */
+  birthtime:Date;
+  
+  //////////////////////////////////////////////////////////////////////////////
+  // Public methods
+  //////////////////////////////////////////////////////////////////////////////
+
   /**
    * Returns a boolean that indicates whether the associated item is a file
    * (<code>true</code>), or not (<code>false</code>).
@@ -83,5 +161,4 @@ export interface FileStats {
    *                   socket; <code>false</code> otherwise.
    */
   isSocket():boolean;
-  
 }
