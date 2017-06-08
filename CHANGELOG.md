@@ -7,6 +7,9 @@
 
 ### Features
 
+- **JecContainer:** the `JecContainer` interface is the marker interface for all JEC containers
+- **startup:** the `startup` package contains the API for bootstrapping JEC applications
+
 This release provides many tests improvements.
 
 <a name="jec-commons-1.1.0"></a>

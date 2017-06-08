@@ -48,6 +48,7 @@ export {JcadContext} from "./jcad/JcadContext";
 export {ClassLoader} from "./lang/ClassLoader";
 export {EncodingFormat} from "./lang/EncodingFormat";
 export {GuidGenerator} from "./lang/GuidGenerator";
+export {JecContainer} from "./lang/JecContainer";
 export {JsonLoader} from "./lang/JsonLoader";
 export {JsonLoaderError} from "./lang/JsonLoaderError";
 export {Singleton} from "./lang/Singleton";
@@ -69,6 +70,8 @@ export {HttpMethod} from "./net/http/HttpMethod";
 export {HttpStatusCode} from "./net/http/HttpStatusCode";
 //--> com/jec/commons/net/url
 export {UrlPattern} from "./net/url/UrlPattern";
+//--> com/jec/commons/startup
+export {BootstrapScript} from "./startup/BootstrapScript";
 //--> com/jec/commons/util
 export {UrlStringsEnum} from "./util/UrlStringsEnum";
 export {Properties} from "./util/Properties";

@@ -211,6 +211,9 @@ export class GuidGenerator {
     generate(): string;
 }
 
+export interface JecContainer {
+}
+
 export class JsonLoader {
     constructor();
     encodingFormat: string;
@@ -400,6 +403,10 @@ export interface UrlPattern {
     strict: boolean;
     baseUrl: string;
     baseUrlLength: number;
+}
+
+export interface BootstrapScript {
+    run(container: JecContainer): void;
 }
 
 export class Properties {
