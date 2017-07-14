@@ -7,6 +7,4 @@
 
 declare module "jec-commons" {
 
-/*PLACEHOLDER*/
-
-}
+/*PLACEHOLDER*/}

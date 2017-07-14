@@ -60,14 +60,14 @@ export class DecoratorPropertiesBuilder {
    * @param {string} decorator the decorator string to parse.
    * @param {string} file the class file string from which is extracted the 
    *                      reference to the decorator string to parse.
-   * @param {Array<ImportRef>} imports the list of string that represents the 
+   * @param {Array<ImportRef>} refList the list of string that represents the 
    *                                   class imports extracted from the
-   *                                    specified <code>file</code>.
+   *                                   specified <code>file</code>.
    * @return {DecoratorProperties} a new <code>DecoratorProperties</code>
    *                               instance.
    */
-  public build(decorator:string, file:string, 
-                                      imports:ImportRef[]):DecoratorProperties {
+  public build(decorator:string, file:string,
+                                 refList:Array<ImportRef>):DecoratorProperties {
     let result:DecoratorProperties = new BasicDecoratorProperties();
     let dotPos:number = decorator.indexOf(UrlStringsEnum.DOT);
     let temp:string = decorator.substring(dotPos + 1);
@@ -81,9 +81,9 @@ export class DecoratorPropertiesBuilder {
     result.value = decorator;
     cursor = decorator.indexOf(DecoratorPropertiesBuilder.NEW_LINE);
     classRef = decorator.substring(cursor + 1, dotPos).trim();
-    cursor = imports.length;
+    cursor = refList.length;
     while(cursor--){
-      importRef = imports[cursor];
+      importRef = refList[cursor];
       if(importRef.ref === classRef) {
         result.classPath = importRef.classPath;
         break;

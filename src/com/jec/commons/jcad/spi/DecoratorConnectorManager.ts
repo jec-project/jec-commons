@@ -20,6 +20,7 @@ import {GuidGenerator} from "../../lang/GuidGenerator";
 import {DecoratorConnector} from "../DecoratorConnector";
 import {Decorator} from "../Decorator";
 import {JcadContext} from "../JcadContext";
+import {JcadValidator} from "./JcadValidator";
 
 /**
  * This singleton contains methods for creating context objects and objects 
@@ -103,6 +104,11 @@ export class DecoratorConnectorManager implements Singleton {
    */
   private _id:string = null;
 
+  /**
+   * The <code>JcadValidator</code> instance for this singleton.
+   */
+  private _validator:JcadValidator = null;
+
   //////////////////////////////////////////////////////////////////////////////
   // Private methods
   //////////////////////////////////////////////////////////////////////////////
@@ -114,6 +120,7 @@ export class DecoratorConnectorManager implements Singleton {
     let generator:GuidGenerator = new GuidGenerator();
     this._id = generator.generate();
     this._connectorMap = new Map<string, DecoratorConnector>();
+    this._validator = new JcadValidator();
   }
 
   /**
@@ -127,6 +134,17 @@ export class DecoratorConnectorManager implements Singleton {
    */
   private buildRef(jcadRef:string, contextId:string):string {
     return jcadRef + DecoratorConnectorManager.PIPE + contextId;
+  }
+
+  /**
+   * Throws an error if the specified <code>context</code> parameter is 
+   * <code>null</code>.
+   * 
+   * @param {any} context the context to validate.
+   * @param {string} contextType the type of the context to validate.
+   */
+  private validate(context:any, contextType:string):void {
+    this._validator.validateContext(context, contextType);
   }
 
   //////////////////////////////////////////////////////////////////////////////
@@ -144,6 +162,8 @@ export class DecoratorConnectorManager implements Singleton {
    *                  connector added to this connector manager.
    */
   public addConnector(connector:DecoratorConnector, context:JcadContext):string {
+    this.validate(connector, "DecoratorConnector");
+    this.validate(context, "JcadContext");
     let jcadRef:string = connector.getJcadReference();
     let ref:string = this.buildRef(jcadRef, context.getId());
     this._connectorMap.set(ref, connector);
@@ -163,6 +183,7 @@ export class DecoratorConnectorManager implements Singleton {
    */
   public getConnector(jcadReference:string,
                                        context:JcadContext):DecoratorConnector {
+    this.validate(context, "JcadContext");
     let ref:string = this.buildRef(jcadReference, context.getId());
     return this._connectorMap.get(ref);
   }
@@ -179,6 +200,7 @@ export class DecoratorConnectorManager implements Singleton {
    *                  connector manager; <code>false</code> otherwhise.
    */
   public hasConnector(jcadReference:string, context:JcadContext):boolean {
+    this.validate(context, "JcadContext");
     let ref:string = this.buildRef(jcadReference, context.getId());
     return this._connectorMap.has(ref);
   }
@@ -195,6 +217,7 @@ export class DecoratorConnectorManager implements Singleton {
    * @return {Decorator} the decorator associated with the specified reference.
    */
   public getDecorator(jcadReference:string, context:JcadContext):Decorator {
+    this.validate(context, "JcadContext");
     let ref:string = this.buildRef(jcadReference, context.getId());
     return this._connectorMap.get(ref).getDecorator();
   }
@@ -210,6 +233,7 @@ export class DecoratorConnectorManager implements Singleton {
    *                   been removed; <code>false</code> otherwise.
    */
   public removeConnector(jcadReference:string, context:JcadContext):boolean {
+    this.validate(context, "JcadContext");
     let ref:string = this.buildRef(jcadReference, context.getId());
     return this._connectorMap.delete(ref);
   }

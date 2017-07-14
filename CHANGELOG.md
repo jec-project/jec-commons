@@ -1,5 +1,15 @@
 # JEC Commons Project: Update Release Notes
 
+<a name="jec-commons-1.1.2"></a>
+## **1.1.2** (2017-07-14)
+
+### Bug Fixes
+
+### Features
+
+- **Gruntfile**: adding support for types generation
+- **JcadValidator:** the `JcadValidator` class provides additional validation features for the `DecoratorConnectorManager` singleton
+
 <a name="jec-commons-1.1.1"></a>
 ## **1.1.1** (2017-06-05)
 
