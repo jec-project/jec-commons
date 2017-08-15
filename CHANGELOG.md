@@ -1,5 +1,14 @@
 # JEC Commons Project: Update Release Notes
 
+<a name="jec-commons-1.1.3"></a>
+## **1.1.3** (2017-08-15)
+
+### Bug Fixes
+
+### Features
+
+- **build**: adding build script to npm instal process for GlassCat instal optimisation
+
 <a name="jec-commons-1.1.2"></a>
 ## **1.1.2** (2017-07-14)
 
