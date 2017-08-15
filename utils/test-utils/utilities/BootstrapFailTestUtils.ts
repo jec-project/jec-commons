@@ -14,19 +14,16 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {JecContainer} from "../lang/JecContainer";
+import {ClassLoader} from "../../../src/com/jec/commons/lang/ClassLoader";
 
-/**
- * The <code>BootstrapScrip<code> interface defines the API that you must
- * implement to create configuration scripts for a JEC Application.
+/*!
+ * This module constains utilities used by the BootstrapFailTest test suite.
  */
-export interface BootstrapScript {
 
-  /**
-   * Runs the configuration script.
-   *
-   * @param {JecContainer} container the JEC container for which to run this
-   *                                 configuration script.
-   */
-  run(container:JecContainer):void;
-}
+// Utilities:
+const VALID_CLASS:string = process.cwd() + "/utils/test-utils/classes/BootstrapTestClass";
+const LOADER:ClassLoader = new ClassLoader();
+export const buildClassRef:Function = function():void {
+  let ClassRef:any = LOADER.loadClass(VALID_CLASS);
+  new ClassRef();
+};

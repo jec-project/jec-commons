@@ -14,19 +14,16 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {JecContainer} from "../lang/JecContainer";
+import "mocha";
+import {expect} from "chai";
 
-/**
- * The <code>BootstrapScrip<code> interface defines the API that you must
- * implement to create configuration scripts for a JEC Application.
- */
-export interface BootstrapScript {
+// Utilities:
+import * as utils from "../../../../../../utils/test-utils/utilities/BootstrapFailTestUtils";
 
-  /**
-   * Runs the configuration script.
-   *
-   * @param {JecContainer} container the JEC container for which to run this
-   *                                 configuration script.
-   */
-  run(container:JecContainer):void;
-}
+// Test:
+describe("@Bootstrap", ()=> {
+
+  it("should throw an error since no context has been declared for this decorator", function() {
+    expect(utils.buildClassRef).to.throw(Error);
+  });
+});

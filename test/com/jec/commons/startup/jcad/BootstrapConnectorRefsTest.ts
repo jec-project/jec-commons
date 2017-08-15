@@ -14,19 +14,18 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {JecContainer} from "../lang/JecContainer";
+import "mocha";
+import {expect} from "chai";
 
-/**
- * The <code>BootstrapScrip<code> interface defines the API that you must
- * implement to create configuration scripts for a JEC Application.
- */
-export interface BootstrapScript {
+// Class to test:
+import {BootstrapConnectorRefs} from "../../../../../../src/com/jec/commons/startup/jcad/BootstrapConnectorRefs";
 
-  /**
-   * Runs the configuration script.
-   *
-   * @param {JecContainer} container the JEC container for which to run this
-   *                                 configuration script.
-   */
-  run(container:JecContainer):void;
-}
+// Test:
+describe("BootstrapConnectorRefs", ()=> {
+
+  describe("#BOOTSTRAP_CONNECTOR_REF", ()=> {
+    it("BOOTSTRAP_CONNECTOR_REF should return 'com.jec.commons.startup.annotations.Bootstrap", function() {
+      expect(BootstrapConnectorRefs.BOOTSTRAP_CONNECTOR_REF).to.equal("com.jec.commons.startup.annotations.Bootstrap");
+    });
+  });
+});

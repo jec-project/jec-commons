@@ -14,19 +14,16 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {JecContainer} from "../lang/JecContainer";
-
 /**
- * The <code>BootstrapScrip<code> interface defines the API that you must
- * implement to create configuration scripts for a JEC Application.
+ * The <code>BootstrapConnectorRefs</code> class provides static constants that 
+ * define the references of the <code>@Bootstrap</code> decorator connector.
  */
-export interface BootstrapScript {
-
+export class BootstrapConnectorRefs {
+  
   /**
-   * Runs the configuration script.
-   *
-   * @param {JecContainer} container the JEC container for which to run this
-   *                                 configuration script.
+   * Defines the reference for connectors tha must be used to interact with the
+   * <code>@Bootstrap</code> decorator.
    */
-  run(container:JecContainer):void;
+  public static readonly BOOTSTRAP_CONNECTOR_REF:string =
+                                "com.jec.commons.startup.annotations.Bootstrap";                                      
 }

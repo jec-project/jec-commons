@@ -14,19 +14,9 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {JecContainer} from "../lang/JecContainer";
-
 /**
- * The <code>BootstrapScrip<code> interface defines the API that you must
- * implement to create configuration scripts for a JEC Application.
+ * The <code>BootstrapParams</code> interface defines the API you must implement
+ * to create objects passed as parameter of the JEC <code>@Bootstrap<code>
+ * decorator.
  */
-export interface BootstrapScript {
-
-  /**
-   * Runs the configuration script.
-   *
-   * @param {JecContainer} container the JEC container for which to run this
-   *                                 configuration script.
-   */
-  run(container:JecContainer):void;
-}
+export interface BootstrapParams { }
