@@ -7,7 +7,7 @@
 
 ### Features
 
-- **build**: adding build script to npm instal process for GlassCat instal optimisation
+- **build**: adding build script to npm install process for GlassCat instal optimisation
 - **index**: refactoring the module index
 - **@Bootstrap**: adding the new `@Bootstrap` decorator as specified by JEC
 
