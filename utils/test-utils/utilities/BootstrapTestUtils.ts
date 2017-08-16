@@ -33,7 +33,9 @@ import {BootstrapConnector} from "../classes/BootstrapConnector";
 // Utilities:
 const LOADER:ClassLoader = new ClassLoader();
 const VALID_CLASS:string = process.cwd() + "/utils/test-utils/classes/BootstrapTestClass";
-export const BOOTSTRAP_PARAMS:BootstrapParams = {};
+export const BOOTSTRAP_PARAMS:BootstrapParams = {
+  priority: 2
+};
 class TestDecorator implements Decorator {
 decorate(target:any, params:BootstrapParams):any { return target; }
 }

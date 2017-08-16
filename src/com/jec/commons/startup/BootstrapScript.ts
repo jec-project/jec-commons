@@ -17,7 +17,7 @@
 import {JecContainer} from "../lang/JecContainer";
 
 /**
- * The <code>BootstrapScrip<code> interface defines the API that you must
+ * The <code>BootstrapScript<code> interface defines the API that you must
  * implement to create configuration scripts for a JEC Application.
  */
 export interface BootstrapScript {
@@ -29,4 +29,18 @@ export interface BootstrapScript {
    *                                 configuration script.
    */
   run(container:JecContainer):void;
+
+  /**
+   * Returns the priority of this configuration class.
+   *
+   * @return {number} the priority of this configuration class.
+   */
+  getPriority():number;
+
+  /**
+   * Sets the priority of this configuration class.
+   *
+   * @param {number} priority the priority of this configuration class.
+   */
+  setPriority(priority:number):void;
 }

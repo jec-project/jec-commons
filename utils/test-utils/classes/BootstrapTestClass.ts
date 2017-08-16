@@ -1,11 +1,10 @@
 import {Bootstrap} from "../../../src/com/jec/commons/startup/annotations/Bootstrap";
-import {BootstrapScript} from "../../../src/com/jec/commons/startup/BootstrapScript";
-import {JecContainer} from "../../../src/com/jec/commons/lang/JecContainer";
+import {AbstractBootstrapScript} from "../../../src/com/jec/commons/startup/AbstractBootstrapScript";
 
 @Bootstrap()
-export class BootstrapTestClass implements BootstrapScript {
+export class BootstrapTestClass extends AbstractBootstrapScript {
 
-  run(container:JecContainer): void {
-    throw new Error("Method not implemented.");
+  constructor(){
+    super();
   }
 }

@@ -74,9 +74,12 @@ export {UrlPattern} from "./commons/net/url/UrlPattern";
 export {BootstrapParams} from "./commons/startup/annotations/core/BootstrapParams";
 //--> com/jec/commons/startup/annotations
 export {Bootstrap} from "./commons/startup/annotations/Bootstrap";
+//--> com/jec/commons/startup/exceptions
+export {BootstrapError} from "./commons/startup/exceptions/BootstrapError";
 //--> com/jec/commons/startup/jcad
 export {BootstrapConnectorRefs} from "./commons/startup/jcad/BootstrapConnectorRefs";
 //--> com/jec/commons/startup
+export {AbstractBootstrapScript} from "./commons/startup/AbstractBootstrapScript";
 export {BootstrapScript} from "./commons/startup/BootstrapScript";
 //--> com/jec/commons/util
 export {UrlStringsEnum} from "./commons/util/UrlStringsEnum";
