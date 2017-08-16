@@ -19,4 +19,10 @@
  * to create objects passed as parameter of the JEC <code>@Bootstrap<code>
  * decorator.
  */
-export interface BootstrapParams { }
+export interface BootstrapParams {
+
+  /**
+   * The priority of the bootstrap script.
+   */
+  priority:number;
+}
