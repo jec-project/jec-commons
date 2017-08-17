@@ -41,7 +41,7 @@ export abstract class AbstractBootstrapScript implements BootstrapScript {
    * Stores a reference to the priority for this <code>BootstrapScript<code>
    * object.
    */
-  protected __priority:number = -1;
+  protected __priority:number = null;
 
   //////////////////////////////////////////////////////////////////////////////
   // Public methods

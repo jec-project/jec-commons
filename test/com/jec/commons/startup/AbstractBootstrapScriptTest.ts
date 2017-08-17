@@ -31,8 +31,8 @@ describe("AbstractBootstrapScript", ()=> {
 
     let script:AbstractBootstrapScript = new BootstrapScriptImpl();
 
-    it("should return -1 as default value", function() {
-      expect(script.getPriority()).to.equal(-1);
+    it("should return 'null' as default value", function() {
+      expect(script.getPriority()).to.be.null;
     });
 
     it("should return the same value as passed to the setter method", function() {
