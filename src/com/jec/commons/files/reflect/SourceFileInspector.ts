@@ -47,6 +47,16 @@ export interface SourceFileInspector {
   addProcessor(processor:FilePreProcessor):void;
 
   /**
+   * Removes the specified <code>FilePreProcessor</code> processor instance from
+   * this file inspector and returns the result of the operation.
+   * 
+   * @param {FilePreProcessor} file the processor to remove.
+   * @return {boolean} <code>true</code> whether the processor has been removed;
+   *                   <code>false</code> otherwhise.
+   */
+  removeProcessor(processor:FilePreProcessor):boolean;
+
+  /**
    * Adds a new source path to this file inspector.
    * 
    * @param {string} path the source path to add.
