@@ -33,15 +33,11 @@ export interface BootstrapContext extends ContainerContext {
   addScript(script:BootstrapScript):void;
 
   /**
-   * Returns the <code>BootstrapScript</code> object that matches the specified
-   * name.
+   * Returns the list of <code>BootstrapScript</code> objects that have been
+   * added to this context.
    * 
-   * @param {string} name the name of the <code>BootstrapScript</code> object to
-   *                      find.
-   * @return {BootstrapScript} the <code>BootstrapScript</code> object that 
-   *                           matches the specified name, or
-   *                           <code>undefined</code> whether the object
-   *                           does not exist.
+   * @return {Array<BootstrapScript>} the list of <code>BootstrapScript</code> 
+   *                                  objects in this context.
    */
-  getScript(name:string):BootstrapScript;
+  getScriptList():BootstrapScript[];
 }
