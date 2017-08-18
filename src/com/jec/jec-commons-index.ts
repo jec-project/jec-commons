@@ -12,6 +12,8 @@
  * Please maintain package and alphabetical order!
  */
 
+//--> com/jec/commons/context
+export {ContainerContext} from "./commons/context/ContainerContext";
 //--> com/jec/commons/exceptions
 export {SingletonError} from "./commons/exceptions/SingletonError";
 //--> com/jec/commons/jcad/exceptions
@@ -74,6 +76,8 @@ export {UrlPattern} from "./commons/net/url/UrlPattern";
 export {BootstrapParams} from "./commons/startup/annotations/core/BootstrapParams";
 //--> com/jec/commons/startup/annotations
 export {Bootstrap} from "./commons/startup/annotations/Bootstrap";
+//--> com/jec/commons/startup/context
+export {BootstrapContext} from "./commons/startup/context/BootstrapContext";
 //--> com/jec/commons/startup/exceptions
 export {BootstrapError} from "./commons/startup/exceptions/BootstrapError";
 //--> com/jec/commons/startup/jcad

@@ -15,16 +15,17 @@
 //   limitations under the License.
 
 import {BootstrapScript} from "../BootstrapScript";
-import {Logger} from "jec-commons";
+import {ContainerContext} from "../../context/ContainerContext";
 
 /**
  * The <code>BootstrapContext</code> interface defines a set of methods that use  
  * a <code>BootstrapScript</code> object to communicate with a domain container.
  */
-export interface BootstrapContext {
+export interface BootstrapContext extends ContainerContext {
 
   /**
-   * Adds a <code>BootstrapScript</code> object to this <code>BootstrapContext</code>.
+   * Adds a <code>BootstrapScript</code> object to this
+   * <code>BootstrapContext</code> object.
    * 
    * @param {BootstrapScript} script the <code>BootstrapScript</code> object to 
    *                                 add to this <code>BootstrapContext</code>.
@@ -37,40 +38,10 @@ export interface BootstrapContext {
    * 
    * @param {string} name the name of the <code>BootstrapScript</code> object to
    *                      find.
-   * @return {Jslet} the <code>BootstrapScript</code> object that matches the
-   *                 specified URL, name <code>undefined</code> whether the
-   *                 object does not exist.
+   * @return {BootstrapScript} the <code>BootstrapScript</code> object that 
+   *                           matches the specified name, or
+   *                           <code>undefined</code> whether the object
+   *                           does not exist.
    */
-  getScript(name:string):Jslet;
-  
-  /**
-   * Returns the status information for this <code>BootstrapContext</code> instance.
-   * 
-   * @return {Object} the status information for this <code>BootstrapContext</code>
-   *                  instance.
-   */
-  getStatusInfo():any;
-
-  /**
-   * Returns the directory path for this <code>BootstrapContext</code> instance.
-   * 
-   * @return {string} the directory path for this <code>BootstrapContext</code>
-   *                  instance.
-   */
-  getDirectoryPath():string;
-
-  /**
-   * Returns the source path for this <code>BootstrapContext</code> instance.
-   * 
-   * @return {string} the source path for this <code>BootstrapContext</code>
-   *                  instance.
-   */
-  getSourcePath():string;
-  
-  /**
-   * Returns the logger associated with this context.
-   *
-   * @return {Logger} the logger associated with this context.
-   */
-  getLogger():Logger;
+  getScript(name:string):BootstrapScript;
 }
