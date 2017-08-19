@@ -66,5 +66,5 @@ export interface SourceFileInspector {
   /**
    * Inspects the specified source paths for this file inspector.
    */
-  inspect():void;
+  inspect(inspectMode:number):void;
 }

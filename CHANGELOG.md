@@ -1,7 +1,7 @@
 # JEC Commons Project: Update Release Notes
 
 <a name="jec-commons-1.1.3"></a>
-## **1.1.3** (2017-08-15)
+## **1.1.3** (2017-08-19)
 
 ### Bug Fixes
 
@@ -10,6 +10,7 @@
 - **build**: adding build script to npm install process for GlassCat instal optimisation
 - **index**: refactoring the module index
 - **@Bootstrap**: adding the new `@Bootstrap` decorator as specified by JEC
+- **InspectMode**: adding the `inspectMode` parameter to the `inspect()` method defined by the `SourceFileInspector` interface. Valid values are constants of the `InspectMode` enum.
 
 <a name="jec-commons-1.1.2"></a>
 ## **1.1.2** (2017-07-14)
