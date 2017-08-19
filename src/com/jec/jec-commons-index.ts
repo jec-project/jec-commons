@@ -27,6 +27,7 @@ export {DecoratorPropertiesBuilder} from "./commons/files/reflect/utils/Decorato
 export {ImportRef} from "./commons/files/reflect/utils/ImportRef";
 export {ImportRefParser} from "./commons/files/reflect/utils/ImportRefParser";
 export {InspectMode} from "./commons/files/reflect/utils/InspectMode";
+export {InspectModeUtil} from "./commons/files/reflect/utils/InspectModeUtil";
 export {PathStats} from "./commons/files/reflect/utils/PathStats";
 //--> com/jec/commons/files/reflect
 export {DecoratorProperties} from "./commons/files/reflect/DecoratorProperties";
