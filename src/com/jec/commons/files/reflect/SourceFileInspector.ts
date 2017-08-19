@@ -67,4 +67,9 @@ export interface SourceFileInspector {
    * Inspects the specified source paths for this file inspector.
    */
   inspect(inspectMode:number):void;
+
+  /**
+   * Clears the cache of this file inspector.
+   */
+  clearCache():void;
 }
