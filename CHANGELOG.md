@@ -11,7 +11,7 @@
 - **index**: refactoring the module index
 - **@Bootstrap**: adding the new `@Bootstrap` decorator as specified by JEC
 - **InspectMode**: adding the `inspectMode` parameter to the `inspect()` method defined by the `SourceFileInspector` interface. Valid values are constants of the `InspectMode` enum.
-- **SourceFileInspector.clearCache()**: adding the `clearCache` method to the `SourceFileInspector` interface
+- **SourceFileInspector.clearCache()**: adding the `clearCache()` method to the `SourceFileInspector` interface
 
 <a name="jec-commons-1.1.2"></a>
 ## **1.1.2** (2017-07-14)

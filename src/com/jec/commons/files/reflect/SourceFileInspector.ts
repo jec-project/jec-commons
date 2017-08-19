@@ -65,6 +65,11 @@ export interface SourceFileInspector {
 
   /**
    * Inspects the specified source paths for this file inspector.
+   * 
+   * @param {number} inspectMode specifies the process used by this file
+   *                             inspector to inspect files. Valid values are
+   *                             the constants of the <code>InspectMode</code>
+   *                             class.
    */
   inspect(inspectMode:number):void;
 
