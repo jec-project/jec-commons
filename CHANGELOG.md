@@ -1,5 +1,14 @@
 # JEC Commons Project: Update Release Notes
 
+<a name="jec-commons-1.1.4"></a>
+## **1.1.3** (2017-08-20)
+
+### Bug Fixes
+
+- fixing peer dependencies for Glasscat alpha releases integration
+
+### Features
+
 <a name="jec-commons-1.1.3"></a>
 ## **1.1.3** (2017-08-19)
 

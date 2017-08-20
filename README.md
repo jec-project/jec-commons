@@ -66,7 +66,7 @@ The documentation generator is [TypeDoc](http://typedoc.org/)
 
 ## Update Release Notes
 
-**Current stable release:** [1.1.3](CHANGELOG.md#jec-commons-1.1.3)
+**Current stable release:** [1.1.4](CHANGELOG.md#jec-commons-1.1.4)
  
 For a complete listing of release notes for all JEC Commons update releases, see the [CHANGELOG](CHANGELOG.md) file. 
 
