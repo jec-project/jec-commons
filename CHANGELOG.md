@@ -1,7 +1,18 @@
 # JEC Commons Project: Update Release Notes
 
+<a name="jec-commons-1.1.6"></a>
+## **1.1.6** (2017-08-20)
+
+### Bug Fixes
+
+- **postinstall**: removing the post install script
+
+### Features
+
+- **dist**: adding binaries to the `dist` folder
+
 <a name="jec-commons-1.1.5"></a>
-## **1.1.3** (2017-08-20)
+## **1.1.5** (2017-08-20)
 
 ### Bug Fixes
 
@@ -10,7 +21,7 @@
 - Dependencies upgrade
 
 <a name="jec-commons-1.1.4"></a>
-## **1.1.3** (2017-08-20)
+## **1.1.4** (2017-08-20)
 
 ### Bug Fixes
 
