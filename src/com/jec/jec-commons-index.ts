@@ -68,8 +68,10 @@ export {Logger} from "./commons/logging/Logger";
 export {LogLevel} from "./commons/logging/LogLevel";
 export {LogLevelUtil} from "./commons/logging/LogLevelUtil";
 //--> com/jec/commons/net/http
+export {CacheControlPolicy} from "./commons/net/http/CacheControlPolicy";
 export {HttpConnectionType} from "./commons/net/http/HttpConnectionType";
 export {HttpHeader} from "./commons/net/http/HttpHeader";
+export {HttpHeaderParam} from "./commons/net/http/HttpHeaderParam";
 export {HttpMethod} from "./commons/net/http/HttpMethod";
 export {HttpStatusCode} from "./commons/net/http/HttpStatusCode";
 //--> com/jec/commons/net/url

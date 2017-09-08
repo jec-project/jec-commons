@@ -14,14 +14,20 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-/*!
- * This module constains utilities used by the HttpHeaderTest test
- * suite.
+/**
+ * The <code>JecConfig<code> interface defines the API that you must
+ * implement to create configuration objects for a JEC Application.
  */
+export interface JecConfig {
 
-// Utilities:
-// We store constants that should be defined by the HttpHeader class:
-export const ACCEPT:string = "Accept";
-export const ACCESS_CONTROL_ALLOW_ORIGIN:string = "Access-Control-Allow-Origin";
-export const CONTENT_TYPE:string = "Content-Type";
-export const X_POWERED_BY:string = "X-Powered-By";
+	/**
+	 * A constant of the <code>ConfigConnectorRefs<code> class.
+	 */
+	connectorRef:string;
+	
+	/**
+	 * The configuration object associated with the specified connector
+	 * reference.
+	 */
+	config:any;
+}

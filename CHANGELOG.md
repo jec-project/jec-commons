@@ -1,5 +1,15 @@
 # JEC Commons Project: Update Release Notes
 
+<a name="jec-commons-1.1.7"></a>
+## **1.1.7** (2017-09-06)
+
+### Bug Fixes
+
+### Features
+
+- **HttpHeader**: adding new constants to the `HttpHeader` class
+- **HttpHeaderParam**: new interface for manipulating HTTP headers
+
 <a name="jec-commons-1.1.6"></a>
 ## **1.1.6** (2017-08-20)
 

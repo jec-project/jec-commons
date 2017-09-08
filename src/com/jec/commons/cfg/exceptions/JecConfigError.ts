@@ -14,14 +14,22 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-/*!
- * This module constains utilities used by the HttpHeaderTest test
- * suite.
+/**
+ * The <code>JecConfigError</code> class represents an error thrown by an 
+ * invalid configuration decorator.
  */
+export class JecConfigError extends Error {
 
-// Utilities:
-// We store constants that should be defined by the HttpHeader class:
-export const ACCEPT:string = "Accept";
-export const ACCESS_CONTROL_ALLOW_ORIGIN:string = "Access-Control-Allow-Origin";
-export const CONTENT_TYPE:string = "Content-Type";
-export const X_POWERED_BY:string = "X-Powered-By";
+  //////////////////////////////////////////////////////////////////////////////
+  // Constructor function
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   * Creates a new <code>JecConfigError</code> instance.
+   * 
+   * @param {string} message the error message that describes this error.
+   */
+  constructor(message:string) {
+    super(message);
+  }
+}

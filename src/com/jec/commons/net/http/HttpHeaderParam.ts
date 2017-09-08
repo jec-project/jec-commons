@@ -14,14 +14,18 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-/*!
- * This module constains utilities used by the HttpHeaderTest test
- * suite.
+/**
+ * Represents an HTTP header <code>key/value</code> object.
  */
+export interface HttpHeaderParam {
 
-// Utilities:
-// We store constants that should be defined by the HttpHeader class:
-export const ACCEPT:string = "Accept";
-export const ACCESS_CONTROL_ALLOW_ORIGIN:string = "Access-Control-Allow-Origin";
-export const CONTENT_TYPE:string = "Content-Type";
-export const X_POWERED_BY:string = "X-Powered-By";
+  /**
+   * The reference to an HTTP header, as specified by HTTP standards.
+   */
+  header:string;
+
+  /**
+   * The value associated to the specified <code>header</code> property.
+   */
+  value:any;
+}

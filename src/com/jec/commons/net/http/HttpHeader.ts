@@ -21,12 +21,23 @@
 export class HttpHeader {
 
   /**
-   * Provides the reference for the <code>Accept</code> header field.
+   * Provides the reference for the <code>Accept</code> header.
    */
   public static readonly ACCEPT:string = "Accept";
 
   /**
-   * Provides the reference for the <code>Content-Type</code> header field.
+   * Provides the reference for the <code>Access-Control-Allow-Origin</code> header.
+   */
+  public static readonly ACCESS_CONTROL_ALLOW_ORIGIN:string = "Access-Control-Allow-Origin";
+
+  /**
+   * Provides the reference for the <code>Content-Type</code> header.
    */
   public static readonly CONTENT_TYPE:string = "Content-Type";
+
+  /**
+   * Provides the reference for the <code>X-Powered-By</code> header.
+   */
+  public static readonly X_POWERED_BY:string = "X-Powered-By";
+  
 }

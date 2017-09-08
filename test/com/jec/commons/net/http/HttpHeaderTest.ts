@@ -32,9 +32,22 @@ describe("HttpHeader", ()=> {
     });
   });
 
+  describe("#ACCESS_CONTROL_ALLOW_ORIGIN", ()=> {
+    it("ACCEPT should return 'Access-Control-Allow-Origin'", function() {
+      expect(HttpHeader.ACCESS_CONTROL_ALLOW_ORIGIN).to.equal(utils.ACCESS_CONTROL_ALLOW_ORIGIN);
+    });
+  });
+
   describe("#CONTENT_TYPE", ()=> {
     it("CONTENT_TYPE should return 'Content-Type'", function() {
       expect(HttpHeader.CONTENT_TYPE).to.equal(utils.CONTENT_TYPE);
     });
   });
+
+  describe("#X_POWERED_BY", ()=> {
+    it("X_POWERED_BY should return 'X-Powered-By'", function() {
+      expect(HttpHeader.X_POWERED_BY).to.equal(utils.X_POWERED_BY);
+    });
+  });
+  
 });
