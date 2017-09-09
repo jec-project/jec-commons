@@ -22,38 +22,39 @@ import {JcadContextFactory} from "../../../src/com/jec/commons/jcad/spi/JcadCont
 import {JcadContext} from "../../../src/com/jec/commons/jcad/JcadContext";
 import {Decorator} from "../../../src/com/jec/commons/jcad/Decorator";
 import {DecoratorConnector} from "../../../src/com/jec/commons/jcad/DecoratorConnector";
-import {BootstrapParams} from "../../../src/com/jec/commons/startup/annotations/core/BootstrapParams";
-import {BootstrapConnectorRefs} from "../../../src/com/jec/commons/startup/jcad/BootstrapConnectorRefs";
-import {BootstrapConnector} from "../classes/BootstrapConnector";
+import {CacheControlPolicy} from "../../../src/com/jec/commons/net/http/CacheControlPolicy";
+import {ConfigConnectorRefs} from "../../../src/com/jec/commons/cfg/jcad/ConfigConnectorRefs";
+import {ConfigConnector} from "../classes/ConfigConnector";
 
 /*!
-* This module constains utilities used by the BootstrapTest test suite.
+* This module constains utilities used by the StaticResourceTest test suite.
 */
 
 // Utilities:
 const LOADER:ClassLoader = new ClassLoader();
-const VALID_CLASS:string = process.cwd() + "/utils/test-utils/classes/BootstrapTestClass";
-export const BOOTSTRAP_PARAMS:BootstrapParams = {
-  priority: 2
+const VALID_CLASS:string = process.cwd() + "/utils/test-utils/classes/StaticResourceTestClass";
+export const URL_PATTERN:string = "/url/pattern/*";
+export const CACHE_CONTROL_PARAMS:CacheControlPolicy = {
+  urlPattern: URL_PATTERN
 };
-class BootstrapDecorator implements Decorator {
-  decorate(target:any, params:BootstrapParams):any { return target; }
+class StaticResourceDecorator implements Decorator {
+  decorate(target:any, params:CacheControlPolicy):any { return target; }
 }
-export const BOOTSTRAP_DECORATOR:Decorator = new BootstrapDecorator();
+export const STATIC_RESOURCE_DECORATOR:Decorator = new StaticResourceDecorator();
 export const buildClassRef:Function = function():void {
   let ClassRef:any = LOADER.loadClass(VALID_CLASS);
   new ClassRef();
 };
 export const initContext:Function = function():JcadContext {
   let factory:JcadContextFactory = new JcadContextFactory();
-  let connector = new BootstrapConnector(BootstrapConnectorRefs.BOOTSTRAP_CONNECTOR_REF, BOOTSTRAP_DECORATOR);
+  let connector = new ConfigConnector(ConfigConnectorRefs.STATIC_RESOURCE_CONNECTOR_REF, STATIC_RESOURCE_DECORATOR);
   let context:JcadContext = factory.create();
   DecoratorConnectorManager.getInstance().addConnector(connector, context);
-  JcadContextManager.getInstance().addContext(BootstrapConnectorRefs.BOOTSTRAP_CONNECTOR_REF, context);
+  JcadContextManager.getInstance().addContext(ConfigConnectorRefs.STATIC_RESOURCE_CONNECTOR_REF, context);
   return context;
 }
 export const resetContext:Function = function(context:JcadContext):void {
-  JcadContextManager.getInstance().removeContext(BootstrapConnectorRefs.BOOTSTRAP_CONNECTOR_REF);
-  DecoratorConnectorManager.getInstance().removeConnector(BootstrapConnectorRefs.BOOTSTRAP_CONNECTOR_REF, context);
+  JcadContextManager.getInstance().removeContext(ConfigConnectorRefs.STATIC_RESOURCE_CONNECTOR_REF);
+  DecoratorConnectorManager.getInstance().removeConnector(ConfigConnectorRefs.STATIC_RESOURCE_CONNECTOR_REF, context);
   context = null;
 }

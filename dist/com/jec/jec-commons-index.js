@@ -1,5 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var CacheControl_1 = require("./commons/cfg/annotations/CacheControl");
+exports.CacheControl = CacheControl_1.CacheControl;
+var StaticResource_1 = require("./commons/cfg/annotations/StaticResource");
+exports.StaticResource = StaticResource_1.StaticResource;
+var JecConfigError_1 = require("./commons/cfg/exceptions/JecConfigError");
+exports.JecConfigError = JecConfigError_1.JecConfigError;
+var ConfigConnectorRefs_1 = require("./commons/cfg/jcad/ConfigConnectorRefs");
+exports.ConfigConnectorRefs = ConfigConnectorRefs_1.ConfigConnectorRefs;
 var SingletonError_1 = require("./commons/exceptions/SingletonError");
 exports.SingletonError = SingletonError_1.SingletonError;
 var JcadContextError_1 = require("./commons/jcad/exceptions/JcadContextError");

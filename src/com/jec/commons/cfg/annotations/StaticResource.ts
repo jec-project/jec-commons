@@ -38,8 +38,8 @@ const CTXM:JcadContextManager = JcadContextManager.getInstance();
 export class MyConfigClass() {}
 ```
  *
- * @param {CacheControlPolicy} params the parameters for the associated
- *                                    static resource.
+ * @param {CacheControlPolicy} params the parameters for the associated static
+ *                                    resource.
  */
 export function StaticResource(params?:CacheControlPolicy):Function {
   

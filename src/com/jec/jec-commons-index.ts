@@ -12,6 +12,15 @@
  * Please maintain package and alphabetical order!
  */
 
+//--> com/jec/commons/cfg/annotations
+export {CacheControl} from "./commons/cfg/annotations/CacheControl";
+export {StaticResource} from "./commons/cfg/annotations/StaticResource";
+//--> com/jec/commons/cfg/context
+export {ConfigContext} from "./commons/cfg/context/ConfigContext";
+//--> com/jec/commons/cfg/exceptions
+export {JecConfigError} from "./commons/cfg/exceptions/JecConfigError";
+//--> com/jec/commons/cfg/jcad
+export {ConfigConnectorRefs} from "./commons/cfg/jcad/ConfigConnectorRefs";
 //--> com/jec/commons/context
 export {ContainerContext} from "./commons/context/ContainerContext";
 //--> com/jec/commons/exceptions

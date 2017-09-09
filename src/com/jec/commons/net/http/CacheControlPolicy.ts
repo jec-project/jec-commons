@@ -30,53 +30,53 @@ export interface CacheControlPolicy {
    * Adds the <code>must-revalidate</code> directive to the
    * <code>Cache-Control</code> header whether it is <code>true</code>.
    */
-  mustRevalidate:boolean;
+  mustRevalidate?:boolean;
 
   /**
    * Adds the <code>no-cache</code> directive to the
    * <code>Cache-Control</code> header whether it is <code>true</code>.
    */
-  noCache:boolean;
+  noCache?:boolean;
   
   /**
    * Adds the <code>no-store</code> directive to the
    * <code>Cache-Control</code> header whether it is <code>true</code>.
    */
-  noStore:boolean;
+  noStore?:boolean;
   
   /**
    * Adds the <code>no-transform</code> directive to the
    * <code>Cache-Control</code> header whether it is <code>true</code>.
    */
-  noTransform:boolean;
+  noTransform?:boolean;
   
   /**
    * Adds the <code>public</code> directive to the
    * <code>Cache-Control</code> header whether it is <code>true</code>.
    */
-  isPublic:boolean;
+  isPublic?:boolean;
   
   /**
    * Adds the <code>private</code> directive to the
    * <code>Cache-Control</code> header whether it is <code>true</code>.
    */
-  isPrivate:boolean;
+  isPrivate?:boolean;
   
   /**
    * Adds the <code>proxy-revalidate</code> directive to the
    * <code>Cache-Control</code> header whether it is <code>true</code>.
    */
-  proxyRevalidate:boolean;
+  proxyRevalidate?:boolean;
   
   /**
    * Adds the <code>max-age</code> directive to the
    * <code>Cache-Control</code> header it is not <code>null</code>.
    */
-  maxAge:number;
+  maxAge?:number;
     
   /**
    * Adds the <code>s-maxage</code> directive with the specified value 
    * to the <code>Cache-Control</code> header it is not <code>null</code>.
    */
-  sMaxage:number;
+  sMaxage?:number;
 }
