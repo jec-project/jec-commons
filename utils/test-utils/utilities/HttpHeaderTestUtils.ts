@@ -23,5 +23,6 @@
 // We store constants that should be defined by the HttpHeader class:
 export const ACCEPT:string = "Accept";
 export const ACCESS_CONTROL_ALLOW_ORIGIN:string = "Access-Control-Allow-Origin";
+export const CACHE_CONTROL:string = "Cache-Control";
 export const CONTENT_TYPE:string = "Content-Type";
 export const X_POWERED_BY:string = "X-Powered-By";

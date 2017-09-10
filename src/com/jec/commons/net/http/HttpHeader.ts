@@ -26,9 +26,16 @@ export class HttpHeader {
   public static readonly ACCEPT:string = "Accept";
 
   /**
-   * Provides the reference for the <code>Access-Control-Allow-Origin</code> header.
+   * Provides the reference for the <code>Access-Control-Allow-Origin</code>
+   * header.
    */
-  public static readonly ACCESS_CONTROL_ALLOW_ORIGIN:string = "Access-Control-Allow-Origin";
+  public static readonly ACCESS_CONTROL_ALLOW_ORIGIN:string =
+                                                  "Access-Control-Allow-Origin";
+
+  /**
+   * Provides the reference for the <code>Cache-Control</code> header.
+   */
+  public static readonly CACHE_CONTROL:string = "Cache-Control";
 
   /**
    * Provides the reference for the <code>Content-Type</code> header.

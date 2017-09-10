@@ -38,6 +38,12 @@ describe("HttpHeader", ()=> {
     });
   });
 
+  describe("#CACHE_CONTROL", ()=> {
+    it("CACHE_CONTROL should return 'Cache-Control'", function() {
+      expect(HttpHeader.CACHE_CONTROL).to.equal(utils.CACHE_CONTROL);
+    });
+  });
+
   describe("#CONTENT_TYPE", ()=> {
     it("CONTENT_TYPE should return 'Content-Type'", function() {
       expect(HttpHeader.CONTENT_TYPE).to.equal(utils.CONTENT_TYPE);
