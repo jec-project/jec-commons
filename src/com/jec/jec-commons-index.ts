@@ -95,6 +95,16 @@ export {BootstrapContext} from "./commons/startup/context/BootstrapContext";
 export {BootstrapError} from "./commons/startup/exceptions/BootstrapError";
 //--> com/jec/commons/startup/jcad
 export {BootstrapConnectorRefs} from "./commons/startup/jcad/BootstrapConnectorRefs";
+//--> com/jec/commons/scheduling/annotations/core
+export {ScheduledParams} from "./commons/scheduling/annotations/core/ScheduledParams";
+//--> com/jec/commons/scheduling/annotations
+export {Scheduled} from "./commons/scheduling/annotations/Scheduled";
+//--> com/jec/commons/scheduling/exceptions
+export {SchedulingError} from "./commons/scheduling/exceptions/SchedulingError";
+//--> com/jec/commons/scheduling/jcad
+export {SchedulingConnectorRefs} from "./commons/scheduling/jcad/SchedulingConnectorRefs";
+//--> com/jec/commons/scheduling/utils
+export {ScheduledParamsValidator} from "./commons/scheduling/utils/ScheduledParamsValidator";
 //--> com/jec/commons/startup
 export {AbstractBootstrapScript} from "./commons/startup/AbstractBootstrapScript";
 export {BootstrapScript} from "./commons/startup/BootstrapScript";

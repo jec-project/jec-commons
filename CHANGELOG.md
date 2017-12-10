@@ -1,5 +1,14 @@
 # JEC Commons Project: Update Release Notes
 
+<a name="jec-commons-1.1.8"></a>
+## **1.1.8** (2017-12-10)
+
+### Bug Fixes
+
+### Features
+
+- **@Scheduled**: adding annotations support for scheduling tasks
+
 <a name="jec-commons-1.1.7"></a>
 ## **1.1.7** (2017-09-06)
 
