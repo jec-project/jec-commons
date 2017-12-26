@@ -1,13 +1,16 @@
 # JEC Commons Project: Update Release Notes
 
 <a name="jec-commons-1.1.8"></a>
-## **1.1.8** (2017-12-10)
+## **1.1.8** (2017-12-26)
 
 ### Bug Fixes
 
 ### Features
 
+- Documentation improvements
 - **@Scheduled**: adding annotations support for scheduling tasks
+- Classes thar define static constants have been replaced by string based Enums
+- **`LogLevelUtil` refactoring**: string constants have been added to the new `LogLevelString` Enum and both classes have been moved into the `jec.commons.logging.utils` package
 
 <a name="jec-commons-1.1.7"></a>
 ## **1.1.7** (2017-09-06)

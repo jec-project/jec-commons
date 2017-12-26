@@ -28,18 +28,10 @@ const DCM:DecoratorConnectorManager = DecoratorConnectorManager.getInstance();
 const CTXM:JcadContextManager = JcadContextManager.getInstance();
 
 /**
- * The <code>CacheControl</code> decorator defines the cache control policy for
+ * The <code>@CacheControl</code> decorator defines the cache control policy for
  * a specific URL pattern in the JEC specification.
- *
- * ```javascript
-@CacheControl({
-  urlPattern: "/my/url/*",
-  noCache: true,
-  noStore: true,
-  mustRevalidate: true
-})
-export class MyConfigClass() {}
-```
+ * 
+ * [[include:CacheControl.md]]
  *
  * @param {CacheControlPolicy} params the parameters for the associated cache
  *                                    control policy.

@@ -15,15 +15,14 @@
 //   limitations under the License.
 
 /**
- * The <code>SchedulingConnectorRefs</code> class provides static constants that 
- * define the references of the JEC scheduling decorators API.
+ * The <code>SchedulingConnectorRefs</code> Enum provides values that define the
+ * references of the JEC scheduling decorators API.
  */
-export class SchedulingConnectorRefs {
+export enum SchedulingConnectorRefs {
   
   /**
    * Defines the reference for connectors tha must be used to interact with the
    * <code>@Scheduled</code> decorator.
    */
-  public static readonly SCHEDULED_CONNECTOR_REF:string =
-                             "com.jec.commons.scheduling.annotations.Scheduled";                                      
+  SCHEDULED_CONNECTOR_REF = "com.jec.commons.scheduling.annotations.Scheduled"                                    
 }

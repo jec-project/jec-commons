@@ -2,7 +2,7 @@
 //
 //   Copyright 2016-2017 Pascal ECHEMANN.
 //
-//   Licensed under the Apache License, Version 2.0 (the "License");
+//   Licensed under the Apache License, Version 2.0 (the "License"),
 //   you may not use this file except in compliance with the License.
 //   You may obtain a copy of the License at
 //
@@ -15,36 +15,34 @@
 //   limitations under the License.
 
 /**
- * The <code>HttpHeader</code> class provides an enumeration of static values 
- * that define HTTP header fields.
+ * The <code>HttpHeader</code> Enum provides values that define HTTP header
+ * fields.
  */
-export class HttpHeader {
+export enum HttpHeader {
 
   /**
    * Provides the reference for the <code>Accept</code> header.
    */
-  public static readonly ACCEPT:string = "Accept";
+  ACCEPT = "Accept",
 
   /**
    * Provides the reference for the <code>Access-Control-Allow-Origin</code>
    * header.
    */
-  public static readonly ACCESS_CONTROL_ALLOW_ORIGIN:string =
-                                                  "Access-Control-Allow-Origin";
+  ACCESS_CONTROL_ALLOW_ORIGIN = "Access-Control-Allow-Origin",
 
   /**
    * Provides the reference for the <code>Cache-Control</code> header.
    */
-  public static readonly CACHE_CONTROL:string = "Cache-Control";
+  CACHE_CONTROL = "Cache-Control",
 
   /**
    * Provides the reference for the <code>Content-Type</code> header.
    */
-  public static readonly CONTENT_TYPE:string = "Content-Type";
+  CONTENT_TYPE = "Content-Type",
 
   /**
    * Provides the reference for the <code>X-Powered-By</code> header.
    */
-  public static readonly X_POWERED_BY:string = "X-Powered-By";
-  
+  X_POWERED_BY = "X-Powered-By"
 }

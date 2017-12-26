@@ -15,36 +15,33 @@
 //   limitations under the License.
 
 /**
- * A convenient Enum for specifying encoding formats used in JEC modules.
+ * The <code>LogLevelString</code> Enum provides string values that represent
+ * each level specified in the <code>LogLevel</code> Enum.
  */
-export enum EncodingFormat {
-
-  //////////////////////////////////////////////////////////////////////////////
-  // Public properties
-  //////////////////////////////////////////////////////////////////////////////
+export enum LogLevelString {
 
   /**
-   * Specifies the format for <code>utf8</code> encoding.
+   * The string reference to the <code>LogLevel.TRACE</code> property.
    */
-  UTF8 = "utf8",
+  TRACE = "TRACE",
 
   /**
-   * Specifies the format for <code>ascii</code> encoding.
+   * The string reference to the <code>LogLevel.DEBUG</code> property.
    */
-  ASCII = "ascii",
+  DEBUG = "DEBUG",
   
   /**
-   * Specifies the format for <code>latin1</code> encoding.
+   * The string reference to the <code>LogLevel.INFO</code> property.
    */
-  LATIN1 = "latin1",
+  INFO = "INFO",
+
+  /**
+   * The string reference to the <code>LogLevel.WARN</code> property.
+   */
+  WARN = "WARN",
   
   /**
-   * Specifies the format for <code>base64</code> encoding.
+   * The string reference to the <code>LogLevel.ERROR</code> property.
    */
-  BASE64 = "base64",
-  
-  /**
-   * Specifies the format for <code>hex</code> encoding.
-   */
-  HEX = "hex"
-}
+  ERROR = "ERROR"
+};

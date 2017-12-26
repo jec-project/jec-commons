@@ -37,12 +37,14 @@ export class DefaultLogFormatter implements LogFormatter {
 
   /**
    * The string used to add new line charaters when the <code>useAppender</code>
-   * parameter of the <code>format()</code> method is <code>true</code>.
+   * parameter of the <code>format()</code> method is <code>true</code>. Current
+   * value is <code>\n</code>.
    */
   public appender:string = "\n";
 
   /**
-   * The pattern used to format times.
+   * The pattern used to format times. Current value is
+   * <code>MM/DD/YY HH:mm:ss.SSS</code>.
    */
   public timeFormat:string = "MM/DD/YY HH:mm:ss.SSS";
 

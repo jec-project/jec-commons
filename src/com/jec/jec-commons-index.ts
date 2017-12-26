@@ -68,6 +68,9 @@ export {Singleton} from "./commons/lang/Singleton";
 //--> com/jec/commons/logging/proxy
 export {AbstractLoggerProxy} from "./commons/logging/proxy/AbstractLoggerProxy";
 export {LoggerProxy} from "./commons/logging/proxy/LoggerProxy";
+//--> com/jec/commons/logging/utils
+export {LogLevelString} from "./commons/logging/utils/LogLevelString";
+export {LogLevelUtil} from "./commons/logging/utils/LogLevelUtil";
 //--> com/jec/commons/logging
 export {AbstractLogger} from "./commons/logging/AbstractLogger";
 export {ConsoleLogger} from "./commons/logging/ConsoleLogger";
@@ -75,7 +78,6 @@ export {DefaultLogFormatter} from "./commons/logging/DefaultLogFormatter";
 export {LogFormatter} from "./commons/logging/LogFormatter";
 export {Logger} from "./commons/logging/Logger";
 export {LogLevel} from "./commons/logging/LogLevel";
-export {LogLevelUtil} from "./commons/logging/LogLevelUtil";
 //--> com/jec/commons/net/http
 export {CacheControlPolicy} from "./commons/net/http/CacheControlPolicy";
 export {HttpConnectionType} from "./commons/net/http/HttpConnectionType";

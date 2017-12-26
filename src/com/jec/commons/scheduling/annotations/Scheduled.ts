@@ -29,20 +29,10 @@ const DCM:DecoratorConnectorManager = DecoratorConnectorManager.getInstance();
 const CTXM:JcadContextManager = JcadContextManager.getInstance();
 
 /**
- * The <code>Scheduled</code> decorator can be added to a method along with
+ * The <code>@Scheduled</code> decorator can be added to a method along with
  * trigger metadata.
  *
- * ```javascript
-export class ScheduledTasks() {
-  
-  @Scheduled({
-    cron:'0 17 * * 5'
-  })
-  public reportImportantEvent():void {
-    console.log("Hi, it's Happy Hour!");
-  }
-}
-```
+ * [[include:Scheduled.md]]
  *
  * @param {ScheduledParams} params the parameters for the associated shedulable
  *                                 method.

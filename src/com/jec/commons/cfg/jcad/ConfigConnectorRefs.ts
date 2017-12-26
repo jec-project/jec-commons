@@ -15,23 +15,21 @@
 //   limitations under the License.
 
 /**
- * The <code>ConfigConnectorRefs</code> class provides static constants that 
- * define the references of the JEC decorator connectors used for applications
- * config.
+ * The <code>ConfigConnectorRefs</code> Enum provides values that define the
+ * references of the JEC decorator connectors used for applications config.
  */
-export class ConfigConnectorRefs {
+export enum ConfigConnectorRefs {
     
   /**
    * Defines the reference for connectors tha must be used to interact with the
    * <code>@CacheControl</code> decorator.
    */
-  public static readonly CACHE_CONTROL_CONNECTOR_REF:string =
-                                 "com.jec.commons.cfg.annotations.CacheControl";  
+  CACHE_CONTROL_CONNECTOR_REF = "com.jec.commons.cfg.annotations.CacheControl",  
 
   /**
    * Defines the reference for connectors tha must be used to interact with the
    * <code>@StaticResource</code> decorator.
    */
-  public static readonly STATIC_RESOURCE_CONNECTOR_REF:string =
-                               "com.jec.commons.cfg.annotations.StaticResource";                                      
+  STATIC_RESOURCE_CONNECTOR_REF =
+                                "com.jec.commons.cfg.annotations.StaticResource"                                     
 }

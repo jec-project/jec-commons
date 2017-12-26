@@ -17,7 +17,7 @@
 import "mocha";
 import {expect} from "chai";
 import {LogLevel} from "../../../../../src/com/jec/commons/logging/LogLevel";
-import {LogLevelUtil} from "../../../../../src/com/jec/commons/logging/LogLevelUtil";
+import {LogLevelUtil} from "../../../../../src/com/jec/commons/logging/utils/LogLevelUtil";
 
 // Class to test:
 import {DefaultLogFormatter} from "../../../../../src/com/jec/commons/logging/DefaultLogFormatter";

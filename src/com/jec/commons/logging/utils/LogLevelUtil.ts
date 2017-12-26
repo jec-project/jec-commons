@@ -14,7 +14,8 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {LogLevel} from "./LogLevel";
+import {LogLevel} from "../LogLevel";
+import {LogLevelString} from "./LogLevelString";
 
 /**
  * A utility class for working with Log levels.
@@ -29,35 +30,6 @@ export class LogLevelUtil {
    * Creates a new <code>LogLevelUtil</code> instance. 
    */
   constructor() {}
-
-  //////////////////////////////////////////////////////////////////////////////
-  // Public properties
-  //////////////////////////////////////////////////////////////////////////////
-
-  /**
-   * The string reference to the <code>LogLevel.TRACE</code> property.
-   */
-  public static readonly TRACE:string = "TRACE";
-
-  /**
-   * The string reference to the <code>LogLevel.DEBUG</code> property.
-   */
-  public static readonly DEBUG:string = "DEBUG";
-  
-  /**
-   * The string reference to the <code>LogLevel.INFO</code> property.
-   */
-  public static readonly INFO:string = "INFO";
-
-  /**
-   * The string reference to the <code>LogLevel.WARN</code> property.
-   */
-  public static readonly WARN:string = "WARN";
-  
-  /**
-   * The string reference to the <code>LogLevel.ERROR</code> property.
-   */
-  public static readonly ERROR:string = "ERROR";
 
   //////////////////////////////////////////////////////////////////////////////
   // Public methods
@@ -83,11 +55,11 @@ export class LogLevelUtil {
   public logLevelToString(level:number):string {
     let value:string = "";
     switch(level) {
-      case LogLevel.TRACE : value = LogLevelUtil.TRACE; break;
-      case LogLevel.DEBUG : value = LogLevelUtil.DEBUG; break;
-      case LogLevel.INFO : value = LogLevelUtil.INFO; break;
-      case LogLevel.WARN : value = LogLevelUtil.WARN; break;
-      case LogLevel.ERROR : value = LogLevelUtil.ERROR; break;
+      case LogLevel.TRACE : value = LogLevelString.TRACE; break;
+      case LogLevel.DEBUG : value = LogLevelString.DEBUG; break;
+      case LogLevel.INFO : value = LogLevelString.INFO; break;
+      case LogLevel.WARN : value = LogLevelString.WARN; break;
+      case LogLevel.ERROR : value = LogLevelString.ERROR; break;
     }
     return value;
   }

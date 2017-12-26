@@ -28,15 +28,10 @@ const DCM:DecoratorConnectorManager = DecoratorConnectorManager.getInstance();
 const CTXM:JcadContextManager = JcadContextManager.getInstance();
 
 /**
- * The <code>StaticResource</code> decorator specifes autowire configurations  
+ * The <code>@StaticResource</code> decorator specifes autowire configurations  
  * for static resources in the JEC specification.
  *
- * ```javascript
-@StaticResource({
-  urlPattern: "/my/url/*"
-})
-export class MyConfigClass() {}
-```
+ * [[include:StaticResource.md]]
  *
  * @param {CacheControlPolicy} params the parameters for the associated static
  *                                    resource.

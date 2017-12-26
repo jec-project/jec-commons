@@ -15,18 +15,18 @@
 //   limitations under the License.
 
 /**
- * The <code>HttpConnectionType</code> class provides an enumeration of static  
- * values that define HTTP connection types.
+ * The <code>HttpConnectionType</code> Enum provides values that define HTTP
+ * connection types.
  */
-export class HttpConnectionType {
+export enum HttpConnectionType {
 
   /**
    * Provides the reference for the <code>HTTP</code> connection type.
    */
-  public static readonly HTTP:string = "http";
+  HTTP = "http",
 
   /**
    * Provides the reference for the <code>HTTPS</code> connection type.
    */
-  public static readonly HTTPS:string = "https";
+  HTTPS = "https"
 }

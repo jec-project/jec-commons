@@ -109,7 +109,4 @@ export class Properties {
     this._properties.set(key, value);
     return old;
   }
-
-  //TODO: implement the load() method
-  //public load(path:string):void { }
 }

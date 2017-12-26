@@ -28,15 +28,10 @@ const DCM:DecoratorConnectorManager = DecoratorConnectorManager.getInstance();
 const CTXM:JcadContextManager = JcadContextManager.getInstance();
 
 /**
- * The <code>Bootstrap</code> decorator defines a bootstrap script class in the 
+ * The <code>@Bootstrap</code> decorator defines a bootstrap script class in the 
  * JEC specification.
  *
- * ```javascript
-@Bootstrap()
-export class MyConfigClass() {
-  // Config here...
-}
-```
+ * [[include:Bootstrap.md]]
  *
  * @param {BootstrapParams} params the parameters for the associated class.
  */

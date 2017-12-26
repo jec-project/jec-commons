@@ -17,7 +17,7 @@
 import "mocha";
 import * as chai from "chai";
 import * as spies from "chai-spies";
-import {LogLevelUtil} from "../../../../../src/com/jec/commons/logging/LogLevelUtil";
+import {LogLevelString} from "../../../../../src/com/jec/commons/logging/utils/LogLevelString";
 
 // Class to test:
 import {ConsoleLogger} from "../../../../../src/com/jec/commons/logging/ConsoleLogger";
@@ -53,7 +53,7 @@ describe("ConsoleLogger", ()=> {
       let oldLog:any = console.log;
       logger.trace(utils.MESSAGE, utils.CONTEXT);
       console.log = function (message) {
-          expect(message).to.have.string(LogLevelUtil.TRACE);
+          expect(message).to.have.string(LogLevelString.TRACE);
           expect(message).to.have.string(utils.CONTEXT);
           expect(message).to.have.string(utils.MESSAGE);
           oldLog.apply(console, arguments);
@@ -73,7 +73,7 @@ describe("ConsoleLogger", ()=> {
       let oldLog:any = console.log;
       logger.info(utils.MESSAGE, utils.CONTEXT);
       console.log = function (message) {
-          expect(message).to.have.string(LogLevelUtil.INFO);
+          expect(message).to.have.string(LogLevelString.INFO);
           expect(message).to.have.string(utils.CONTEXT);
           expect(message).to.have.string(utils.MESSAGE);
           oldLog.apply(console, arguments);
@@ -93,7 +93,7 @@ describe("ConsoleLogger", ()=> {
       let oldLog:any = console.log;
       logger.debug(utils.MESSAGE, utils.CONTEXT);
       console.log = function (message) {
-          expect(message).to.have.string(LogLevelUtil.DEBUG);
+          expect(message).to.have.string(LogLevelString.DEBUG);
           expect(message).to.have.string(utils.CONTEXT);
           expect(message).to.have.string(utils.MESSAGE);
           oldLog.apply(console, arguments);
@@ -113,7 +113,7 @@ describe("ConsoleLogger", ()=> {
       let oldLog:any = console.log;
       logger.warn(utils.MESSAGE, utils.CONTEXT);
       console.log = function (message) {
-          expect(message).to.have.string(LogLevelUtil.WARN);
+          expect(message).to.have.string(LogLevelString.WARN);
           expect(message).to.have.string(utils.CONTEXT);
           expect(message).to.have.string(utils.MESSAGE);
           oldLog.apply(console, arguments);
@@ -133,7 +133,7 @@ describe("ConsoleLogger", ()=> {
       let oldLog:any = console.log;
       logger.error(utils.MESSAGE, utils.CONTEXT);
       console.log = function (message) {
-          expect(message).to.have.string(LogLevelUtil.ERROR);
+          expect(message).to.have.string(LogLevelString.ERROR);
           expect(message).to.have.string(utils.CONTEXT);
           expect(message).to.have.string(utils.MESSAGE);
           oldLog.apply(console, arguments);

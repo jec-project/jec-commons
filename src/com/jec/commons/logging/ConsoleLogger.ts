@@ -17,7 +17,7 @@
 import {Logger} from "./Logger";
 import {AbstractLogger} from "./AbstractLogger";
 import {LogLevel} from "./LogLevel";
-import {LogLevelUtil} from "./LogLevelUtil";
+import {LogLevelString} from "./utils/LogLevelString";
 import {LogFormatter} from "./LogFormatter";
 import {DefaultLogFormatter} from "./DefaultLogFormatter";
 
@@ -68,7 +68,7 @@ export class ConsoleLogger extends AbstractLogger implements Logger {
   public debug(marker:any, context:string = ""):void {
     if(this.isValidLogLevel(LogLevel.DEBUG)) {
       console.log(
-        this._formatter.format(LogLevelUtil.DEBUG, marker, false, context)
+        this._formatter.format(LogLevelString.DEBUG, marker, false, context)
       );
     }
   }
@@ -79,7 +79,7 @@ export class ConsoleLogger extends AbstractLogger implements Logger {
   public error(marker:any, context:string = ""):void {
     if(this.isValidLogLevel(LogLevel.ERROR)) {
       console.log(
-        this._formatter.format(LogLevelUtil.ERROR, marker, false, context)
+        this._formatter.format(LogLevelString.ERROR, marker, false, context)
       );
     }
   }
@@ -90,7 +90,7 @@ export class ConsoleLogger extends AbstractLogger implements Logger {
   public info(marker:any, context:string = ""):void {
     if(this.isValidLogLevel(LogLevel.INFO)) {
       console.log(
-        this._formatter.format(LogLevelUtil.INFO, marker, false, context)
+        this._formatter.format(LogLevelString.INFO, marker, false, context)
       );
     }
   }
@@ -101,7 +101,7 @@ export class ConsoleLogger extends AbstractLogger implements Logger {
   public trace(marker:any, context:string = ""):void {
     if(this.isValidLogLevel(LogLevel.TRACE)) {
       console.log(
-        this._formatter.format(LogLevelUtil.TRACE, marker, false, context)
+        this._formatter.format(LogLevelString.TRACE, marker, false, context)
       );
     }
   }
@@ -112,7 +112,7 @@ export class ConsoleLogger extends AbstractLogger implements Logger {
   public warn(marker:any, context:string = ""):void {
     if(this.isValidLogLevel(LogLevel.WARN)) {
       console.log(
-        this._formatter.format(LogLevelUtil.WARN, marker, false, context)
+        this._formatter.format(LogLevelString.WARN, marker, false, context)
       );
     }
   }
