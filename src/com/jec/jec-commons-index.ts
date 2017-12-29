@@ -27,6 +27,14 @@ export {ContainerContext} from "./commons/context/ContainerContext";
 export {SingletonError} from "./commons/exceptions/SingletonError";
 //--> com/jec/commons/jcad/exceptions
 export {JcadContextError} from "./commons/jcad/exceptions/JcadContextError";
+//--> com/onsoft/glasscat/facade/utils
+export {ContainerConfigMessageComposer} from "./commons/facade/utils/ContainerConfigMessageComposer";
+export {ContainersConfigLauncher} from "./commons/facade/utils/ContainersConfigLauncher";
+export {ContainersConfigParams} from "./commons/facade/utils/ContainersConfigParams";
+//--> com/onsoft/glasscat/facade
+export {ContainersConfig} from "./commons/facade/ContainersConfig";
+export {DelegatedContainer} from "./commons/facade/DelegatedContainer";
+export {DelegatedContainerBuilder} from "./commons/facade/DelegatedContainerBuilder";
 //--> com/jec/commons/files/reflect/impl
 export {BasicDecoratorProperties} from "./commons/files/reflect/impl/BasicDecoratorProperties";
 export {BasicFileProperties} from "./commons/files/reflect/impl/BasicFileProperties";
