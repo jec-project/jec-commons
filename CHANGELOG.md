@@ -11,7 +11,9 @@
 - **@Scheduled**: adding annotations support for scheduling tasks
 - Classes that define static constants have been replaced by string based Enums
 - **`LogLevelUtil` refactoring**: string constants have been added to the new `LogLevelString` Enum and both classes have been moved into the `jec.commons.logging.utils` package
-- Adding the new `facade` package to facilitate development of external frameworks 
+- Adding the new `facade` package to facilitate development of external frameworks
+- **BeanManager**: adding the interface responsible for management of beans 
+- **Locale**: adding the new locale API 
 
 <a name="jec-commons-1.1.7"></a>
 ## **1.1.7** (2017-09-06)

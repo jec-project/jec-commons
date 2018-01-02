@@ -15,10 +15,10 @@
 //   limitations under the License.
 
 /*!
- * This module constains utilities used by the ClassLoaderTest test suite.
+ * This module constains utilities used by the LocaleTest test suite.
  */
 
 // Utilities:
-export const VALID_CLASS:string = "../../../../../dist/com/jec/commons/lang/JsonLoader";
-export const INVALID_CLASS_PATH:string = "invalid/path/to/module";
-export const INVALID_CLASS_FILE:string = "../../../../../utils/test-utils/classes/invalid-class-module";
+export const LANGUAGE:string = "it";
+export const SCRIPT:string = "Latn";
+export const REGION:string = "IT";

@@ -18,10 +18,10 @@ import "mocha";
 import {expect} from "chai";
 
 // Class to test:
-import {EncodingFormat} from "../../../../../src/com/jec/commons/lang/EncodingFormat";
+import {EncodingFormat} from "../../../../../../src/com/jec/commons/lang/utils/EncodingFormat";
 
 // Utilities:
-import * as utils from "../../../../../utils/test-utils/utilities/EncodingFormatTestUtils";
+import * as utils from "../../../../../../utils/test-utils/utilities/EncodingFormatTestUtils";
 
 // Test:
 describe("EncodingFormat", ()=> {

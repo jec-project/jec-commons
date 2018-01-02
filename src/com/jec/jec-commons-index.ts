@@ -65,13 +65,17 @@ exports.JcadContextManager = JcadContextManager.getInstance().constructor;
 export {Decorator} from "./commons/jcad/Decorator";
 export {DecoratorConnector} from "./commons/jcad/DecoratorConnector";
 export {JcadContext} from "./commons/jcad/JcadContext";
+//--> com/jec/commons/lang/utils
+export {EncodingFormat} from "./commons/lang/utils/EncodingFormat";
+export {LocaleBuilder} from "./commons/lang/utils/LocaleBuilder";
 //--> com/jec/commons/lang
+export {BeanManager} from "./commons/lang/BeanManager";
 export {ClassLoader} from "./commons/lang/ClassLoader";
-export {EncodingFormat} from "./commons/lang/EncodingFormat";
 export {GuidGenerator} from "./commons/lang/GuidGenerator";
 export {JecContainer} from "./commons/lang/JecContainer";
 export {JsonLoader} from "./commons/lang/JsonLoader";
 export {JsonLoaderError} from "./commons/lang/JsonLoaderError";
+export {Locale} from "./commons/lang/Locale";
 export {Singleton} from "./commons/lang/Singleton";
 //--> com/jec/commons/logging/proxy
 export {AbstractLoggerProxy} from "./commons/logging/proxy/AbstractLoggerProxy";

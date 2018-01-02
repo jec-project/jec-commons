@@ -15,7 +15,7 @@
 //   limitations under the License.
 
 import * as fs from "fs";
-import {EncodingFormat} from "./EncodingFormat";
+import {EncodingFormat} from "./utils/EncodingFormat";
 import {JsonLoaderError} from "./JsonLoaderError";
 
 /**

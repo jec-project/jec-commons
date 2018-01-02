@@ -14,7 +14,6 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import * as fs from "fs";
 import {DecoratorPropertiesBuilder} from "./DecoratorPropertiesBuilder";
 import {ImportRef} from "./ImportRef";
 import {ImportRefParser} from "./ImportRefParser";

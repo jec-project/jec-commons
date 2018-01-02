@@ -14,11 +14,10 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-/*!
- * This module constains utilities used by the ClassLoaderTest test suite.
+/**
+ * Allows a portable extension to interact directly with the JEC container.
+ * Provides operations for obtaining contextual references for beans.
  */
-
-// Utilities:
-export const VALID_CLASS:string = "../../../../../dist/com/jec/commons/lang/JsonLoader";
-export const INVALID_CLASS_PATH:string = "invalid/path/to/module";
-export const INVALID_CLASS_FILE:string = "../../../../../utils/test-utils/classes/invalid-class-module";
+export interface BeanManager {
+  
+};

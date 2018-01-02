@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs = require("fs");
-const EncodingFormat_1 = require("./EncodingFormat");
+const EncodingFormat_1 = require("./utils/EncodingFormat");
 const JsonLoaderError_1 = require("./JsonLoaderError");
 class JsonLoader {
     constructor() {

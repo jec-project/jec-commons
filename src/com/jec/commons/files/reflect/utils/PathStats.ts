@@ -17,7 +17,6 @@
 import {FileProperties} from "../FileProperties";
 import {JecStringsEnum} from "../../../util/JecStringsEnum";
 import {UrlStringsEnum} from "../../../util/UrlStringsEnum";
-import * as fs from "fs";
 
 /**
  * A helper class that concatenate statistics about all files in a directory.
