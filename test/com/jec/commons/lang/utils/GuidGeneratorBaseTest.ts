@@ -16,21 +16,31 @@
 
 import "mocha";
 import {expect} from "chai";
+import {GuidGenerator} from "../../../../../../src/com/jec/commons/lang/GuidGenerator";
 
 // Class to test:
-import {GuidGenerator} from "../../../../../src/com/jec/commons/lang/GuidGenerator";
+import {GuidGeneratorBase} from "../../../../../../src/com/jec/commons/lang/utils/GuidGeneratorBase";
 
 // Utilities:
-import {GuidTestUtils} from "../../../../../utils/test-utils/utilities/GuidTestUtils";
+import {GuidTestUtils} from "../../../../../../utils/test-utils/utilities/GuidTestUtils";
 
 // Test:
 describe("GuidGenerator", ()=> {
 
   describe("#generate", ()=> {
     it("should return a valid GUID V4", function() {
-      let generator:GuidGenerator = new GuidGenerator();
+      let generator:GuidGenerator = new GuidGeneratorBase();
       let guid:string = generator.generate();
       expect(GuidTestUtils.GUID_VALIDATOR.test(guid)).to.equal(true);
     });
+
+    it("should a unique GUID each time", function() {
+      let generator:GuidGenerator = new GuidGeneratorBase();
+      let guid1:string = generator.generate();
+      let guid2:string = generator.generate();
+      expect(guid1).to.not.equal(guid2);
+    });
   });
+
+  
 });

@@ -16,6 +16,7 @@
 
 import {JcadContext} from "../JcadContext";
 import {GuidGenerator} from "../../lang/GuidGenerator";
+import {GuidGeneratorBase} from "../../lang/utils/GuidGeneratorBase";
 
 /**
  * The default implementation of the <code>JcadContext</code> interface.
@@ -50,7 +51,7 @@ export class JcadContextImpl implements JcadContext {
    * Initializes this object.
    */
   private initObj():void {
-    let generator:GuidGenerator = new GuidGenerator();
+    let generator:GuidGenerator = new GuidGeneratorBase();
     this._id = generator.generate();
   }
 

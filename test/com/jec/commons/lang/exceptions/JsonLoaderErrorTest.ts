@@ -18,10 +18,10 @@ import "mocha";
 import {expect} from "chai";
 
 // Class to test:
-import {JsonLoaderError} from "../../../../../src/com/jec/commons/lang/JsonLoaderError";
+import {JsonLoaderError} from "../../../../../../src/com/jec/commons/lang/exceptions/JsonLoaderError";
 
 // Utilities:
-import * as utils from "../../../../../utils/test-utils/utilities/JsonLoaderErrorTestUtils";
+import * as utils from "../../../../../../utils/test-utils/utilities/JsonLoaderErrorTestUtils";
 
 // Test:
 describe("JsonLoaderError", ()=> {

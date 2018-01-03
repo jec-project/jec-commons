@@ -14,23 +14,31 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
+import * as uuid from "uuid";
+import {GuidGenerator} from "../GuidGenerator";
+
 /**
- * The <code>JcadContextError</code> class represents error throwned by the
- * <code>JcadContextManager</code> singleton.
+ * A helper class that generates Globally Unique Identifiers (GUID). 
  */
-export class JcadContextError extends Error {
+export class GuidGeneratorBase implements GuidGenerator {
 
   //////////////////////////////////////////////////////////////////////////////
   // Constructor function
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Creates a new <code>JcadContextError</code> instance.
-   * 
-   * @param {string} message the error message associated with this
-   *                         <code>JcadContextError</code> instance.
+   * Creates a new <code>GuidGeneratorBase</code> instance.
    */
-  constructor(message:string) {
-    super(message);
+  constructor() {}
+
+  //////////////////////////////////////////////////////////////////////////////
+  // Public methods
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   * @inheritDoc
+   */
+  public generate():string {
+    return uuid.v4();
   }
 }

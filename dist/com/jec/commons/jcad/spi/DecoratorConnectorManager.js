@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const SingletonError_1 = require("../../exceptions/SingletonError");
-const GuidGenerator_1 = require("../../lang/GuidGenerator");
+const GuidGeneratorBase_1 = require("../../lang/utils/GuidGeneratorBase");
 const JcadValidator_1 = require("./JcadValidator");
 class DecoratorConnectorManager {
     constructor() {
@@ -29,7 +29,7 @@ class DecoratorConnectorManager {
         return global[DecoratorConnectorManager.GLOBAL_REF];
     }
     initObj() {
-        let generator = new GuidGenerator_1.GuidGenerator();
+        let generator = new GuidGeneratorBase_1.GuidGeneratorBase();
         this._id = generator.generate();
         this._connectorMap = new Map();
         this._validator = new JcadValidator_1.JcadValidator();

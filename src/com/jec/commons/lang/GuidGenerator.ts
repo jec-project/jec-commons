@@ -14,32 +14,17 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import * as uuid from "uuid";
-
 /**
- * A helper class that generates Globally Unique Identifiers (GUID). 
+ * The <code>GuidGenerator</code> interface defines the basic set of APIs you
+ * must implement to create helper classes that generate Globally Unique
+ * Identifiers (GUID) for JEC applications. 
  */
-export class GuidGenerator {
-
-  //////////////////////////////////////////////////////////////////////////////
-  // Constructor function
-  //////////////////////////////////////////////////////////////////////////////
-
-  /**
-   * Creates a new <code>GuidGenerator</code> instance.
-   */
-  constructor() {}
-
-  //////////////////////////////////////////////////////////////////////////////
-  // Private methods
-  //////////////////////////////////////////////////////////////////////////////
+export interface GuidGenerator {
 
   /**
    * Generates and returns a new GUID.
    * 
    * @return {string} a string that represents a new GUID.
    */
-  public generate():string {
-    return uuid.v4();
-  }
+  generate():string;
 }

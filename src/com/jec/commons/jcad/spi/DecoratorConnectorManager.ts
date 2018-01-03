@@ -17,6 +17,7 @@
 import {SingletonError} from "../../exceptions/SingletonError";
 import {Singleton} from "../../lang/Singleton";
 import {GuidGenerator} from "../../lang/GuidGenerator";
+import {GuidGeneratorBase} from "../../lang/utils/GuidGeneratorBase";
 import {DecoratorConnector} from "../DecoratorConnector";
 import {Decorator} from "../Decorator";
 import {JcadContext} from "../JcadContext";
@@ -117,7 +118,7 @@ export class DecoratorConnectorManager implements Singleton {
    * Initializes this object.
    */
   private initObj():void {
-    let generator:GuidGenerator = new GuidGenerator();
+    let generator:GuidGenerator = new GuidGeneratorBase();
     this._id = generator.generate();
     this._connectorMap = new Map<string, DecoratorConnector>();
     this._validator = new JcadValidator();

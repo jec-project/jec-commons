@@ -14,6 +14,8 @@
 - Adding the new `facade` package to facilitate development of external frameworks
 - **BeanManager**: adding the interface responsible for management of beans 
 - **Locale**: adding the new locale API 
+- **GuidGenerator**: the `GuidGenerator` class has been transformed to an interface 
+- **GuidGenerator**: the `JsonLoader` class has been transformed to an interface 
 
 <a name="jec-commons-1.1.7"></a>
 ## **1.1.7** (2017-09-06)

@@ -18,6 +18,7 @@ import {JcadContextError} from "../exceptions/JcadContextError";
 import {SingletonError} from "../../exceptions/SingletonError";
 import {Singleton} from "../../lang/Singleton";
 import {GuidGenerator} from "../../lang/GuidGenerator";
+import {GuidGeneratorBase} from "../../lang/utils/GuidGeneratorBase";
 import {JcadContext} from "../JcadContext";
 
 /**
@@ -101,7 +102,7 @@ export class JcadContextManager implements Singleton {
    * Initializes this object.
    */
   private initObj():void {
-    let generator:GuidGenerator = new GuidGenerator();
+    let generator:GuidGenerator = new GuidGeneratorBase();
     this._id = generator.generate();
     this._jcadContextMap = new Map<string, JcadContext>();
   }

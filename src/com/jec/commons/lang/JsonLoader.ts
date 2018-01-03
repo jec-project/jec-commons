@@ -14,23 +14,13 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import * as fs from "fs";
-import {EncodingFormat} from "./utils/EncodingFormat";
-import {JsonLoaderError} from "./JsonLoaderError";
+import {JsonLoaderError} from "./exceptions/JsonLoaderError";
 
 /**
- * A utility class for loading JSON files.
+ * The <code>JsonLoader</code> interface defines the basic set of APIs you must
+ * implement to create helper classes that load JSON files.
  */
-export class JsonLoader {
-
-  ////////////////////////////////////////////////////////////////////////////
-  // Constructor function
-  ////////////////////////////////////////////////////////////////////////////
-
-  /**
-   * Creates a new <code>JsonLoader</code> instance.
-   */
-  constructor() {}
+export interface JsonLoader {
 
   ////////////////////////////////////////////////////////////////////////////
   // Public properties
@@ -40,7 +30,7 @@ export class JsonLoader {
    * The encoding format used by this object to parse JSON files. Valid values
    * are constants of the <code>EncodingFormat</code> class.
    */
-  public encodingFormat:string = EncodingFormat.UTF8;
+  encodingFormat:string;
 
   ////////////////////////////////////////////////////////////////////////////
   // Public methods
@@ -53,17 +43,7 @@ export class JsonLoader {
    * @param {string} path the path to the file to load.
    * @return {any} the JSON object parsed from the loaded file.
    */
-  public loadSync(path:string):any {
-    let loadedString:string = null;
-    let json:any = null;
-    try {
-      loadedString = fs.readFileSync(path, this.encodingFormat);
-      json = JSON.parse(loadedString);
-    } catch(e) {
-      throw new JsonLoaderError(e.toString());
-    }
-    return json;
-  }
+  loadSync(path:string):any;
   
   /**
    * Loads the specified JSON file asynchronously.
@@ -76,19 +56,6 @@ export class JsonLoader {
    *                           loading error. This method takes the error
    *                           reference as parameter.
    */
-  public load(path:string, success:(data:any)=>void,
-                                       error:(err:JsonLoaderError)=>void):void {
-    let json:Object = null;
-    fs.readFile(path, (err:Error, data:Buffer)=> {
-      if(err) error(new JsonLoaderError(err.toString()));
-      else {
-        try {
-          json = JSON.parse(data.toString(this.encodingFormat));
-          success(json);
-        } catch(e) {
-          error(new JsonLoaderError(e.toString()));
-        }
-      }
-    });
-  }
+  load(path:string, success:(data:any)=>void,
+                                        error:(err:JsonLoaderError)=>void):void;
 };

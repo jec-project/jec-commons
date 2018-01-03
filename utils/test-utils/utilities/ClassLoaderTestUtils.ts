@@ -19,6 +19,6 @@
  */
 
 // Utilities:
-export const VALID_CLASS:string = "../../../../../dist/com/jec/commons/lang/JsonLoader";
+export const VALID_CLASS:string = "../../../../../dist/com/jec/commons/files/reflect/impl/BasicDecoratorProperties";
 export const INVALID_CLASS_PATH:string = "invalid/path/to/module";
 export const INVALID_CLASS_FILE:string = "../../../../../utils/test-utils/classes/invalid-class-module";
