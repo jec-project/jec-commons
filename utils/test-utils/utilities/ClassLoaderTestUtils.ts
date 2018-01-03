@@ -1,5 +1,3 @@
-import { pwd } from "shelljs";
-
 //  DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 //
 //   Copyright 2016-2017 Pascal ECHEMANN.
@@ -21,7 +19,7 @@ import { pwd } from "shelljs";
  */
 
 // Utilities:
-const PWD:string = pwd();
-export const VALID_CLASS:string = PWD + "/dist/com/jec/commons/files/reflect/impl/BasicDecoratorProperties";
+const CWD:string = process.cwd();
+export const VALID_CLASS:string = CWD + "/dist/com/jec/commons/files/reflect/impl/BasicDecoratorProperties";
 export const INVALID_CLASS_PATH:string = "invalid/path/to/module";
-export const INVALID_CLASS_FILE:string = PWD + "/utils/test-utils/classes/invalid-class-module";
+export const INVALID_CLASS_FILE:string = CWD + "/utils/test-utils/classes/invalid-class-module";
