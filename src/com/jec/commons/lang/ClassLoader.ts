@@ -15,33 +15,16 @@
 //   limitations under the License.
 
 /**
- * Creates objects that are responsible for loading JEC classes. 
+ * The <code>ClassLoader</code> interface defined the basic set of API you must
+ * implement to create objects that are responsible for loading JEC classes. 
  */
-export class ClassLoader {
-
-  //////////////////////////////////////////////////////////////////////////////
-  // Constructor function
-  //////////////////////////////////////////////////////////////////////////////
-
-  /**
-   * Creates a new <code>ClassLoader</code> instance.
-   */
-  constructor() {}
-
-  //////////////////////////////////////////////////////////////////////////////
-  // Private methods
-  //////////////////////////////////////////////////////////////////////////////
+export interface ClassLoader {
 
   /**
    * Loads the class from the specified location. Loading is synchronous.
    * 
    * @param {string} path the location of the class to load.
-   * @return {any} the constructor for the loaded class.
+   * @return {any} the constructor of the loaded class.
    */
-  public loadClass(path:string):any {
-    let classRef:any = require(path);
-    let props:string[] = Object.keys(classRef);
-    let className:string = props[0];
-    return classRef[className];
-  }
+  loadClass(path:string):any;
 }

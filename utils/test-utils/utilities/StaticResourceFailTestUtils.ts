@@ -15,6 +15,7 @@
 //   limitations under the License.
 
 import {ClassLoader} from "../../../src/com/jec/commons/lang/ClassLoader";
+import {DefaultClassLoader} from "../../../src/com/jec/commons/lang/utils/DefaultClassLoader";
 
 /*!
  * This module constains utilities used by the StaticResourceFailTest test suite.
@@ -22,7 +23,7 @@ import {ClassLoader} from "../../../src/com/jec/commons/lang/ClassLoader";
 
 // Utilities:
 const VALID_CLASS:string = process.cwd() + "/utils/test-utils/classes/StaticResourceTestClass";
-const LOADER:ClassLoader = new ClassLoader();
+const LOADER:ClassLoader = new DefaultClassLoader();
 export const buildClassRef:Function = function():void {
   let ClassRef:any = LOADER.loadClass(VALID_CLASS);
   new ClassRef();

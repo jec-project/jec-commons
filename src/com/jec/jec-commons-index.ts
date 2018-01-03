@@ -68,6 +68,7 @@ export {JcadContext} from "./commons/jcad/JcadContext";
 //--> com/jec/commons/lang/exceptions
 export {JsonLoaderError} from "./commons/lang/exceptions/JsonLoaderError";
 //--> com/jec/commons/lang/utils
+export {DefaultClassLoader} from "./commons/lang/utils/DefaultClassLoader";
 export {EncodingFormat} from "./commons/lang/utils/EncodingFormat";
 export {LocaleBuilder} from "./commons/lang/utils/LocaleBuilder";
 export {GuidGeneratorBase} from "./commons/lang/utils/GuidGeneratorBase";

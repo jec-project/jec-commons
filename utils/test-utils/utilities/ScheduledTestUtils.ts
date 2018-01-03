@@ -15,6 +15,7 @@
 //   limitations under the License.
 
 import {ClassLoader} from "../../../src/com/jec/commons/lang/ClassLoader";
+import {DefaultClassLoader} from "../../../src/com/jec/commons/lang/utils/DefaultClassLoader";
 import {DecoratorConnectorManager} from "../../../src/com/jec/commons/jcad/spi/DecoratorConnectorManager";
 import {JcadContextManager} from "../../../src/com/jec/commons/jcad/spi/JcadContextManager";
 import {AbstractDecoratorConnector} from "../../../src/com/jec/commons/jcad/spi/AbstractDecoratorConnector";
@@ -30,7 +31,7 @@ import {ScheduledParams} from "../../../src/com/jec/commons/scheduling/annotatio
 */
 
 // Utilities:
-const LOADER:ClassLoader = new ClassLoader();
+const LOADER:ClassLoader = new DefaultClassLoader();
 const VALID_CLASS:string = process.cwd() + "/utils/test-utils/classes/ScheduledTestClass";
 class TestConnector extends AbstractDecoratorConnector {}
 class TestDecorator implements Decorator {

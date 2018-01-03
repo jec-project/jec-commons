@@ -16,19 +16,20 @@
 
 import "mocha";
 import {expect, assert} from "chai";
+import {ClassLoader} from "../../../../../../src/com/jec/commons/lang/ClassLoader";
 
 // Class to test:
-import {ClassLoader} from "../../../../../src/com/jec/commons/lang/ClassLoader";
+import {DefaultClassLoader} from "../../../../../../src/com/jec/commons/lang/utils/DefaultClassLoader";
 
 // Utilities:
-import * as utils from "../../../../../utils/test-utils/utilities/ClassLoaderTestUtils";
+import * as utils from "../../../../../../utils/test-utils/utilities/ClassLoaderTestUtils";
 
 // Test:
-describe("ClassLoader", ()=> {
+describe("DefaultClassLoader", ()=> {
 
   describe("#loadClass()", ()=> {
     it("should return a valid class constructor", function() {
-      let loader:ClassLoader = new ClassLoader();
+      let loader:ClassLoader = new DefaultClassLoader();
       let Contructor:any = loader.loadClass(utils.VALID_CLASS);
       let obj:any = new Contructor();
       expect(obj).not.to.be.null;
@@ -36,7 +37,7 @@ describe("ClassLoader", ()=> {
     });
 
     it("should throw an error when the path to class is not valid", function() {
-      let loader:ClassLoader = new ClassLoader();
+      let loader:ClassLoader = new DefaultClassLoader();
       let loadInvalidClassPath:Function = function():void {
         loader.loadClass(utils.INVALID_CLASS_PATH);
       };
@@ -44,7 +45,7 @@ describe("ClassLoader", ()=> {
     });
 
     it("should throw a TypeError when the loaded file is not a class", function() {
-      let loader:ClassLoader = new ClassLoader();
+      let loader:ClassLoader = new DefaultClassLoader();
       let Contructor:any = loader.loadClass(utils.INVALID_CLASS_FILE);
       try {
         new Contructor();
