@@ -16,6 +16,7 @@
 
 import {BeanManager} from "./BeanManager";
 import {Logger} from "../logging/Logger";
+import {Locale} from "./Locale";
 
 /**
  * The marker interface for JEC containers.
@@ -34,4 +35,11 @@ export interface JecContainer {
    * @return {Logger} the logger associated with this JEC container.
    */
   getLogger():Logger;
+
+  /**
+   * Returns the locale for this JEC container.
+   *
+   * @return {Locale} the locale for this JEC container.
+   */
+  getLocale():Locale;
 };
