@@ -73,7 +73,6 @@ export {EncodingFormat} from "./commons/lang/utils/EncodingFormat";
 export {LocaleBuilder} from "./commons/lang/utils/LocaleBuilder";
 export {GuidGeneratorBase} from "./commons/lang/utils/GuidGeneratorBase";
 //--> com/jec/commons/lang
-export {BeanManager} from "./commons/lang/BeanManager";
 export {ClassLoader} from "./commons/lang/ClassLoader";
 export {GuidGenerator} from "./commons/lang/GuidGenerator";
 export {JecContainer} from "./commons/lang/JecContainer";

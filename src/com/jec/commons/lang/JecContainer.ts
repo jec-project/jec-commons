@@ -14,7 +14,6 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {BeanManager} from "./BeanManager";
 import {Logger} from "../logging/Logger";
 import {Locale} from "./Locale";
 
@@ -22,12 +21,6 @@ import {Locale} from "./Locale";
  * The marker interface for JEC containers.
  */
 export interface JecContainer {
-
-  /**
-   * Returns a reference to the <code>BeanManager</code> object for this JEC
-   * container.
-   */
-  getBeanManager():BeanManager;
   
   /**
    * Returns the logger associated with this JEC container.
