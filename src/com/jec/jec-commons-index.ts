@@ -67,6 +67,8 @@ export {DecoratorConnector} from "./commons/jcad/DecoratorConnector";
 export {JcadContext} from "./commons/jcad/JcadContext";
 //--> com/jec/commons/lang/exceptions
 export {JsonLoaderError} from "./commons/lang/exceptions/JsonLoaderError";
+//--> com/jec/commons/lang/reflect
+export {PrimitiveType} from "./commons/lang/reflect/PrimitiveType";
 //--> com/jec/commons/lang/utils
 export {DefaultClassLoader} from "./commons/lang/utils/DefaultClassLoader";
 export {EncodingFormat} from "./commons/lang/utils/EncodingFormat";
