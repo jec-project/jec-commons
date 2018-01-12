@@ -68,6 +68,13 @@ export {JcadContext} from "./commons/jcad/JcadContext";
 //--> com/jec/commons/lang/exceptions
 export {JsonLoaderError} from "./commons/lang/exceptions/JsonLoaderError";
 //--> com/jec/commons/lang/reflect
+export {AbstractMember} from "./commons/lang/reflect/AbstractMember";
+export {Constructor} from "./commons/lang/reflect/Constructor";
+export {Field} from "./commons/lang/reflect/Field";
+export {Member} from "./commons/lang/reflect/Member";
+export {MemberType} from "./commons/lang/reflect/MemberType";
+export {Method} from "./commons/lang/reflect/Method";
+export {Parameter} from "./commons/lang/reflect/Parameter";
 export {PrimitiveType} from "./commons/lang/reflect/PrimitiveType";
 //--> com/jec/commons/lang/utils
 export {DefaultClassLoader} from "./commons/lang/utils/DefaultClassLoader";
