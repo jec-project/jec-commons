@@ -71,6 +71,7 @@ export {JsonLoaderError} from "./commons/lang/exceptions/JsonLoaderError";
 export {AbstractMember} from "./commons/lang/reflect/AbstractMember";
 export {Constructor} from "./commons/lang/reflect/Constructor";
 export {Field} from "./commons/lang/reflect/Field";
+export {Interface} from "./commons/lang/reflect/Interface";
 export {Member} from "./commons/lang/reflect/Member";
 export {MemberType} from "./commons/lang/reflect/MemberType";
 export {Method} from "./commons/lang/reflect/Method";
