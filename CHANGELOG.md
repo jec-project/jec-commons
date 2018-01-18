@@ -5,6 +5,8 @@
 
 ### Bug Fixes
 
+- **AbstractLoggerProxy**: adding the missing `LogLevel.DEBUG` statement
+
 ### Features
 
 - Documentation improvements

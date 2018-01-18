@@ -111,6 +111,9 @@ export class AbstractLoggerProxy implements LoggerProxy {
       case LogLevel.ERROR:
         this.__logger.error(message, this._logContext);
         break;
+      case LogLevel.DEBUG:
+        this.__logger.debug(message, this._logContext);
+        break;
       case LogLevel.TRACE:
         this.__logger.trace(message, this._logContext);
         break;
