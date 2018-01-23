@@ -80,6 +80,7 @@ export {PrimitiveType} from "./commons/lang/reflect/PrimitiveType";
 //--> com/jec/commons/lang/utils
 export {DefaultClassLoader} from "./commons/lang/utils/DefaultClassLoader";
 export {EncodingFormat} from "./commons/lang/utils/EncodingFormat";
+export {GlobalClassLoader} from "./commons/lang/utils/GlobalClassLoader";
 export {LocaleBuilder} from "./commons/lang/utils/LocaleBuilder";
 export {GuidGeneratorBase} from "./commons/lang/utils/GuidGeneratorBase";
 //--> com/jec/commons/lang
