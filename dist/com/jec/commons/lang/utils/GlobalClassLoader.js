@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const SingletonError_1 = require("../../exceptions/SingletonError");
 const DefaultClassLoader_1 = require("./DefaultClassLoader");
-const GuidGeneratorBase_1 = require("./GuidGeneratorBase");
+const GlobalGuidGenerator_1 = require("./GlobalGuidGenerator");
 class GlobalClassLoader {
     constructor() {
         this._loader = null;
@@ -21,8 +21,7 @@ class GlobalClassLoader {
         return GlobalClassLoader.INSTANCE;
     }
     initObj() {
-        let gen = new GuidGeneratorBase_1.GuidGeneratorBase();
-        this._id = gen.generate();
+        this._id = GlobalGuidGenerator_1.GlobalGuidGenerator.getInstance().generate();
         this._loader = new DefaultClassLoader_1.DefaultClassLoader();
     }
     loadClass(path) {

@@ -14,31 +14,29 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {ClassLoader} from "../ClassLoader";
-import {Singleton} from "../Singleton";
-import {SingletonError} from "../../exceptions/SingletonError";
-import {DefaultClassLoader} from "./DefaultClassLoader";
-import {GlobalGuidGenerator} from "./GlobalGuidGenerator";
 import {GuidGenerator} from "../GuidGenerator";
+import {SingletonError} from "../../exceptions/SingletonError";
+import {GuidGeneratorBase} from "./GuidGeneratorBase";
+import {Singleton} from "../../lang/Singleton";
 
 /**
- * A singleton implementation of the <code>ClassLoader</code> interface that
- * proxifies a the default <code>ClassLoader</code> object. 
+ * A singleton implementation of the <code>GuidGenerator</code> interface that
+ * proxifies a the default <code>GuidGenerator</code> object. 
  */
-export class GlobalClassLoader implements ClassLoader, Singleton {
+export class GlobalGuidGenerator implements GuidGenerator, Singleton {
 
   //////////////////////////////////////////////////////////////////////////////
   // Constructor function
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Creates a new <code>GlobalClassLoader</code> instance.
+   * Creates a new <code>GlobalGuidGenerator</code> instance.
    */
   constructor() {
-    if(GlobalClassLoader._locked || GlobalClassLoader.INSTANCE) {
-      throw new SingletonError(GlobalClassLoader);
+    if(GlobalGuidGenerator._locked || GlobalGuidGenerator.INSTANCE) {
+      throw new SingletonError(GlobalGuidGenerator);
     }
-    GlobalClassLoader._locked = true;
+    GlobalGuidGenerator._locked = true;
     this.initObj();
   }
 
@@ -47,27 +45,27 @@ export class GlobalClassLoader implements ClassLoader, Singleton {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * The <code>GlobalClassLoader</code> singleton instance reference.
+   * The <code>GlobalGuidGenerator</code> singleton instance reference.
    */
-  private static INSTANCE:GlobalClassLoader = null;
+  private static INSTANCE:GlobalGuidGenerator = null;
 
   /**
-   * Prevents <code>GlobalClassLoader</code> illegal instanciations.
+   * Prevents <code>GlobalGuidGenerator</code> illegal instanciations.
    */
   private static _locked:boolean = true;
 
   /**
-   * Returns a reference to the <code>GlobalClassLoader</code> singleton.
+   * Returns a reference to the <code>GlobalGuidGenerator</code> singleton.
    *
-   * @return {GlobalClassLoader} a reference to the 
-   *                             <code>GlobalClassLoader<code> singleton.
+   * @return {GlobalGuidGenerator} a reference to the 
+   *                               <code>GlobalGuidGenerator<code> singleton.
    */
-  public static getInstance():GlobalClassLoader{
-    if(GlobalClassLoader.INSTANCE === null) {
-      GlobalClassLoader._locked = false;
-      GlobalClassLoader.INSTANCE = new GlobalClassLoader();
+  public static getInstance():GlobalGuidGenerator{
+    if(GlobalGuidGenerator.INSTANCE === null) {
+      GlobalGuidGenerator._locked = false;
+      GlobalGuidGenerator.INSTANCE = new GlobalGuidGenerator();
     }
-    return GlobalClassLoader.INSTANCE;
+    return GlobalGuidGenerator.INSTANCE;
   }
   
   //////////////////////////////////////////////////////////////////////////////
@@ -75,9 +73,9 @@ export class GlobalClassLoader implements ClassLoader, Singleton {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * The class loader for this proxy.
+   * The GUID generator for this proxy.
    */
-  private _loader:ClassLoader = null;
+  private _generator:GuidGenerator = null;
 
   /**
    * The GUID for this proxy.
@@ -92,8 +90,8 @@ export class GlobalClassLoader implements ClassLoader, Singleton {
    * Initializes this object.
    */
   private initObj():void {
-    this._id = GlobalGuidGenerator.getInstance().generate();
-    this._loader = new DefaultClassLoader();
+    this._generator = new GuidGeneratorBase();
+    this._id = this._generator.generate();
   }
 
   //////////////////////////////////////////////////////////////////////////////
@@ -103,8 +101,8 @@ export class GlobalClassLoader implements ClassLoader, Singleton {
   /**
    * @inheritDoc
    */
-  public loadClass(path:string):any {
-    return this._loader.loadClass(path);
+  public generate():string {
+    return this._generator.generate();
   }
   
   /**

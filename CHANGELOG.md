@@ -18,6 +18,7 @@
 - **GuidGenerator**: the `GuidGenerator` class has been refactored into an interface
 - **JsonLoader**: the `JsonLoader` class has been refactored into an interface
 - **ClassLoader**: the `ClassLoader` class has been refactored into an interface
+- **ClassLoaderContext**: adding a new SPI that provides information about the currently loaded class
 
 <a name="jec-commons-1.1.7"></a>
 ## **1.1.7** (2017-09-06)

@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const JcadContextError_1 = require("../exceptions/JcadContextError");
 const SingletonError_1 = require("../../exceptions/SingletonError");
-const GuidGeneratorBase_1 = require("../../lang/utils/GuidGeneratorBase");
+const GlobalGuidGenerator_1 = require("../../lang/utils/GlobalGuidGenerator");
 class JcadContextManager {
     constructor() {
         this._jcadContextMap = null;
@@ -27,8 +27,7 @@ class JcadContextManager {
         return global[JcadContextManager.GLOBAL_REF];
     }
     initObj() {
-        let generator = new GuidGeneratorBase_1.GuidGeneratorBase();
-        this._id = generator.generate();
+        this._id = GlobalGuidGenerator_1.GlobalGuidGenerator.getInstance().generate();
         this._jcadContextMap = new Map();
     }
     getContext(jcadReference) {

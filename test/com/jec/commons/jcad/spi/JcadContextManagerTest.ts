@@ -45,6 +45,14 @@ describe("JcadContextManager", ()=> {
     });
   });
 
+  describe("#getInstance()", ()=> {
+    it("should return a singleton", function() {
+      expect(
+        JcadContextManager.getInstance()
+      ).to.equal(JcadContextManager.getInstance());
+    });
+  });
+
   describe("#getId()", ()=> {
     it("should always return a valid GUID", function() {
       this.retries(10);

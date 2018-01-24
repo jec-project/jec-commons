@@ -21,6 +21,8 @@ export {ConfigContext} from "./commons/cfg/context/ConfigContext";
 export {JecConfigError} from "./commons/cfg/exceptions/JecConfigError";
 //--> com/jec/commons/cfg/jcad
 export {ConfigConnectorRefs} from "./commons/cfg/jcad/ConfigConnectorRefs";
+//--> com/jec/commons/context/spi
+export {ClassLoaderContext} from "./commons/context/spi/ClassLoaderContext";
 //--> com/jec/commons/context
 export {ContainerContext} from "./commons/context/ContainerContext";
 //--> com/jec/commons/exceptions
@@ -81,8 +83,9 @@ export {PrimitiveType} from "./commons/lang/reflect/PrimitiveType";
 export {DefaultClassLoader} from "./commons/lang/utils/DefaultClassLoader";
 export {EncodingFormat} from "./commons/lang/utils/EncodingFormat";
 export {GlobalClassLoader} from "./commons/lang/utils/GlobalClassLoader";
-export {LocaleBuilder} from "./commons/lang/utils/LocaleBuilder";
+export {GlobalGuidGenerator} from "./commons/lang/utils/GlobalGuidGenerator";
 export {GuidGeneratorBase} from "./commons/lang/utils/GuidGeneratorBase";
+export {LocaleBuilder} from "./commons/lang/utils/LocaleBuilder";
 //--> com/jec/commons/lang
 export {ClassLoader} from "./commons/lang/ClassLoader";
 export {GuidGenerator} from "./commons/lang/GuidGenerator";

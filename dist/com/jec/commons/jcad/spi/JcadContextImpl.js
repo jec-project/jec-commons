@@ -1,14 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const GuidGeneratorBase_1 = require("../../lang/utils/GuidGeneratorBase");
+const GlobalGuidGenerator_1 = require("../../lang/utils/GlobalGuidGenerator");
 class JcadContextImpl {
     constructor() {
         this._id = null;
         this.initObj();
     }
     initObj() {
-        let generator = new GuidGeneratorBase_1.GuidGeneratorBase();
-        this._id = generator.generate();
+        this._id = GlobalGuidGenerator_1.GlobalGuidGenerator.getInstance().generate();
     }
     getId() {
         return this._id;

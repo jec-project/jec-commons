@@ -41,7 +41,17 @@ describe("DecoratorConnectorManager", ()=> {
 
   describe("#getInstance()", ()=> {
     it("should return the reference to the singleton instance", function() {
-      expect(DecoratorConnectorManager.getInstance()).to.be.instanceOf(DecoratorConnectorManager);
+      expect(
+        DecoratorConnectorManager.getInstance()
+      ).to.be.instanceOf(DecoratorConnectorManager);
+    });
+  });
+
+  describe("#getInstance()", ()=> {
+    it("should return a singleton", function() {
+      expect(
+        DecoratorConnectorManager.getInstance()
+      ).to.equal(DecoratorConnectorManager.getInstance());
     });
   });
 
