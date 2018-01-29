@@ -23,6 +23,28 @@ import {FilePreProcessor} from "./FilePreProcessor";
  */
 export interface SourceFileInspector {
 
+  //////////////////////////////////////////////////////////////////////////////
+  // Public methods
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   * A callback method called by the file inspector before files processing.
+   * This method takes the watcher object, associated with this file inspector,
+   * as parameter.
+   */
+  beforeProcess:Function;
+
+  /**
+   * A callback method called by the file inspector after files processing. This
+   * method takes the watcher object, associated with this file inspector, as
+   * parameter.
+   */
+  afterProcess:Function;
+
+  //////////////////////////////////////////////////////////////////////////////
+  // Public properties
+  //////////////////////////////////////////////////////////////////////////////
+
   /**
    * Sets the object that must be notified each time the file inspector complete
    * a file inspection process.
