@@ -8,7 +8,7 @@ class LogLevelUtil {
         return LogLevel_1.LogLevel[logLevel];
     }
     logLevelToString(level) {
-        let value = "";
+        let value = null;
         switch (level) {
             case LogLevel_1.LogLevel.TRACE:
                 value = LogLevelString_1.LogLevelString.TRACE;

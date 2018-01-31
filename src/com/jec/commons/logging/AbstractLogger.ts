@@ -38,7 +38,7 @@ export abstract class AbstractLogger implements Logger {
   /**
    * The log level for this logger.
    */
-  protected __logLevel:number = LogLevel.TRACE;
+  protected __logLevel:LogLevel = LogLevel.TRACE;
 
   /**
    * The name of this logger.
@@ -53,12 +53,11 @@ export abstract class AbstractLogger implements Logger {
    * Returns a boolean which indicates whether the specified log level is
    * valid for this logger (<code>true</code>), or not (<code>false</code>).
    * 
-   * @param {number} logLevel the log level to check. Valid values are the
-   *                          constants of the <code>LogLevel</code> enum.
+   * @param {LogLevel} logLevel the log level to check..
    * @returns {boolean} <code>true</code> whether the specified log level is 
    *                    valid for this logger; <code>false</code> otherwhise.
    */
-  protected isValidLogLevel(logLevel:number):boolean {
+  protected isValidLogLevel(logLevel:LogLevel):boolean {
     return (this.__logLevel <= logLevel);
   }
 
@@ -69,14 +68,14 @@ export abstract class AbstractLogger implements Logger {
   /**
    * @inheritDoc
    */
-  public getLogLevel():number {
+  public getLogLevel():LogLevel {
     return this.__logLevel;
   }
 
   /**
    * @inheritDoc
    */
-  public setLogLevel(logLevel:number):void {
+  public setLogLevel(logLevel:LogLevel):void {
     this.__logLevel = logLevel;
   }
 

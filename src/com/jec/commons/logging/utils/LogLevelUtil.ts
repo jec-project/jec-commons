@@ -39,21 +39,22 @@ export class LogLevelUtil {
    * Returns a <code>LogLevel</code> constant that represents the specified
    * <code>logLevel</code>.
    *
-   * @param {string} logLevel a string that represents the specified log level.
-   * @return {number} a constant of the <code>LogLevel</code> enum.
+   * @param {LogLevelString} logLevel a string that represents the specified log
+   *                                  level.
+   * @return {LogLevel} a value of the <code>LogLevel</code> enum.
    */
-  public stringTogLevel(logLevel:string):number {
-    return LogLevel[logLevel] as number;
+  public stringTogLevel(logLevel:LogLevelString):LogLevel {
+    return LogLevel[logLevel] as LogLevel;
   }
 
   /**
    * Returns a string that represents the specified log level.
    *
-   * @param {number} level a constant of the <code>LogLevel</code> enum.
-   * @return {string} a string that represents the specified log level.
+   * @param {LogLevel} level a value of the <code>LogLevel</code> enum.
+   * @return {LogLevelString} a string that represents the specified log level.
    */
-  public logLevelToString(level:number):string {
-    let value:string = "";
+  public logLevelToString(level:LogLevel):LogLevelString {
+    let value:LogLevelString = null;
     switch(level) {
       case LogLevel.TRACE : value = LogLevelString.TRACE; break;
       case LogLevel.DEBUG : value = LogLevelString.DEBUG; break;

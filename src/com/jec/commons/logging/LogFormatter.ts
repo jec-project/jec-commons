@@ -14,6 +14,8 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
+import {LogLevelString} from "./utils/LogLevelString";
+
 /**
  * The <code>LogFormatter</code> interface defines the API you must implement to 
  * create log messages formatters for <code>Logger</code> objects.
@@ -23,7 +25,7 @@ export interface LogFormatter {
   /**
    * Formats and returns the marker with the specified level information.
    *
-   * @param {string} level the current level information.
+   * @param {LogLevelString} level the current log level information.
    * @param {any} marker the marker object to format.
    * @param {boolean} useAppender indicates whether to add a new line charater
    *                              at the end of the message (<code>true</code>), 
@@ -33,6 +35,6 @@ export interface LogFormatter {
    *                         the log message.
    * @return {string} the formated string for the specified marker.
    */
-  format(level:string, marker:any,
+  format(level:LogLevelString, marker:any,
                                   useAppender?:boolean, context?:string):string;
 };

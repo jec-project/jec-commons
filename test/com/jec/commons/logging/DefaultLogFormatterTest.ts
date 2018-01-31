@@ -18,6 +18,7 @@ import "mocha";
 import {expect} from "chai";
 import {LogLevel} from "../../../../../src/com/jec/commons/logging/LogLevel";
 import {LogLevelUtil} from "../../../../../src/com/jec/commons/logging/utils/LogLevelUtil";
+import {LogLevelString} from "../../../../../src/com/jec/commons/logging/utils/LogLevelString";
 
 // Class to test:
 import {DefaultLogFormatter} from "../../../../../src/com/jec/commons/logging/DefaultLogFormatter";
@@ -31,7 +32,7 @@ describe("DefaultLogFormatter", ()=> {
   describe("#format()", ()=> {
     it("should return a well formatted log message", function() {
       let logLevelUtil:LogLevelUtil = new LogLevelUtil();
-      let level:string = logLevelUtil.logLevelToString(LogLevel.INFO);
+      let level:LogLevelString = logLevelUtil.logLevelToString(LogLevel.INFO);
       let formatter:DefaultLogFormatter = new DefaultLogFormatter();
       formatter.timeFormat = utils.TIME_FORMAT;
       expect(

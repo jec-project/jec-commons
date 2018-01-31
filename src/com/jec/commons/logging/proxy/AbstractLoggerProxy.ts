@@ -100,7 +100,7 @@ export class AbstractLoggerProxy implements LoggerProxy {
   /**
    * @inheritDoc
    */
-  public log(message:string, logLevel:number = LogLevel.INFO):void {
+  public log(message:string, logLevel:LogLevel = LogLevel.INFO):void {
     switch(logLevel) {
       case LogLevel.INFO:
         this.__logger.info(message, this._logContext);

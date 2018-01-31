@@ -16,6 +16,7 @@
 
 import {LogFormatter} from "./LogFormatter";
 import * as moment from "moment";
+import {LogLevelString} from "./utils/LogLevelString";
 
 /**
  * Creates the standard message formatter for <code>Logger</code> objects.
@@ -55,8 +56,8 @@ export class DefaultLogFormatter implements LogFormatter {
   /**
    * @inheritDoc
    */
-  public format(level:string, marker:any, useAppender:boolean = false,
-                                          context:string = ""):string {
+  public format(level:LogLevelString, marker:any, useAppender:boolean = false,
+                                                   context:string = ""):string {
     let time:string =  moment().format(this.timeFormat);
     let msg:string = `[${time}]${context} ${level}: ${marker}`;
     if(useAppender) msg += this.appender;
