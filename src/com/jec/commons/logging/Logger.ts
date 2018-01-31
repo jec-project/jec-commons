@@ -14,6 +14,8 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
+import {LogLevel} from "./LogLevel";
+
 /**
  * The base interface for all logger instances of JEC modules.
  */
@@ -26,16 +28,16 @@ export interface Logger {
   /**
    * Returns the log level for this <code>Logger</code>.
    *
-   * @return {number} the log level for this <code>Logger</code>.
+   * @return {LogLevel} the log level for this <code>Logger</code>.
    */
-  getLogLevel():number;
+  getLogLevel():LogLevel;
 
   /**
    * Sets the log level for this <code>Logger</code>.
    *
-   * @param {number} logLevel the new log level for this <code>Logger</code>.
+   * @param {LogLevel} logLevel the new log level for this <code>Logger</code>.
    */
-  setLogLevel(logLevel:number):void;
+  setLogLevel(logLevel:LogLevel):void;
 
   /**
    * Returns the name of this <code>Logger</code>.
