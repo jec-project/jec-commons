@@ -14,6 +14,8 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
+import {MemberType} from "./MemberType";
+
 /**
  * The <code>Member</code> interface reflects identifying information about a
  * single member (a field or a method) or a constructor. 
@@ -34,8 +36,7 @@ export interface Member {
   
   /**
    * Returns the type of the underlying member represented by this
-   * <code>Member</code>. Possible values are defined by the
-   * <code>MemberType</code> Enum.
+   * <code>Member</code>.
    */
-  getType():number;
+  getType():MemberType;
 }

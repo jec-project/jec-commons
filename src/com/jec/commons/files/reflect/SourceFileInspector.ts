@@ -15,6 +15,7 @@
 //   limitations under the License.
 
 import {FilePreProcessor} from "./FilePreProcessor";
+import {InspectMode} from "./utils/InspectMode";
 
 /**
  * The <code>SourceFileInspector</code> interface defines the default set of 
@@ -88,12 +89,10 @@ export interface SourceFileInspector {
   /**
    * Inspects the specified source paths for this file inspector.
    * 
-   * @param {number} inspectMode specifies the process used by this file
-   *                             inspector to inspect files. Valid values are
-   *                             the constants of the <code>InspectMode</code>
-   *                             class.
+   * @param {InspectMode} inspectMode specifies the process used by this file
+   *                             inspector to inspect files. 
    */
-  inspect(inspectMode:number):void;
+  inspect(inspectMode:InspectMode):void;
 
   /**
    * Clears the cache of this file inspector.

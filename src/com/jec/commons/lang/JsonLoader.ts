@@ -15,6 +15,7 @@
 //   limitations under the License.
 
 import {JsonLoaderError} from "./exceptions/JsonLoaderError";
+import {EncodingFormat} from "./utils/EncodingFormat";
 
 /**
  * The <code>JsonLoader</code> interface defines the basic set of APIs you must
@@ -27,10 +28,9 @@ export interface JsonLoader {
   ////////////////////////////////////////////////////////////////////////////
 
   /**
-   * The encoding format used by this object to parse JSON files. Valid values
-   * are constants of the <code>EncodingFormat</code> class.
+   * The encoding format used by this object to parse JSON files.
    */
-  encodingFormat:string;
+  encodingFormat:EncodingFormat;
 
   ////////////////////////////////////////////////////////////////////////////
   // Public methods

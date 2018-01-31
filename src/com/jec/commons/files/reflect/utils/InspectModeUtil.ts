@@ -67,10 +67,10 @@ export class InspectModeUtil {
   /**
    * Returns a string that represents the specified inspect mode.
    *
-   * @param {number} mode a constant of the <code>InspectMode</code> enum.
+   * @param {InspectMode} mode a constant of the <code>InspectMode</code> enum.
    * @return {string} a string that represents the specified inspect mode.
    */
-  public inspectModeToString(mode:number):string {
+  public inspectModeToString(mode:InspectMode):string {
     let value:string = "";
     switch(mode) {
       case InspectMode.NONE : value = InspectModeUtil.NONE; break;

@@ -15,6 +15,7 @@
 //   limitations under the License.
 
 import {Member} from "./Member";
+import {MemberType} from "./MemberType";
 
 /**
  * Base implementation of a <code>Member</code>.
@@ -30,13 +31,13 @@ export abstract class AbstractMember implements Member {
    * 
    * @param {string} name simple name of the underlying member or constructor
    *                      represented by this <code>Member</code>.
-   * @param {number} type the type of the underlying member represented by this
-   *                      <code>Member</code>.
+   * @param {MemberType} type the type of the underlying member represented by 
+   *                          this <code>Member</code>.
    * @param {any} declaringClass the object representing the class that declares
    *                             the member or constructor represented by this
    *                             <code>Member</code>.
    */
-  constructor(name:string, type:number, declaringClass:any) {
+  constructor(name:string, type:MemberType, declaringClass:any) {
     this.initObj(name, type, declaringClass);
   }
 
@@ -53,7 +54,7 @@ export abstract class AbstractMember implements Member {
   /**
    * The type of the underlying member represented by this <code>Member</code>.
    */
-  private _type:number = null;
+  private _type:MemberType = null;
 
   /**
    * The type of the underlying member represented by this <code>Member</code>.
@@ -69,13 +70,13 @@ export abstract class AbstractMember implements Member {
    * 
    * @param {string} name simple name of the underlying member or constructor
    *                      represented by this <code>Member</code>.
-   * @param {number} type the type of the underlying member represented by this
+   * @param {MemberType} type the type of the underlying member represented by this
    *                      <code>Member</code>.
    * @param {any} declaringClass the object representing the class that declares
    *                             the member or constructor represented by this
    *                             <code>Member</code>.
    */
-  private initObj(name:string, type:number, declaringClass:any):void {
+  private initObj(name:string, type:MemberType, declaringClass:any):void {
     this._name = name;
     this._type = type;
     this._declaringClass = declaringClass;
@@ -95,7 +96,7 @@ export abstract class AbstractMember implements Member {
   /**
    * @inheritDoc
    */
-  public getType():number {
+  public getType():MemberType {
     return this._type;
   }
   
