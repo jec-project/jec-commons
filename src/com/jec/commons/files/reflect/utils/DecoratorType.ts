@@ -14,35 +14,21 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {DecoratorType} from "./utils/DecoratorType";
-
 /**
- * Defines the API for Data Transfert Object that describe all properties of a
- * TypeScript decorator.
+ * Contains the different modes availables to specify the
+ * <code>inspectMode</code> parameter of the <code>inspect()</code> method
+ * defined by the <code>SourceFileInspector</code> interface.
  */
-export interface DecoratorProperties {
-
-  //////////////////////////////////////////////////////////////////////////////
-  // Public properties
-  //////////////////////////////////////////////////////////////////////////////
+export enum DecoratorType {
 
   /**
-   * The name of the decorator.
+   * Indicates that the decorator declaration is applyed to a class, or a class
+   * member.
    */
-  name:string;
+  MEMBER = 0,
 
   /**
-   * The class path of the decorator.
+   * Indicates that the decorator declaration is applyed to a field.
    */
-  classPath:string;
-
-  /**
-   * The content value of the decorator definition file.
-   */
-  value:string;
-
-  /**
-   * The type of the decorator.
-   */
-  decoratorType:DecoratorType;
+  FIELD = 1,
 }

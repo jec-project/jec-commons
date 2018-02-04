@@ -6,6 +6,7 @@
 ### Bug Fixes
 
 - **AbstractLoggerProxy**: adding the missing `LogLevel.DEBUG` statement
+- **DecoratorParser**: adding support for parameter decorators detection
 
 ### Features
 

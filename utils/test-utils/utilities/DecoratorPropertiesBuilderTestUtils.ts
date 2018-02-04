@@ -16,16 +16,13 @@
 
 import {ImportRef} from "../../../src/com/jec/commons/files/reflect/utils/ImportRef";
 import {ImportRefParser} from "../../../src/com/jec/commons/files/reflect/utils/ImportRefParser";
+import {DecoratorType} from "../../../src/com/jec/commons/files/reflect/utils/DecoratorType";
 
 /*!
  * This module constains utilities used by the DecoratorParserTest test suite.
  */
 
 // Utilities:
-export const buildImportRefs:Function = function():ImportRef[] {
-  let parser:ImportRefParser = new ImportRefParser();
-  return parser.getImports(FILE);
-}
 export const DECORATOR:string = "__decorate([\r\n    SampleDecorator_1.SampleDecorator()\r\n], SampleFile);";
 export const FILE:string =
 `"use strict";
@@ -46,3 +43,4 @@ exports.SampleFile = SampleFile;
 `;
 export const CLASS_PATH:string = "./SampleDecorator";
 export const NAME:string = "SampleDecorator";
+export const DECORATOR_TYPE:DecoratorType = DecoratorType.FIELD;

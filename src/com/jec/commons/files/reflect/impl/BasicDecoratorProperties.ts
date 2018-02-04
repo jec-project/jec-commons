@@ -15,6 +15,7 @@
 //   limitations under the License.
 
 import {DecoratorProperties} from "../DecoratorProperties";
+import { DecoratorType } from "../utils/DecoratorType";
 
 /**
  * A Data Transfert Object that defines all properties of a TypeScript decorator.
@@ -48,4 +49,19 @@ export class BasicDecoratorProperties implements DecoratorProperties {
    * @inheritDoc
    */
   public value:string = null;
+
+  /**
+   * @inheritDoc
+   */
+  public decoratorType:DecoratorType = null;
+
+  /**
+   * @inheritDoc
+   */
+  public toString():string {
+    let result:string = 
+`[DecoratorProperties: name=${this.name}, classPath=${this.classPath}, decoratorType=${this.decoratorType},
+value=${this.value}]`
+    return result;
+  }
 }

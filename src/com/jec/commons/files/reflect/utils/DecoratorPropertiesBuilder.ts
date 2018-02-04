@@ -19,10 +19,11 @@ import {BasicDecoratorProperties} from "../impl/BasicDecoratorProperties";
 import {FileProperties} from "../FileProperties";
 import {UrlStringsEnum} from "../../../util/UrlStringsEnum";
 import {ImportRef} from "./ImportRef";
+import {DecoratorType} from "./DecoratorType";
 
 /**
  * A utility class that builds <code>DecoratorProperties</code> instances from 
- * decorator strings extracted from class files.
+ * decoratorString strings extracted from class files.
  */
 export class DecoratorPropertiesBuilder {
   
@@ -36,59 +37,32 @@ export class DecoratorPropertiesBuilder {
   constructor() {}
 
   //////////////////////////////////////////////////////////////////////////////
-  // Private properties
-  //////////////////////////////////////////////////////////////////////////////
-
-  /**
-   * The reference to the open parenthesis character (<code>(</code>).
-   */
-  private static readonly OPEN_PARENTHESIS:string = "(";
-
-  /**
-   * The reference to the newline character (<code>\n</code>).
-   */
-  private static readonly NEW_LINE:string = "\n";
-  
-  //////////////////////////////////////////////////////////////////////////////
   // Public methods
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Builds and returns a new <code>DecoratorProperties</code> instance from the
+   * Builds and returns a new <code>DecoratorProperties</code> object from the
    * specified parameters.
    * 
-   * @param {string} decorator the decorator string to parse.
-   * @param {string} file the class file string from which is extracted the 
-   *                      reference to the decorator string to parse.
-   * @param {Array<ImportRef>} refList the list of string that represents the 
-   *                                   class imports extracted from the
-   *                                   specified <code>file</code>.
+   * @param {string} name the name of the new <code>DecoratorProperties</code>
+   *                      object.
+   * @param {string} value the value of the new <code>DecoratorProperties</code>
+   *                       object.
+   * @param {string} classPath the class path of the new 
+   *                           <code>DecoratorProperties</code> object.
+   * @param {DecoratorType} decoratorType the type of the new
+   *                                      <code>DecoratorProperties</code>
+   *                                      object.
    * @return {DecoratorProperties} a new <code>DecoratorProperties</code>
-   *                               instance.
+   *                               object.
    */
-  public build(decorator:string, file:string,
-                                 refList:Array<ImportRef>):DecoratorProperties {
+  public build(name:string, value:string, classPath:string,
+                              decoratorType:DecoratorType):DecoratorProperties {
     let result:DecoratorProperties = new BasicDecoratorProperties();
-    let dotPos:number = decorator.indexOf(UrlStringsEnum.DOT);
-    let temp:string = decorator.substring(dotPos + 1);
-    let cursor:number =
-                      temp.indexOf(DecoratorPropertiesBuilder.OPEN_PARENTHESIS);
-    let classRef:string = null;
-    let importRef:ImportRef = null;
-    let classPath:string = null;
-    let decoratorName:string = temp.substring(0, cursor);
-    result.name = decoratorName;
-    result.value = decorator;
-    cursor = decorator.indexOf(DecoratorPropertiesBuilder.NEW_LINE);
-    classRef = decorator.substring(cursor + 1, dotPos).trim();
-    cursor = refList.length;
-    while(cursor--){
-      importRef = refList[cursor];
-      if(importRef.ref === classRef) {
-        result.classPath = importRef.classPath;
-        break;
-      }
-    }
+    result.name = name;
+    result.value = value;
+    result.classPath = classPath;
+    result.decoratorType = decoratorType;
     return result;
   }
 }

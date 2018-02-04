@@ -17,7 +17,6 @@
 import "mocha";
 import {expect} from "chai";
 import {DecoratorProperties} from "../../../../../../../src/com/jec/commons/files/reflect/DecoratorProperties";
-import {ImportRef} from "../../../../../../../src/com/jec/commons/files/reflect/utils/ImportRef";
 
 // Class to test:
 import {DecoratorPropertiesBuilder} from "../../../../../../../src/com/jec/commons/files/reflect/utils/DecoratorPropertiesBuilder";
@@ -28,18 +27,17 @@ import * as utils from "../../../../../../../utils/test-utils/utilities/Decorato
 // Test:
 describe("DecoratorPropertiesBuilder", ()=> {
 
-  let importRefs:ImportRef[] = null;
   let builder:DecoratorPropertiesBuilder = null;
   let properties:DecoratorProperties = null;
 
   beforeEach(()=> {
-    importRefs = utils.buildImportRefs();
     builder = new DecoratorPropertiesBuilder();
-    properties = builder.build(utils.DECORATOR, utils.FILE, importRefs);
+    properties = builder.build(
+      utils.NAME, utils.DECORATOR, utils.CLASS_PATH, utils.DECORATOR_TYPE
+    );
   });
 
   afterEach(()=> {
-    importRefs = null;
     builder = null;
     properties = null;
   });
@@ -56,6 +54,10 @@ describe("DecoratorPropertiesBuilder", ()=> {
     
     it("should return a 'value' reference built from the specified parameters", function() {
       expect(properties.value).to.equal(utils.DECORATOR);
+    });
+    
+    it("should return a 'decoratorType' reference built from the specified parameters", function() {
+      expect(properties.decoratorType).to.equal(utils.DECORATOR_TYPE);
     });
   });
 });

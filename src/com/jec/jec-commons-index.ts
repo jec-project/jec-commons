@@ -1,6 +1,6 @@
 /*!
  * JEC Commons Node Module
- * Copyright(c) 2017 Pascal ECHEMANN
+ * Copyright(c) 2017-2018 Pascal ECHEMANN
  * Apache 2.0 Licensed
  * This is a part of the JEC Projects: <https://github.com/pechemann/JEC>
  */
@@ -43,6 +43,7 @@ export {BasicFileProperties} from "./commons/files/reflect/impl/BasicFilePropert
 //--> com/jec/commons/files/reflect/utils
 export {DecoratorParser} from "./commons/files/reflect/utils/DecoratorParser";
 export {DecoratorPropertiesBuilder} from "./commons/files/reflect/utils/DecoratorPropertiesBuilder";
+export {DecoratorType} from "./commons/files/reflect/utils/DecoratorType";
 export {ImportRef} from "./commons/files/reflect/utils/ImportRef";
 export {ImportRefParser} from "./commons/files/reflect/utils/ImportRefParser";
 export {InspectMode} from "./commons/files/reflect/utils/InspectMode";

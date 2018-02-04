@@ -18,26 +18,23 @@ import "mocha";
 import {expect} from "chai";
 
 // Class to test:
-import {BasicDecoratorProperties} from "../../../../../../../src/com/jec/commons/files/reflect/impl/BasicDecoratorProperties";
+import {DecoratorType} from "../../../../../../../src/com/jec/commons/files/reflect/utils/DecoratorType";
+
+// Utilities:
+import * as utils from "../../../../../../../utils/test-utils/utilities/DecoratorTypeTestUtils";
 
 // Test:
-describe("DecoratorProperties", ()=> {
+describe("DecoratorType", ()=> {
 
-  let decoratorProps:BasicDecoratorProperties = new BasicDecoratorProperties();
-
-  it("should have a 'name' property", function() {
-    expect(decoratorProps).to.have.property("name", null);
+  describe("#MEMBER", ()=> {
+    it("MEMBER should return 0", function() {
+      expect(DecoratorType.MEMBER).to.equal(utils.MEMBER);
+    });
   });
 
-  it("should have a 'classPath' property", function() {
-    expect(decoratorProps).to.have.property("classPath", null);
-  });
-
-  it("should have an 'value' property", function() {
-    expect(decoratorProps).to.have.property("value", null);
-  });
-  
-  it("should have an 'decoratorType' property", function() {
-    expect(decoratorProps).to.have.property("decoratorType", null);
+  describe("#FIELD", ()=> {
+    it("FILL_CACHE should return 1", function() {
+      expect(DecoratorType.FIELD).to.equal(utils.FIELD);
+    });
   });
 });

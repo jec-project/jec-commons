@@ -14,35 +14,11 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {DecoratorType} from "./utils/DecoratorType";
-
-/**
- * Defines the API for Data Transfert Object that describe all properties of a
- * TypeScript decorator.
+/*!
+ * This module constains utilities used by the DecoratorTypeUtilTest test suite.
  */
-export interface DecoratorProperties {
 
-  //////////////////////////////////////////////////////////////////////////////
-  // Public properties
-  //////////////////////////////////////////////////////////////////////////////
-
-  /**
-   * The name of the decorator.
-   */
-  name:string;
-
-  /**
-   * The class path of the decorator.
-   */
-  classPath:string;
-
-  /**
-   * The content value of the decorator definition file.
-   */
-  value:string;
-
-  /**
-   * The type of the decorator.
-   */
-  decoratorType:DecoratorType;
-}
+// Utilities:
+// We store constants that should be defined by the DecoratorTypeUtil class:
+export const MEMBER:number = 0;
+export const FIELD:number = 1;
