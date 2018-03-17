@@ -5,10 +5,10 @@ class DefaultClassLoader {
     constructor() { }
     loadClass(path) {
         ClassLoaderContext_1.ClassLoaderContext.getInstance().setPath(path);
-        let classRef = require(path);
+        const classRef = require(path);
         ClassLoaderContext_1.ClassLoaderContext.getInstance().setPath(null);
-        let props = Object.keys(classRef);
-        let className = props[0];
+        const props = Object.keys(classRef);
+        const className = props[0];
         return classRef[className];
     }
 }

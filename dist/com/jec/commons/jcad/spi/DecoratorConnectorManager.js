@@ -18,7 +18,7 @@ class DecoratorConnectorManager {
     static getInstance() {
         if (global[DecoratorConnectorManager.GLOBAL_REF] === undefined) {
             DecoratorConnectorManager._locked = false;
-            let ctx = new DecoratorConnectorManager();
+            const ctx = new DecoratorConnectorManager();
             Object.defineProperty(global, DecoratorConnectorManager.GLOBAL_REF, {
                 value: ctx,
                 writable: false,
@@ -42,29 +42,29 @@ class DecoratorConnectorManager {
     addConnector(connector, context) {
         this.validate(connector, "DecoratorConnector");
         this.validate(context, "JcadContext");
-        let jcadRef = connector.getJcadReference();
-        let ref = this.buildRef(jcadRef, context.getId());
+        const jcadRef = connector.getJcadReference();
+        const ref = this.buildRef(jcadRef, context.getId());
         this._connectorMap.set(ref, connector);
         return jcadRef;
     }
     getConnector(jcadReference, context) {
         this.validate(context, "JcadContext");
-        let ref = this.buildRef(jcadReference, context.getId());
+        const ref = this.buildRef(jcadReference, context.getId());
         return this._connectorMap.get(ref);
     }
     hasConnector(jcadReference, context) {
         this.validate(context, "JcadContext");
-        let ref = this.buildRef(jcadReference, context.getId());
+        const ref = this.buildRef(jcadReference, context.getId());
         return this._connectorMap.has(ref);
     }
     getDecorator(jcadReference, context) {
         this.validate(context, "JcadContext");
-        let ref = this.buildRef(jcadReference, context.getId());
+        const ref = this.buildRef(jcadReference, context.getId());
         return this._connectorMap.get(ref).getDecorator();
     }
     removeConnector(jcadReference, context) {
         this.validate(context, "JcadContext");
-        let ref = this.buildRef(jcadReference, context.getId());
+        const ref = this.buildRef(jcadReference, context.getId());
         return this._connectorMap.delete(ref);
     }
     getId() {

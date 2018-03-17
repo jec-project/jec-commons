@@ -57,7 +57,7 @@ class DecoratorParser {
     }
     static findDecorators(file) {
         let result = new Array();
-        let imports = DecoratorParser.PARSER.getImports(file);
+        const imports = DecoratorParser.PARSER.getImports(file);
         this.extractMembers(result, imports, file);
         this.extractFields(result, imports, file);
         return result;

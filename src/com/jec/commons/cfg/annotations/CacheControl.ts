@@ -44,7 +44,7 @@ export function CacheControl(params?:CacheControlPolicy):Function {
     // JCAD API
     ////////////////////////////////////////////////////////////////////////////
 
-    var ctx:JcadContext =
+    const ctx:JcadContext =
                CTXM.getContext(ConfigConnectorRefs.CACHE_CONTROL_CONNECTOR_REF);
     return DCM.getDecorator(
                   ConfigConnectorRefs.CACHE_CONTROL_CONNECTOR_REF, ctx

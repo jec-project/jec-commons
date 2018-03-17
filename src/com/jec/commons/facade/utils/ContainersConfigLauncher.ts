@@ -49,8 +49,8 @@ export class ContainersConfigLauncher {
    */
   private launchContainer(containerCfg:ContainersConfigParams,
                                                jecContainer:JecContainer):void {
-    let builder:DelegatedContainerBuilder = new containerCfg.builder;
-    let container:DelegatedContainer = builder.build(jecContainer);
+    const builder:DelegatedContainerBuilder = new containerCfg.builder;
+    const container:DelegatedContainer = builder.build(jecContainer);
     let composer:ContainerConfigMessageComposer = null;
     container.process((err:Error|any)=>{
       if(err) {
@@ -75,7 +75,7 @@ export class ContainersConfigLauncher {
    */
   public initContainers(config:Array<ContainersConfigParams>,
                                                jecContainer:JecContainer):void {
-    let len:number = config.length -1;
+    const len:number = config.length -1;
     let i:number = 0;
     for(; i<= len; ++i){
       this.launchContainer(config[i], jecContainer);

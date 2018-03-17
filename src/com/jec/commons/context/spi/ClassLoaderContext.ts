@@ -63,7 +63,7 @@ export class ClassLoaderContext implements Singleton {
   public static getInstance():ClassLoaderContext{
     if(global[ClassLoaderContext.GLOBAL_REF] === undefined) {
       ClassLoaderContext._locked = false;
-      let ctx:ClassLoaderContext = new ClassLoaderContext();
+      const ctx:ClassLoaderContext = new ClassLoaderContext();
       Object.defineProperty(
         global,
         ClassLoaderContext.GLOBAL_REF,

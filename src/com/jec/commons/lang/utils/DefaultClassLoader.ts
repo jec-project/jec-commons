@@ -41,10 +41,10 @@ export class DefaultClassLoader implements ClassLoader {
    */
   public loadClass(path:string):any {
     ClassLoaderContext.getInstance().setPath(path);
-    let classRef:any = require(path);
+    const classRef:any = require(path);
     ClassLoaderContext.getInstance().setPath(null);
-    let props:string[] = Object.keys(classRef);
-    let className:string = props[0];
+    const props:string[] = Object.keys(classRef);
+    const className:string = props[0];
     return classRef[className];
   }
 }

@@ -4,8 +4,7 @@ const JcadContextImpl_1 = require("./JcadContextImpl");
 class JcadContextFactory {
     constructor() { }
     create() {
-        let context = new JcadContextImpl_1.JcadContextImpl();
-        return context;
+        return new JcadContextImpl_1.JcadContextImpl();
     }
 }
 exports.JcadContextFactory = JcadContextFactory;

@@ -65,7 +65,7 @@ export class JcadContextManager implements Singleton {
   public static getInstance():JcadContextManager{
     if(global[JcadContextManager.GLOBAL_REF] === undefined) {
       JcadContextManager._locked = false;
-      let ctx:JcadContextManager = new JcadContextManager();
+      const ctx:JcadContextManager = new JcadContextManager();
       Object.defineProperty(
         global,
         JcadContextManager.GLOBAL_REF,
@@ -158,7 +158,7 @@ export class JcadContextManager implements Singleton {
    * @return {JcadContext} the context removed from this manager.
    */
   public removeContext(jcadReference:string):JcadContext {
-    let context:JcadContext = this._jcadContextMap.get(jcadReference);
+    const context:JcadContext = this._jcadContextMap.get(jcadReference);
     this._jcadContextMap.delete(jcadReference);
     return context;
   }

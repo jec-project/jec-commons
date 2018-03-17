@@ -7,7 +7,7 @@ const DCM = DecoratorConnectorManager_1.DecoratorConnectorManager.getInstance();
 const CTXM = JcadContextManager_1.JcadContextManager.getInstance();
 function CacheControl(params) {
     return function (target) {
-        var ctx = CTXM.getContext(ConfigConnectorRefs_1.ConfigConnectorRefs.CACHE_CONTROL_CONNECTOR_REF);
+        const ctx = CTXM.getContext(ConfigConnectorRefs_1.ConfigConnectorRefs.CACHE_CONTROL_CONNECTOR_REF);
         return DCM.getDecorator(ConfigConnectorRefs_1.ConfigConnectorRefs.CACHE_CONTROL_CONNECTOR_REF, ctx).decorate(target, params);
     };
 }

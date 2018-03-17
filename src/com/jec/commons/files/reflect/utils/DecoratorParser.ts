@@ -187,7 +187,7 @@ export class DecoratorParser {
    */
   public static findDecorators(file:string):Array<DecoratorProperties> {
     let result:Array<DecoratorProperties> = new Array<DecoratorProperties>();
-    let imports:Array<ImportRef> = DecoratorParser.PARSER.getImports(file);
+    const imports:Array<ImportRef> = DecoratorParser.PARSER.getImports(file);
     this.extractMembers(result, imports, file);
     this.extractFields(result, imports, file);
     return result;

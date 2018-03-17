@@ -59,7 +59,7 @@ export class BasicDecoratorProperties implements DecoratorProperties {
    * @inheritDoc
    */
   public toString():string {
-    let result:string = 
+    const result:string = 
 `[DecoratorProperties: name=${this.name}, classPath=${this.classPath}, decoratorType=${this.decoratorType},
 value=${this.value}]`
     return result;

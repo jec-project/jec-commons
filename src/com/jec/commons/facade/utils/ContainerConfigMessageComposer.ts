@@ -45,7 +45,6 @@ export class ContainerConfigMessageComposer {
    * @return {string} an error message composed from the  specified parameters.
    */
   public compose(err:Error|any, containerCfg:ContainersConfigParams):string {
-    let msg:string = "Invalid delegated container config:\n" + err;
-    return msg;
+    return "Invalid delegated container config:\n" + err;
   }
 }

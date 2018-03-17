@@ -15,7 +15,7 @@ class ClassLoaderContext {
     static getInstance() {
         if (global[ClassLoaderContext.GLOBAL_REF] === undefined) {
             ClassLoaderContext._locked = false;
-            let ctx = new ClassLoaderContext();
+            const ctx = new ClassLoaderContext();
             Object.defineProperty(global, ClassLoaderContext.GLOBAL_REF, {
                 value: ctx,
                 writable: false,

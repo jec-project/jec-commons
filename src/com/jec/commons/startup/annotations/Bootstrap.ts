@@ -43,7 +43,7 @@ export function Bootstrap(params?:BootstrapParams):Function {
     // JCAD API
     ////////////////////////////////////////////////////////////////////////////
 
-    var ctx:JcadContext =
+    const ctx:JcadContext =
                CTXM.getContext(BootstrapConnectorRefs.BOOTSTRAP_CONNECTOR_REF);
     return DCM.getDecorator(BootstrapConnectorRefs.BOOTSTRAP_CONNECTOR_REF, ctx)
               .decorate(target, params);

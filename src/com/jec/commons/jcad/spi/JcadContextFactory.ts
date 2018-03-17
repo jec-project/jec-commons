@@ -43,7 +43,6 @@ export class JcadContextFactory {
    *                       <code>JcadContext</code>.
    */
   public create():JcadContext {
-    let context:JcadContext = new JcadContextImpl();
-    return context;
+    return new JcadContextImpl();
   }
 }

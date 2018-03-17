@@ -52,7 +52,7 @@ export function Scheduled(params?:ScheduledParams):Function {
     // JCAD API
     ////////////////////////////////////////////////////////////////////////////
 
-    var ctx:JcadContext =
+    const ctx:JcadContext =
                CTXM.getContext(SchedulingConnectorRefs.SCHEDULED_CONNECTOR_REF);
     return DCM.getDecorator(
                 SchedulingConnectorRefs.SCHEDULED_CONNECTOR_REF, ctx

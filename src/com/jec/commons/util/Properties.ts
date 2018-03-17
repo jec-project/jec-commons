@@ -59,7 +59,7 @@ export class Properties {
   private initObj(defaults?:Properties):void {
      this._properties = new Map<string, string>();
     if(defaults) {
-      let keys:string[] = defaults.propertyNames();
+      const keys:string[] = defaults.propertyNames();
       let len:number = keys.length;
       let key:string = null;
       while(len--) {
@@ -79,8 +79,7 @@ export class Properties {
    * @return {Array<string>} an array of all the keys in this property list.
    */
   public propertyNames():string[] {
-    let result:string[] = Array.from(this._properties.keys());
-    return result;
+    return Array.from(this._properties.keys());
   }
 
   /**

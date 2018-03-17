@@ -8,7 +8,7 @@ class BasicDecoratorProperties {
         this.decoratorType = null;
     }
     toString() {
-        let result = `[DecoratorProperties: name=${this.name}, classPath=${this.classPath}, decoratorType=${this.decoratorType},
+        const result = `[DecoratorProperties: name=${this.name}, classPath=${this.classPath}, decoratorType=${this.decoratorType},
 value=${this.value}]`;
         return result;
     }

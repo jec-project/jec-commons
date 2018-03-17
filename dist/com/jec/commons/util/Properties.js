@@ -8,7 +8,7 @@ class Properties {
     initObj(defaults) {
         this._properties = new Map();
         if (defaults) {
-            let keys = defaults.propertyNames();
+            const keys = defaults.propertyNames();
             let len = keys.length;
             let key = null;
             while (len--) {
@@ -18,8 +18,7 @@ class Properties {
         }
     }
     propertyNames() {
-        let result = Array.from(this._properties.keys());
-        return result;
+        return Array.from(this._properties.keys());
     }
     getProperty(key) {
         return this._properties.get(key);

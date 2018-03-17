@@ -9,7 +9,7 @@ const CTXM = JcadContextManager_1.JcadContextManager.getInstance();
 function Scheduled(params) {
     return function (target, key, descriptor) {
         ScheduledParamsValidator_1.ScheduledParamsValidator.validate(params);
-        var ctx = CTXM.getContext(SchedulingConnectorRefs_1.SchedulingConnectorRefs.SCHEDULED_CONNECTOR_REF);
+        const ctx = CTXM.getContext(SchedulingConnectorRefs_1.SchedulingConnectorRefs.SCHEDULED_CONNECTOR_REF);
         return DCM.getDecorator(SchedulingConnectorRefs_1.SchedulingConnectorRefs.SCHEDULED_CONNECTOR_REF, ctx).decorate(target, key, descriptor, params);
     };
 }

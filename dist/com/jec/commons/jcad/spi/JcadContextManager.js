@@ -16,7 +16,7 @@ class JcadContextManager {
     static getInstance() {
         if (global[JcadContextManager.GLOBAL_REF] === undefined) {
             JcadContextManager._locked = false;
-            let ctx = new JcadContextManager();
+            const ctx = new JcadContextManager();
             Object.defineProperty(global, JcadContextManager.GLOBAL_REF, {
                 value: ctx,
                 writable: false,
@@ -43,7 +43,7 @@ class JcadContextManager {
         return this._jcadContextMap.has(jcadReference);
     }
     removeContext(jcadReference) {
-        let context = this._jcadContextMap.get(jcadReference);
+        const context = this._jcadContextMap.get(jcadReference);
         this._jcadContextMap.delete(jcadReference);
         return context;
     }

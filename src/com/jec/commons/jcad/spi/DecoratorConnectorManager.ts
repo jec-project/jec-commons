@@ -70,7 +70,7 @@ export class DecoratorConnectorManager implements Singleton {
   public static getInstance():DecoratorConnectorManager{
     if(global[DecoratorConnectorManager.GLOBAL_REF] === undefined) {
       DecoratorConnectorManager._locked = false;
-      let ctx:DecoratorConnectorManager = new DecoratorConnectorManager();
+      const ctx:DecoratorConnectorManager = new DecoratorConnectorManager();
       Object.defineProperty(
         global,
         DecoratorConnectorManager.GLOBAL_REF,
@@ -164,8 +164,8 @@ export class DecoratorConnectorManager implements Singleton {
   public addConnector(connector:DecoratorConnector, context:JcadContext):string {
     this.validate(connector, "DecoratorConnector");
     this.validate(context, "JcadContext");
-    let jcadRef:string = connector.getJcadReference();
-    let ref:string = this.buildRef(jcadRef, context.getId());
+    const jcadRef:string = connector.getJcadReference();
+    const ref:string = this.buildRef(jcadRef, context.getId());
     this._connectorMap.set(ref, connector);
     return jcadRef;
   }
@@ -184,7 +184,7 @@ export class DecoratorConnectorManager implements Singleton {
   public getConnector(jcadReference:string,
                                        context:JcadContext):DecoratorConnector {
     this.validate(context, "JcadContext");
-    let ref:string = this.buildRef(jcadReference, context.getId());
+    const ref:string = this.buildRef(jcadReference, context.getId());
     return this._connectorMap.get(ref);
   }
 
@@ -201,7 +201,7 @@ export class DecoratorConnectorManager implements Singleton {
    */
   public hasConnector(jcadReference:string, context:JcadContext):boolean {
     this.validate(context, "JcadContext");
-    let ref:string = this.buildRef(jcadReference, context.getId());
+    const ref:string = this.buildRef(jcadReference, context.getId());
     return this._connectorMap.has(ref);
   }
 
@@ -218,7 +218,7 @@ export class DecoratorConnectorManager implements Singleton {
    */
   public getDecorator(jcadReference:string, context:JcadContext):Decorator {
     this.validate(context, "JcadContext");
-    let ref:string = this.buildRef(jcadReference, context.getId());
+    const ref:string = this.buildRef(jcadReference, context.getId());
     return this._connectorMap.get(ref).getDecorator();
   }
   
@@ -234,7 +234,7 @@ export class DecoratorConnectorManager implements Singleton {
    */
   public removeConnector(jcadReference:string, context:JcadContext):boolean {
     this.validate(context, "JcadContext");
-    let ref:string = this.buildRef(jcadReference, context.getId());
+    const ref:string = this.buildRef(jcadReference, context.getId());
     return this._connectorMap.delete(ref);
   }
 

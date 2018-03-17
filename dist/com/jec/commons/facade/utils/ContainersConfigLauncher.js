@@ -4,8 +4,8 @@ const ContainerConfigMessageComposer_1 = require("./ContainerConfigMessageCompos
 class ContainersConfigLauncher {
     constructor() { }
     launchContainer(containerCfg, jecContainer) {
-        let builder = new containerCfg.builder;
-        let container = builder.build(jecContainer);
+        const builder = new containerCfg.builder;
+        const container = builder.build(jecContainer);
         let composer = null;
         container.process((err) => {
             if (err) {
@@ -15,7 +15,7 @@ class ContainersConfigLauncher {
         });
     }
     initContainers(config, jecContainer) {
-        let len = config.length - 1;
+        const len = config.length - 1;
         let i = 0;
         for (; i <= len; ++i) {
             this.launchContainer(config[i], jecContainer);

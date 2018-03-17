@@ -44,7 +44,7 @@ export function StaticResource(params?:CacheControlPolicy):Function {
     // JCAD API
     ////////////////////////////////////////////////////////////////////////////
 
-    var ctx:JcadContext =
+    const ctx:JcadContext =
              CTXM.getContext(ConfigConnectorRefs.STATIC_RESOURCE_CONNECTOR_REF);
     return DCM.getDecorator(
                   ConfigConnectorRefs.STATIC_RESOURCE_CONNECTOR_REF, ctx
