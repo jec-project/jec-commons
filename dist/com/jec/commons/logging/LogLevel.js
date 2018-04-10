@@ -7,5 +7,6 @@ var LogLevel;
     LogLevel[LogLevel["INFO"] = 2] = "INFO";
     LogLevel[LogLevel["WARN"] = 3] = "WARN";
     LogLevel[LogLevel["ERROR"] = 4] = "ERROR";
-    LogLevel[LogLevel["OFF"] = 5] = "OFF";
+    LogLevel[LogLevel["ALWAYS"] = 5] = "ALWAYS";
+    LogLevel[LogLevel["OFF"] = 6] = "OFF";
 })(LogLevel = exports.LogLevel || (exports.LogLevel = {}));

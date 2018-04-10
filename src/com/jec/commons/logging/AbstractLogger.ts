@@ -117,4 +117,9 @@ export abstract class AbstractLogger implements Logger {
    * @inheritDoc
    */
   public warn(marker:any):void {}
+  
+  /**
+   * @inheritDoc
+   */
+  public always(marker:any):void {}
 };

@@ -51,6 +51,10 @@ describe("LogLevelUtil", ()=> {
     it("stringTogLevel(LogLevelString.ERROR) should return LogLevel.ERROR", function() {
       expect(util.stringTogLevel(LogLevelString.ERROR)).to.equal(LogLevel.ERROR);
     });
+    
+    it("stringTogLevel(LogLevelString.ALWAYS) should return LogLevel.ALWAYS", function() {
+      expect(util.stringTogLevel(LogLevelString.ALWAYS)).to.equal(LogLevel.ALWAYS);
+    });
   });
 
   describe("#logLevelToString()", ()=> {
@@ -74,6 +78,10 @@ describe("LogLevelUtil", ()=> {
 
     it("logLevelToString(LogLevel.ERROR) should return LogLevelString.ERROR", function() {
       expect(util.logLevelToString(LogLevel.ERROR)).to.equal(LogLevelString.ERROR);
+    });
+    
+    it("logLevelToString(LogLevel.ALWAYS) should return LogLevelString.ALWAYS", function() {
+      expect(util.logLevelToString(LogLevel.ALWAYS)).to.equal(LogLevelString.ALWAYS);
     });
   });
 });

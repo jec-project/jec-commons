@@ -25,3 +25,4 @@ export const DEBUG:string = "DEBUG";
 export const INFO:string = "INFO";
 export const WARN:string = "WARN";
 export const ERROR:string = "ERROR";
+export const ALWAYS:string = "ALWAYS";

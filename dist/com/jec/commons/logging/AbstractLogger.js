@@ -26,6 +26,7 @@ class AbstractLogger {
     info(marker) { }
     trace(marker) { }
     warn(marker) { }
+    always(marker) { }
 }
 exports.AbstractLogger = AbstractLogger;
 ;

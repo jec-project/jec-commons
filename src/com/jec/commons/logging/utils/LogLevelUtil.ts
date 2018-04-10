@@ -61,6 +61,7 @@ export class LogLevelUtil {
       case LogLevel.INFO : value = LogLevelString.INFO; break;
       case LogLevel.WARN : value = LogLevelString.WARN; break;
       case LogLevel.ERROR : value = LogLevelString.ERROR; break;
+      case LogLevel.ALWAYS : value = LogLevelString.ALWAYS; break;
     }
     return value;
   }

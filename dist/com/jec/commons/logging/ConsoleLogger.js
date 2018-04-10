@@ -38,6 +38,9 @@ class ConsoleLogger extends AbstractLogger_1.AbstractLogger {
             console.log(this._formatter.format(LogLevelString_1.LogLevelString.WARN, marker, false, context));
         }
     }
+    always(marker, context = "") {
+        console.log(this._formatter.format(LogLevelString_1.LogLevelString.ALWAYS, marker, false, context));
+    }
     toString() {
         return "[Logger::ConsoleLogger]";
     }

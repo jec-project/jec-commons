@@ -80,6 +80,12 @@ export interface SourceFileInspector {
   removeProcessor(processor:FilePreProcessor):boolean;
 
   /**
+   * Removes all <code>FilePreProcessor</code> processor instance from this file
+   * inspector.
+   */
+  removeProcessors():void;
+
+  /**
    * Adds a new source path to this file inspector.
    * 
    * @param {string} path the source path to add.

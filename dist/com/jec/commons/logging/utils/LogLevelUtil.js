@@ -25,6 +25,9 @@ class LogLevelUtil {
             case LogLevel_1.LogLevel.ERROR:
                 value = LogLevelString_1.LogLevelString.ERROR;
                 break;
+            case LogLevel_1.LogLevel.ALWAYS:
+                value = LogLevelString_1.LogLevelString.ALWAYS;
+                break;
         }
         return value;
     }

@@ -43,5 +43,10 @@ export enum LogLevelString {
   /**
    * The string reference to the <code>LogLevel.ERROR</code> property.
    */
-  ERROR = "ERROR"
+  ERROR = "ERROR",
+  
+  /**
+   * The string reference to the <code>LogLevel.ALWAYS</code> property.
+   */
+  ALWAYS = "ALWAYS"
 };

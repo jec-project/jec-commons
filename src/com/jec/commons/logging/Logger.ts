@@ -97,4 +97,14 @@ export interface Logger {
    *                         the log message.
    */
   warn(marker:any, context?:string):void;
+  
+  /**
+   * Logs a message with the specific marker independently of the current log
+   * level.
+   * 
+   * @param {any} marker the marker to log.
+   * @param {string} context an optional context information whis is added to
+   *                         the log message.
+   */
+  always(marker:any, context?:string):void;
 };

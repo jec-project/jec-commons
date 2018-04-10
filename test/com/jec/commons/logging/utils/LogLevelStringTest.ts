@@ -55,4 +55,10 @@ describe("LogLevelString", ()=> {
       expect(LogLevelString.ERROR).to.equal(utils.ERROR);
     });
   });
+  
+  describe("#ALWAYS", ()=> {
+    it("ALWAYS should return 'ALWAYS'", function() {
+      expect(LogLevelString.ALWAYS).to.equal(utils.ALWAYS);
+    });
+  });
 });

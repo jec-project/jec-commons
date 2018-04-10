@@ -120,6 +120,15 @@ export class ConsoleLogger extends AbstractLogger implements Logger {
   /**
    * @inheritDoc
    */
+  public always(marker:any, context:string = ""):void {
+    console.log(
+      this._formatter.format(LogLevelString.ALWAYS, marker, false, context)
+    );
+  }
+
+  /**
+   * @inheritDoc
+   */
   public toString():string {
     return "[Logger::ConsoleLogger]";
   }

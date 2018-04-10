@@ -7,5 +7,6 @@ var LogLevelString;
     LogLevelString["INFO"] = "INFO";
     LogLevelString["WARN"] = "WARN";
     LogLevelString["ERROR"] = "ERROR";
+    LogLevelString["ALWAYS"] = "ALWAYS";
 })(LogLevelString = exports.LogLevelString || (exports.LogLevelString = {}));
 ;

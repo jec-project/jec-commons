@@ -56,8 +56,13 @@ describe("LogLevel", ()=> {
     });
   });
 
+  describe("#ALWAYS", ()=> {
+    it("ALWAYS should return '5'", function() {
+      expect(LogLevel.ALWAYS).to.equal(utils.ALWAYS);
+    });
+  });
   describe("#OFF", ()=> {
-    it("OFF should return '5'", function() {
+    it("OFF should return '6'", function() {
       expect(LogLevel.OFF).to.equal(utils.OFF);
     });
   });

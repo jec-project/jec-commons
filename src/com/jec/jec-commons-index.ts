@@ -87,6 +87,7 @@ export {GlobalClassLoader} from "./commons/lang/utils/GlobalClassLoader";
 export {GlobalGuidGenerator} from "./commons/lang/utils/GlobalGuidGenerator";
 export {GuidGeneratorBase} from "./commons/lang/utils/GuidGeneratorBase";
 export {LocaleBuilder} from "./commons/lang/utils/LocaleBuilder";
+export {PathUtils} from "./commons/lang/utils/PathUtils";
 //--> com/jec/commons/lang
 export {ClassLoader} from "./commons/lang/ClassLoader";
 export {GuidGenerator} from "./commons/lang/GuidGenerator";

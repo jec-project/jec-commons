@@ -92,4 +92,13 @@ describe("AbstractLogger", ()=> {
       expect(spy).to.have.been.called.with(utils.MESSAGE);
     });
   });
+  
+  describe("#always()", ()=> {
+    let logger:AbstractLogger = utils.buildAbstractLogger();
+    it("should be called with the specified parameter", function() {
+      let spy:any = chai.spy.on(logger, "always");
+      logger.always(utils.MESSAGE);
+      expect(spy).to.have.been.called.with(utils.MESSAGE);
+    });
+  });
 });

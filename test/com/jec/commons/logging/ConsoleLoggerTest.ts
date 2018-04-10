@@ -141,4 +141,24 @@ describe("ConsoleLogger", ()=> {
       console.log = oldLog;
     });
   });
+  
+  describe("#always()", ()=> {
+    it("should output a log message in the console", function() {
+      let spy:any = chai.spy.on(console, "log");
+      logger.always(utils.MESSAGE, utils.CONTEXT);
+      expect(spy).to.have.been.called();
+    });
+
+    it("should output a well formatted log message", function() {
+      let oldLog:any = console.log;
+      logger.always(utils.MESSAGE, utils.CONTEXT);
+      console.log = function (message) {
+          expect(message).to.have.string(LogLevelString.ALWAYS);
+          expect(message).to.have.string(utils.CONTEXT);
+          expect(message).to.have.string(utils.MESSAGE);
+          oldLog.apply(console, arguments);
+      };
+      console.log = oldLog;
+    });
+  });
 });

@@ -25,4 +25,5 @@ export const DEBUG:number = 1;
 export const INFO:number = 2;
 export const WARN:number = 3;
 export const ERROR:number = 4;
-export const OFF:number = 5;
+export const ALWAYS:number = 5;
+export const OFF:number = 6;
