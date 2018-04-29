@@ -1,6 +1,6 @@
 # JEC Commons Project
 
-JEC Commons is a [JavaScript Entreprise Container][jec-url] project focused on all aspects of reusable JEC components.
+JEC Commons is a [JavaScript Enterprise Container][jec-url] project focused on all aspects of reusable JEC components.
 
 [![][jec-logo]][jec-url]
 
@@ -89,5 +89,5 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-[jec-url]: https://github.com/pechemann/JEC
+[jec-url]: https://jecproject.org
 [jec-logo]: https://raw.githubusercontent.com/pechemann/JEC/master/assets/jec-logos/jec-logo.png

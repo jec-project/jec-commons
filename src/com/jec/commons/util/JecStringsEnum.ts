@@ -15,7 +15,7 @@
 //   limitations under the License.
 
 /**
- * A collection of constants for working with JavaScript Entreprise Container
+ * A collection of constants for working with JavaScript Enterprise Container
  * strings.
  */
 export class JecStringsEnum {
