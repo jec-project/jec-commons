@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pechemann/jec-commons.git"
+    "url": "git+https://github.com/jec-project/jec-commons.git"
   },
   "keywords": [
     "JEC",
@@ -22,9 +22,9 @@
   "author": "Pascal ECHEMANN",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
-    "url": "https://github.com/pechemann/jec-commons/issues"
+    "url": "https://github.com/jec-project/jec-commons/issues"
   },
-  "homepage": "https://github.com/pechemann/jec-commons#readme",
+  "homepage": "https://github.com/jec-project/jec-commons#readme",
   "dependencies": {
     "moment": "^2.18.1",
     "uuid": "^3.1.0"
