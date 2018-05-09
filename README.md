@@ -34,7 +34,7 @@ All JEC Commons components have to be imported with the ES6 syntax:
 import { HttpStatusCode, HttpMethod } from "jec-commons";
 
 const NO_CONTENT:number = HttpStatusCode.NO_CONTENT;
-const GET:number = HttpMethod.GET;
+const GET:string = HttpMethod.GET;
 console.log(NO_CONTENT);
 //204
 console.log(GET);
