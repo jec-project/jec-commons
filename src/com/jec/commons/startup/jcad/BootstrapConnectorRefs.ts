@@ -21,7 +21,7 @@
 export enum BootstrapConnectorRefs {
   
   /**
-   * Defines the reference for connectors tha must be used to interact with the
+   * Defines the reference for connectors that must be used to interact with the
    * <code>@Bootstrap</code> decorator.
    */
   BOOTSTRAP_CONNECTOR_REF = "com.jec.commons.startup.annotations.Bootstrap"                                      

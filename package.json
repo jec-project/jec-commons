@@ -26,8 +26,8 @@
   },
   "homepage": "https://github.com/jec-project/jec-commons#readme",
   "dependencies": {
-    "moment": "^2.18.1",
-    "uuid": "^3.1.0"
+    "moment": "^2.22.1",
+    "uuid": "^3.2.1"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.41",

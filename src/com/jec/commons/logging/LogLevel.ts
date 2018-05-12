@@ -53,7 +53,7 @@ export enum LogLevel {
   ERROR = 4,
 
   /**
-   * <code>ALWAYS</code> turns off outputs for all logs.
+   * <code>ALWAYS</code> turns on outputs for all logs.
    * This level is initialized to <code>5</code>.
    */
   ALWAYS = 5,

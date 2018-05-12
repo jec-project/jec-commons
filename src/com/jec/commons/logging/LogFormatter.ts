@@ -31,7 +31,7 @@ export interface LogFormatter {
    *                              at the end of the message (<code>true</code>), 
    *                              or not (<code>false</code>). Default value is
    *                              <code>false</code>.
-   * @param {string} context an optional context information whis is added to
+   * @param {string} context an optional context information which is added to
    *                         the log message.
    * @return {string} the formated string for the specified marker.
    */

@@ -21,7 +21,7 @@
 export enum SchedulingConnectorRefs {
   
   /**
-   * Defines the reference for connectors tha must be used to interact with the
+   * Defines the reference for connectors that must be used to interact with the
    * <code>@Scheduled</code> decorator.
    */
   SCHEDULED_CONNECTOR_REF = "com.jec.commons.scheduling.annotations.Scheduled"                                    

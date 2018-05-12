@@ -21,13 +21,13 @@
 export enum ConfigConnectorRefs {
     
   /**
-   * Defines the reference for connectors tha must be used to interact with the
+   * Defines the reference for connectors that must be used to interact with the
    * <code>@CacheControl</code> decorator.
    */
   CACHE_CONTROL_CONNECTOR_REF = "com.jec.commons.cfg.annotations.CacheControl",  
 
   /**
-   * Defines the reference for connectors tha must be used to interact with the
+   * Defines the reference for connectors that must be used to interact with the
    * <code>@StaticResource</code> decorator.
    */
   STATIC_RESOURCE_CONNECTOR_REF =
