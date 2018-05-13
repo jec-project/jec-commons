@@ -19,7 +19,7 @@ import {JecContainer} from "../lang/JecContainer";
 import {BootstrapError} from "./exceptions/BootstrapError";
 
 /**
- * The abstract implementation of the <code>BootstrapScript<code> interface. 
+ * The abstract implementation of the <code>BootstrapScript</code> interface. 
  * This class should be extended by all configuration classes in EJPs.
  */
 export abstract class AbstractBootstrapScript implements BootstrapScript {

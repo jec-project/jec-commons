@@ -17,7 +17,7 @@
 import {JecContainer} from "../lang/JecContainer";
 
 /**
- * The <code>BootstrapScript<code> interface defines the API that you must
+ * The <code>BootstrapScript</code> interface defines the API that you must
  * implement to create configuration scripts for a JEC Application.
  */
 export interface BootstrapScript {
