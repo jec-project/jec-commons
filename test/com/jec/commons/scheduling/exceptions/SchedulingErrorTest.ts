@@ -27,14 +27,14 @@ describe("SchedulingError", ()=> {
 
   describe("instanceOf(Error)", ()=> {
     it("SchedulingError should extend Error", function() {
-      let error:SchedulingError = new SchedulingError(MESSAGE);
+      const error:SchedulingError = new SchedulingError(MESSAGE);
       expect(error).to.be.instanceOf(Error);
     });
   });
 
   describe("#message", ()=> {
     it("should return the same message as passed in the class constructor", function() {
-      let error:SchedulingError = new SchedulingError(MESSAGE);
+      const error:SchedulingError = new SchedulingError(MESSAGE);
       expect(error.message).to.equal(MESSAGE);
     });
   });

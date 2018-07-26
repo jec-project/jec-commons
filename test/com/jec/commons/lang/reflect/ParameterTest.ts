@@ -26,9 +26,9 @@ import * as utils from "../../../../../../utils/test-utils/utilities/ParameterTe
 // Test:
 describe("ParameterTest", ()=> {
 
-    let member:Parameter = utils.buildParameter();
+  const member:Parameter = utils.buildParameter();
 
-    it("#getName() should retrieve the same value as passed to the constructor parameter", function() {
-      expect(member.getName()).to.equal(utils.PARAMETER_NAME);
-    });
+  it("#getName() should retrieve the same value as passed to the constructor parameter", function() {
+    expect(member.getName()).to.equal(utils.PARAMETER_NAME);
+  });
 });

@@ -29,59 +29,82 @@ import * as utils from "../../../../../../utils/test-utils/utilities/LogLevelUti
 describe("LogLevelUtil", ()=> {
 
   describe("#stringTogLevel()", ()=> {
-
-    let util:LogLevelUtil = new LogLevelUtil();
+    const util:LogLevelUtil = new LogLevelUtil();
 
     it("stringTogLevel(LogLevelString.TRACE) should return LogLevel.TRACE", function() {
-      expect(util.stringTogLevel(LogLevelString.TRACE)).to.equal(LogLevel.TRACE);
+      expect(
+        util.stringTogLevel(LogLevelString.TRACE)
+      ).to.equal(LogLevel.TRACE);
     });
 
     it("stringTogLevel(LogLevelString.DEBUG) should return LogLevel.DEBUG", function() {
-      expect(util.stringTogLevel(LogLevelString.DEBUG)).to.equal(LogLevel.DEBUG);
+      expect(
+        util.stringTogLevel(LogLevelString.DEBUG)
+      ).to.equal(LogLevel.DEBUG);
     });
 
     it("stringTogLevel(LogLevelString.INFO) should return LogLevel.INFO", function() {
-      expect(util.stringTogLevel(LogLevelString.INFO)).to.equal(LogLevel.INFO);
+      expect(
+        util.stringTogLevel(LogLevelString.INFO)
+      ).to.equal(LogLevel.INFO);
     });
 
     it("stringTogLevel(LogLevelString.WARN) should return LogLevel.WARN", function() {
-      expect(util.stringTogLevel(LogLevelString.WARN)).to.equal(LogLevel.WARN);
+      expect(
+        util.stringTogLevel(LogLevelString.WARN)
+      ).to.equal(LogLevel.WARN);
     });
 
     it("stringTogLevel(LogLevelString.ERROR) should return LogLevel.ERROR", function() {
-      expect(util.stringTogLevel(LogLevelString.ERROR)).to.equal(LogLevel.ERROR);
+      expect(
+        util.stringTogLevel(LogLevelString.ERROR)
+      ).to.equal(LogLevel.ERROR);
     });
     
     it("stringTogLevel(LogLevelString.ALWAYS) should return LogLevel.ALWAYS", function() {
-      expect(util.stringTogLevel(LogLevelString.ALWAYS)).to.equal(LogLevel.ALWAYS);
+      expect(
+        util.stringTogLevel(LogLevelString.ALWAYS)
+      ).to.equal(LogLevel.ALWAYS);
     });
   });
 
   describe("#logLevelToString()", ()=> {
-    let util:LogLevelUtil = new LogLevelUtil();
+    const util:LogLevelUtil = new LogLevelUtil();
 
     it("logLevelToString(LogLevel.ERROR) should return LogLevelString.ERROR", function() {
-      expect(util.logLevelToString(LogLevel.ERROR)).to.equal(LogLevelString.ERROR);
+      expect(
+        util.logLevelToString(LogLevel.ERROR)
+      ).to.equal(LogLevelString.ERROR);
     });
 
     it("logLevelToString(LogLevel.DEBUG) should return LogLevelString.DEBUG", function() {
-      expect(util.logLevelToString(LogLevel.DEBUG)).to.equal(LogLevelString.DEBUG);
+      expect(
+        util.logLevelToString(LogLevel.DEBUG)
+      ).to.equal(LogLevelString.DEBUG);
     });
 
     it("logLevelToString(LogLevel.INFO) should return LogLevelString.INFO", function() {
-      expect(util.logLevelToString(LogLevel.INFO)).to.equal(LogLevelString.INFO);
+      expect(
+        util.logLevelToString(LogLevel.INFO)
+      ).to.equal(LogLevelString.INFO);
     });
 
     it("logLevelToString(LogLevel.WARN) should return LogLevelString.WARN", function() {
-      expect(util.logLevelToString(LogLevel.WARN)).to.equal(LogLevelString.WARN);
+      expect(
+        util.logLevelToString(LogLevel.WARN)
+      ).to.equal(LogLevelString.WARN);
     });
 
     it("logLevelToString(LogLevel.ERROR) should return LogLevelString.ERROR", function() {
-      expect(util.logLevelToString(LogLevel.ERROR)).to.equal(LogLevelString.ERROR);
+      expect(
+        util.logLevelToString(LogLevel.ERROR)
+      ).to.equal(LogLevelString.ERROR);
     });
     
     it("logLevelToString(LogLevel.ALWAYS) should return LogLevelString.ALWAYS", function() {
-      expect(util.logLevelToString(LogLevel.ALWAYS)).to.equal(LogLevelString.ALWAYS);
+      expect(
+        util.logLevelToString(LogLevel.ALWAYS)
+      ).to.equal(LogLevelString.ALWAYS);
     });
   });
 });

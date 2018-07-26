@@ -1,6 +1,6 @@
 {
   "name": "jec-commons",
-  "version": "1.1.9",
+  "version": "1.2.0",
   "description": "JEC Commons - Provides developers reusable components used by JEC implementations.",
   "main": "dist/com/jec/jec-commons-index",
   "types": "types/jec-commons.d.ts",
@@ -26,22 +26,23 @@
   },
   "homepage": "https://github.com/jec-project/jec-commons#readme",
   "dependencies": {
-    "moment": "^2.22.1",
-    "uuid": "^3.2.1"
+    "moment": "^2.22.2",
+    "testdouble": "^3.8.1",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "@types/mocha": "^2.2.41",
+    "@types/mocha": "^5.2.5",
     "@types/uuid": "^3.4.3",
-    "chai": "^3.5.0",
-    "chai-spies": "^0.7.1",
-    "grunt": "^1.0.1",
+    "chai": "^4.1.2",
+    "sinon": "^6.1.4",
+    "grunt": "1.0.3",
     "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-mocha-test": "^0.13.2",
-    "grunt-ts": "^6.0.0-beta.16",
+    "grunt-mocha-test": "^0.13.3",
+    "grunt-ts": "^6.0.0-beta.21",
     "grunt-typedoc": "^0.2.4",
-    "mocha": "^3.3.0",
-    "typedoc": "^0.8.0",
-    "typescript": "^2.6.2"
+    "mocha": "^5.2.0",
+    "typedoc": "^0.11.1",
+    "typescript": "^2.9.2"
   }
 }

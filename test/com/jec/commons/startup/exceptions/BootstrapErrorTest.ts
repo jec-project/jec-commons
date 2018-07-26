@@ -25,15 +25,15 @@ describe("BootstrapError", ()=> {
 
   describe("instanceOf(Error)", ()=> {
     it("BootstrapError should extend Error", function() {
-      let error:BootstrapError = new BootstrapError(null);
+      const error:BootstrapError = new BootstrapError(null);
       expect(error).to.be.instanceOf(Error);
     });
   });
 
   describe("#message", ()=> {
     it("should return the same message as passed to the constructor function", function() {
-      let message:string = "foo bar";
-      let error:BootstrapError = new BootstrapError(message);
+      const message:string = "foo bar";
+      const error:BootstrapError = new BootstrapError(message);
       expect(error.message).to.equal(message);
     });
   });

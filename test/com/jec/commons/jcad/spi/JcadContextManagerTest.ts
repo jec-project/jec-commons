@@ -32,7 +32,7 @@ describe("JcadContextManager", ()=> {
 
   describe("#constructor()", ()=> {
     it("should throw a SingletonError", function() {
-      let buildFromConstructor:Function = function():void {
+      const buildFromConstructor:Function = function():void {
         new JcadContextManager();
       };
       assert.throws(buildFromConstructor, SingletonError);
@@ -41,7 +41,9 @@ describe("JcadContextManager", ()=> {
 
   describe("#getInstance()", ()=> {
     it("should return the reference to the singleton instance", function() {
-      expect(JcadContextManager.getInstance()).to.be.instanceOf(JcadContextManager);
+      expect(
+        JcadContextManager.getInstance()
+      ).to.be.instanceOf(JcadContextManager);
     });
   });
 
@@ -56,7 +58,7 @@ describe("JcadContextManager", ()=> {
   describe("#getId()", ()=> {
     it("should always return a valid GUID", function() {
       this.retries(10);
-      let guid:string = JcadContextManager.getInstance().getId();
+      const guid:string = JcadContextManager.getInstance().getId();
       expect(guid).to.be.a("string");
       expect(GuidTestUtils.GUID_VALIDATOR.test(guid)).to.equal(true);
     });
@@ -64,8 +66,8 @@ describe("JcadContextManager", ()=> {
 
   describe("#getContext()", ()=> {
     it("should retrieve the same value as passed to the setContext() method", function() {
-      let manager:JcadContextManager = JcadContextManager.getInstance();
-      let context:JcadContext = utils.buildContext();
+      const manager:JcadContextManager = JcadContextManager.getInstance();
+      const context:JcadContext = utils.buildContext();
       manager.addContext(utils.JCAD_REFERENCE, context);
       expect(manager.getContext(utils.JCAD_REFERENCE)).to.equal(context);
     });
@@ -73,15 +75,15 @@ describe("JcadContextManager", ()=> {
   
   describe("#hasContext()", ()=> {
     it("should return true when context is registered", function() {
-      let manager:JcadContextManager = JcadContextManager.getInstance();
+      const manager:JcadContextManager = JcadContextManager.getInstance();
       expect(manager.hasContext(utils.JCAD_REFERENCE)).to.equal(true);
     });
   });
 
   describe("#removeContext()", ()=> {
     it("should remove already registered contexts", function() {
-      let manager:JcadContextManager = JcadContextManager.getInstance();
-      let context:JcadContext = manager.removeContext(utils.JCAD_REFERENCE);
+      const manager:JcadContextManager = JcadContextManager.getInstance();
+      const context:JcadContext = manager.removeContext(utils.JCAD_REFERENCE);
       expect(context).not.to.be.null;
       expect(manager.getContext(utils.JCAD_REFERENCE)).to.equal(undefined);
     });
@@ -89,16 +91,16 @@ describe("JcadContextManager", ()=> {
 
   describe("#hasContext()", ()=> {
     it("should return false when context is not registered", function() {
-      let manager:JcadContextManager = JcadContextManager.getInstance();
+      const manager:JcadContextManager = JcadContextManager.getInstance();
       expect(manager.hasContext(utils.JCAD_REFERENCE)).to.equal(false);
     });
   });
 
   describe("#addContext()", ()=> {
     it("should throw an error when a context reference already exixts", function() {
-      let manager:JcadContextManager = JcadContextManager.getInstance();
-      let context:JcadContext = utils.buildContext();
-      let addExistingContextReference:Function = function():void {
+      const manager:JcadContextManager = JcadContextManager.getInstance();
+      const context:JcadContext = utils.buildContext();
+      const addExistingContextReference:Function = function():void {
         manager.addContext(utils.JCAD_REFERENCE, null);
       };
       manager.addContext(utils.JCAD_REFERENCE, context);

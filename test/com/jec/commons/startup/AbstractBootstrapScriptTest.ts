@@ -29,22 +29,22 @@ describe("AbstractBootstrapScript", ()=> {
 
   describe("#getPriority()", ()=> {
 
-    let script:AbstractBootstrapScript = new BootstrapScriptImpl();
+    const script:AbstractBootstrapScript = new BootstrapScriptImpl();
 
     it("should return 'null' as default value", function() {
       expect(script.getPriority()).to.be.null;
     });
 
     it("should return the same value as passed to the setter method", function() {
-      let priority:number = 3;
+      const priority:number = 3;
       script.setPriority(priority);
       expect(script.getPriority()).to.equal(priority);
     });
   });
   
   describe("#run()", ()=> {
-    let script:AbstractBootstrapScript = new BootstrapScriptImpl();
-    let doRun:Function = function():void {
+    const script:AbstractBootstrapScript = new BootstrapScriptImpl();
+    const doRun:Function = function():void {
       script.run(null);
     };
     it("should throw a BootstrapError", function() {

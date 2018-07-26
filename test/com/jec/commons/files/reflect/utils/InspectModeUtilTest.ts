@@ -47,7 +47,7 @@ describe("InspectModeUtil", ()=> {
   
   describe("#stringToInspectMode()", ()=> {
 
-    let util:InspectModeUtil = new InspectModeUtil();
+    const util:InspectModeUtil = new InspectModeUtil();
 
     it("stringToInspectMode(InspectModeUtil.NONE) should return InspectMode.NONE", function() {
       expect(util.stringToInspectMode(InspectModeUtil.NONE)).to.equal(InspectMode.NONE);
@@ -63,7 +63,8 @@ describe("InspectModeUtil", ()=> {
   });
 
   describe("#inspectModeToString()", ()=> {
-    let util:InspectModeUtil = new InspectModeUtil();
+    
+    const util:InspectModeUtil = new InspectModeUtil();
 
     it("inspectModeToString(InspectMode.NONE) should return InspectModeUtil.NONE", function() {
       expect(util.inspectModeToString(InspectMode.NONE)).to.equal(InspectModeUtil.NONE);

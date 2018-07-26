@@ -28,14 +28,14 @@ describe("JcadContextError", ()=> {
 
   describe("instanceOf(Error)", ()=> {
     it("JsonLoaderError should extend Error", function() {
-      let error:JcadContextError = new JcadContextError(utils.ERROR_MESSAGE);
+      const error:JcadContextError = new JcadContextError(utils.ERROR_MESSAGE);
       expect(error).to.be.instanceOf(Error);
     });
   });
 
   describe("#message", ()=> {
     it("should return the same message as passed in the class constructor", function() {
-      let error:JcadContextError = new JcadContextError(utils.ERROR_MESSAGE);
+      const error:JcadContextError = new JcadContextError(utils.ERROR_MESSAGE);
       expect(error.message).to.have.string(utils.ERROR_MESSAGE);
     });
   });

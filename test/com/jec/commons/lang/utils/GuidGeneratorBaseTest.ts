@@ -29,15 +29,15 @@ describe("GuidGenerator", ()=> {
 
   describe("#generate", ()=> {
     it("should return a valid GUID V4", function() {
-      let generator:GuidGenerator = new GuidGeneratorBase();
-      let guid:string = generator.generate();
+      const generator:GuidGenerator = new GuidGeneratorBase();
+      const guid:string = generator.generate();
       expect(GuidTestUtils.GUID_VALIDATOR.test(guid)).to.equal(true);
     });
 
     it("should a unique GUID each time", function() {
-      let generator:GuidGenerator = new GuidGeneratorBase();
-      let guid1:string = generator.generate();
-      let guid2:string = generator.generate();
+      const generator:GuidGenerator = new GuidGeneratorBase();
+      const guid1:string = generator.generate();
+      const guid2:string = generator.generate();
       expect(guid1).to.not.equal(guid2);
     });
   });

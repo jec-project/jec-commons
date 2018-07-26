@@ -26,17 +26,17 @@ import * as utils from "../../../../../../utils/test-utils/utilities/AbstractMem
 // Test:
 describe("AbstractMember", ()=> {
 
-    let member:AbstractMember = utils.buildAbstractMember();
+  const member:AbstractMember = utils.buildAbstractMember();
 
-    it("#getName() should retrieve the same value as passed to the constructor parameter", function() {
-      expect(member.getName()).to.equal(utils.NAME);
-    });
-    
-    it("#getType() should retrieve the same value as passed to the constructor parameter", function() {
-      expect(member.getType()).to.equal(utils.TYPE);
-    });
-    
-    it("#getDeclaringClass() should retrieve the same value as passed to the constructor parameter", function() {
-      expect(member.getDeclaringClass()).to.equal(utils.CLASS);
-    });
+  it("#getName() should retrieve the same value as passed to the constructor parameter", function() {
+    expect(member.getName()).to.equal(utils.NAME);
+  });
+  
+  it("#getType() should retrieve the same value as passed to the constructor parameter", function() {
+    expect(member.getType()).to.equal(utils.TYPE);
+  });
+  
+  it("#getDeclaringClass() should retrieve the same value as passed to the constructor parameter", function() {
+    expect(member.getDeclaringClass()).to.equal(utils.CLASS);
+  });
 });

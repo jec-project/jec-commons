@@ -25,15 +25,15 @@ describe("JecConfigError", ()=> {
 
   describe("instanceOf(Error)", ()=> {
     it("JecConfigError should extend Error", function() {
-      let error:JecConfigError = new JecConfigError(null);
+      const error:JecConfigError = new JecConfigError(null);
       expect(error).to.be.instanceOf(Error);
     });
   });
 
   describe("#message", ()=> {
     it("should return the same message as passed to the constructor function", function() {
-      let message:string = "foo bar";
-      let error:JecConfigError = new JecConfigError(message);
+      const message:string = "foo bar";
+      const error:JecConfigError = new JecConfigError(message);
       expect(error.message).to.equal(message);
     });
   });

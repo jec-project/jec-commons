@@ -27,14 +27,14 @@ import * as utils from "../../../../../../utils/test-utils/utilities/AbstractDec
 describe("AbstractDecoratorConnector", ()=> {
 
   describe("#getJcadReference()", ()=> {
-    let connector:AbstractDecoratorConnector = utils.buildAbstractDecoratorConnector();
+    const connector:AbstractDecoratorConnector = utils.buildAbstractDecoratorConnector();
     it("should retrieve the same value as passed to the constructor parameter", function() {
       expect(connector.getJcadReference()).to.equal(utils.JCAD_REFERENCE);
     });
   });
   
   describe("#getDecorator()", ()=> {
-    let connector:AbstractDecoratorConnector = utils.buildAbstractDecoratorConnector();
+    const connector:AbstractDecoratorConnector = utils.buildAbstractDecoratorConnector();
     it("should retrieve the same value as passed to the constructor parameter", function() {
       expect(connector.getDecorator()).to.equal(utils.DECORATOR);
     });

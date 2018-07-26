@@ -1,11 +1,25 @@
 # JEC Commons Project: Update Release Notes
 
-<a name="jec-commons-node-1.0.9"></a>
-## **1.0.9** (2018-04-07)
+<a name="jec-commons-node-1.2.0"></a>
+## **1.2.0** (2018-07-26)
+
+### Bug Fixes
+
+- Fixing test cases issues due to dependencies upgrade
+
+### Features
+
+- Updating all dependencies
+- Test cases improvements
+
+<a name="jec-commons-node-1.1.9"></a>
+## **1.1.9** (2018-04-07)
 
 ### Bug Fixes
 
 - **ClassLoaderContext**: fixing paths structure by replacing double slash patterns (`\\`) by single slash patterns (`\`)
+
+### Features
 
 <a name="jec-commons-1.1.8"></a>
 ## **1.1.8** (2017-12-26)

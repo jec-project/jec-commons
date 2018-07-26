@@ -38,7 +38,7 @@ describe("Properties", ()=> {
   
   describe("new Property()", ()=> {
     it("the properties names array should be empty", function() {
-      let propsNames:string[] = props.propertyNames();
+      const propsNames:string[] = props.propertyNames();
       expect(propsNames.length).to.equal(0);
     });
   });
@@ -59,7 +59,7 @@ describe("Properties", ()=> {
   describe("#propertiesNames()", ()=> {
     it("a Properties instance should expose the registered key names", function() {
       props.setProperty(utils.KEY, utils.VALUE);
-      let propsNames:string[] = props.propertyNames();
+      const propsNames:string[] = props.propertyNames();
       expect(propsNames.length).to.equal(1);
       expect(propsNames).to.include(utils.KEY);
     });
@@ -68,7 +68,7 @@ describe("Properties", ()=> {
   describe("new Property(properties:Property)", ()=> {
     it("a Properties instance should refer default properties", function() {
       props.setProperty(utils.KEY, utils.VALUE);
-      let proxy:Properties = new Properties(props);
+      const proxy:Properties = new Properties(props);
       expect(proxy.getProperty(utils.KEY)).to.equal(utils.VALUE);
     });
   });

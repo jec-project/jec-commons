@@ -23,7 +23,7 @@ import {ImportRef} from "../../../../../../../src/com/jec/commons/files/reflect/
 // Test:
 describe("PathStats", ()=> {
 
-  let ref:ImportRef = new ImportRef();
+  const ref:ImportRef = new ImportRef();
 
   it("should have a 'ref' property", function() {
     expect(ref).to.have.property("ref", null);

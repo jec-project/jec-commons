@@ -26,7 +26,7 @@ import * as utils from "../../../../../../../utils/test-utils/utilities/PathStat
 // Test:
 describe("PathStats", ()=> {
 
-  let stats:PathStats = new PathStats(utils.VALID_PATH);
+  const stats:PathStats = new PathStats(utils.VALID_PATH);
 
   it("should have a 'directoriesNum' property", function() {
     expect(stats).to.have.property("directoriesNum", 0);

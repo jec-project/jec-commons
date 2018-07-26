@@ -16,7 +16,6 @@
 
 import "mocha";
 import * as chai from "chai";
-import * as spies from "chai-spies";
 import {LogLevel} from "../../../../../src/com/jec/commons/logging/LogLevel";
 
 // Class to test:
@@ -26,14 +25,13 @@ import {AbstractLogger} from "../../../../../src/com/jec/commons/logging/Abstrac
 import * as utils from "../../../../../utils/test-utils/utilities/AbstractLoggerTestUtils";
 
 // Chai declarations:
-const expect = chai.expect;
-chai.use(spies);
+const expect: any = chai.expect;
 
 // Test:
 describe("AbstractLogger", ()=> {
 
   describe("#getLogLevel()", ()=> {
-    let logger:AbstractLogger = utils.buildAbstractLogger();
+    const logger:AbstractLogger = utils.buildAbstractLogger();
     it("should retrieve the same value as passed to the setLogLevel() method", function() {
       logger.setLogLevel(LogLevel.ERROR);
       expect(logger.getLogLevel()).to.equal(LogLevel.ERROR);
@@ -41,7 +39,7 @@ describe("AbstractLogger", ()=> {
   });
   
   describe("#getName()", ()=> {
-    let logger:AbstractLogger = utils.buildAbstractLogger();
+    const logger:AbstractLogger = utils.buildAbstractLogger();
     it("should retrieve the same value as passed to the setName() method", function() {
       logger.setName(utils.NAME);
       expect(logger.getName()).to.equal(utils.NAME);
@@ -49,56 +47,49 @@ describe("AbstractLogger", ()=> {
   });
 
   describe("#debug()", ()=> {
-    let logger:AbstractLogger = utils.buildAbstractLogger();
-    it("should be called with the specified parameter", function() {
-      let spy:any = chai.spy.on(logger, "debug");
-      logger.debug(utils.MESSAGE);
-      expect(spy).to.have.been.called.with(utils.MESSAGE);
+    const logger:AbstractLogger = utils.buildAbstractLogger();
+    it("should be defined in the abstract class", function() {
+      expect(logger).to.have.property("debug");
+      expect(logger.debug).to.be.a("function");
     });
   });
   
   describe("#error()", ()=> {
-    let logger:AbstractLogger = utils.buildAbstractLogger();
-    it("should be called with the specified parameter", function() {
-      let spy:any = chai.spy.on(logger, "error");
-      logger.error(utils.MESSAGE);
-      expect(spy).to.have.been.called.with(utils.MESSAGE);
+    const logger:AbstractLogger = utils.buildAbstractLogger();
+    it("should be defined in the abstract class", function() {
+      expect(logger).to.have.property("error");
+      expect(logger.error).to.be.a("function");
     });
   });
   
   describe("#info()", ()=> {
-    let logger:AbstractLogger = utils.buildAbstractLogger();
-    it("should be called with the specified parameter", function() {
-      let spy:any = chai.spy.on(logger, "info");
-      logger.info(utils.MESSAGE);
-      expect(spy).to.have.been.called.with(utils.MESSAGE);
+    const logger:AbstractLogger = utils.buildAbstractLogger();
+    it("should be defined in the abstract class", function() {
+      expect(logger).to.have.property("info");
+      expect(logger.info).to.be.a("function");
     });
   });
   
   describe("#trace()", ()=> {
-    let logger:AbstractLogger = utils.buildAbstractLogger();
-    it("should be called with the specified parameter", function() {
-      let spy:any = chai.spy.on(logger, "trace");
-      logger.trace(utils.MESSAGE);
-      expect(spy).to.have.been.called.with(utils.MESSAGE);
+    const logger:AbstractLogger = utils.buildAbstractLogger();
+    it("should be defined in the abstract class", function() {
+      expect(logger).to.have.property("trace");
+      expect(logger.trace).to.be.a("function");
     });
   });
   
   describe("#warn()", ()=> {
-    let logger:AbstractLogger = utils.buildAbstractLogger();
-    it("should be called with the specified parameter", function() {
-      let spy:any = chai.spy.on(logger, "warn");
-      logger.warn(utils.MESSAGE);
-      expect(spy).to.have.been.called.with(utils.MESSAGE);
+    const logger:AbstractLogger = utils.buildAbstractLogger();
+    it("should be defined in the abstract class", function() {
+      expect(logger).to.have.property("warn");
+      expect(logger.warn).to.be.a("function");
     });
   });
   
   describe("#always()", ()=> {
-    let logger:AbstractLogger = utils.buildAbstractLogger();
-    it("should be called with the specified parameter", function() {
-      let spy:any = chai.spy.on(logger, "always");
-      logger.always(utils.MESSAGE);
-      expect(spy).to.have.been.called.with(utils.MESSAGE);
+    const logger:AbstractLogger = utils.buildAbstractLogger();
+    it("should be defined in the abstract class", function() {
+      expect(logger).to.have.property("always");
     });
   });
 });

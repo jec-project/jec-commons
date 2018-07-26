@@ -16,7 +16,6 @@
 
 import "mocha";
 import * as chai from "chai";
-import * as spies from "chai-spies";
 import {Logger} from "../../../../../../src/com/jec/commons/logging/Logger";
 import {ConsoleLogger} from "../../../../../../src/com/jec/commons/logging/ConsoleLogger";
 
@@ -28,33 +27,31 @@ import * as utils from "../../../../../../utils/test-utils/utilities/AbstractLog
 
 // Chai declarations:
 const expect = chai.expect;
-chai.use(spies);
 
 // Test:
 describe("AbstractLoggerProxy", ()=> {
 
   describe("#getLogContext()", ()=> {
-    let loggerProxy:AbstractLoggerProxy = utils.buildAbstractLoggerProxy();
     it("should return the specified context", function() {
+      const loggerProxy:AbstractLoggerProxy = utils.buildAbstractLoggerProxy();
       expect(loggerProxy.getLogContext()).to.equal(utils.LOG_CONTEXT);
     });
   });
   
   describe("#getLogger()", ()=> {
-    let loggerProxy:AbstractLoggerProxy = utils.buildAbstractLoggerProxy();
-    let logger:Logger = new ConsoleLogger();
     it("should retrieve the same value as passed to the setLogger() method", function() {
+      const loggerProxy:AbstractLoggerProxy = utils.buildAbstractLoggerProxy();
+      const logger:Logger = new ConsoleLogger();
       loggerProxy.setLogger(logger);
       expect(loggerProxy.getLogger()).to.equal(logger);
     });
   });
   
   describe("#log()", ()=> {
-    let loggerProxy:AbstractLoggerProxy = utils.buildAbstractLoggerProxy();
-    it("should be called with the specified parameters", function() {
-      let spy:any = chai.spy.on(loggerProxy, "log");
-      loggerProxy.log(utils.MESSAGE, null);
-      expect(spy).to.have.been.called.with(utils.MESSAGE, null);
+    it("should be defined in the abstract class", function() {
+      const loggerProxy:AbstractLoggerProxy = utils.buildAbstractLoggerProxy();
+      expect(loggerProxy).to.have.property("log");
+      expect(loggerProxy.log).to.be.a("function");
     });
   });
 });

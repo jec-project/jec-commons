@@ -28,14 +28,14 @@ describe("JsonLoaderError", ()=> {
 
   describe("instanceOf(Error)", ()=> {
     it("JsonLoaderError should extend Error", function() {
-      let error:JsonLoaderError = new JsonLoaderError(utils.ERROR_MSG);
+      const error:JsonLoaderError = new JsonLoaderError(utils.ERROR_MSG);
       expect(error).to.be.instanceOf(Error);
     });
   });
 
   describe("#message", ()=> {
     it("should return the same message as passed in the class constructor", function() {
-      let error:JsonLoaderError = new JsonLoaderError(utils.ERROR_MSG);
+      const error:JsonLoaderError = new JsonLoaderError(utils.ERROR_MSG);
       expect(error.message).to.have.string(utils.ERROR_MSG);
     });
   });

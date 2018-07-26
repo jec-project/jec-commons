@@ -29,24 +29,24 @@ describe("DefaultClassLoader", ()=> {
 
   describe("#loadClass()", ()=> {
     it("should return a valid class constructor", function() {
-      let loader:ClassLoader = new DefaultClassLoader();
-      let Contructor:any = loader.loadClass(utils.VALID_CLASS);
-      let obj:any = new Contructor();
+      const loader:ClassLoader = new DefaultClassLoader();
+      const Contructor:any = loader.loadClass(utils.VALID_CLASS);
+      const obj:any = new Contructor();
       expect(obj).not.to.be.null;
       expect(obj).to.be.an('object');
     });
 
     it("should throw an error when the path to class is not valid", function() {
-      let loader:ClassLoader = new DefaultClassLoader();
-      let loadInvalidClassPath:Function = function():void {
+      const loader:ClassLoader = new DefaultClassLoader();
+      const loadInvalidClassPath:Function = function():void {
         loader.loadClass(utils.INVALID_CLASS_PATH);
       };
       assert.throws(loadInvalidClassPath, Error);
     });
 
     it("should throw a TypeError when the loaded file is not a class", function() {
-      let loader:ClassLoader = new DefaultClassLoader();
-      let Contructor:any = loader.loadClass(utils.INVALID_CLASS_FILE);
+      const loader:ClassLoader = new DefaultClassLoader();
+      const Contructor:any = loader.loadClass(utils.INVALID_CLASS_FILE);
       try {
         new Contructor();
         assert.fail("ok", "ko", "Exception not thrown");

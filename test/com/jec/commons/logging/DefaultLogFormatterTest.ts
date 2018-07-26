@@ -31,9 +31,9 @@ describe("DefaultLogFormatter", ()=> {
 
   describe("#format()", ()=> {
     it("should return a well formatted log message", function() {
-      let logLevelUtil:LogLevelUtil = new LogLevelUtil();
-      let level:LogLevelString = logLevelUtil.logLevelToString(LogLevel.INFO);
-      let formatter:DefaultLogFormatter = new DefaultLogFormatter();
+      const logLevelUtil:LogLevelUtil = new LogLevelUtil();
+      const level:LogLevelString = logLevelUtil.logLevelToString(LogLevel.INFO);
+      const formatter:DefaultLogFormatter = new DefaultLogFormatter();
       formatter.timeFormat = utils.TIME_FORMAT;
       expect(
         formatter.format(level, utils.MESSAGE, false, utils.CONTEXT)

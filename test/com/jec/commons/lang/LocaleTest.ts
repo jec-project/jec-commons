@@ -29,12 +29,12 @@ describe("Locale", ()=> {
   describe("#getLanguage()", ()=> {
 
     it("should return 'null' by default", function() {
-      let locale:Locale = new Locale();
+      const locale:Locale = new Locale();
       expect(locale.getLanguage()).to.be.null;
     });
   
     it("should return the value defined by the #setLanguage() method", function() {
-      let locale:Locale = new Locale();
+      const locale:Locale = new Locale();
       locale.setLanguage(utils.LANGUAGE);
       expect(locale.getLanguage()).to.equal(utils.LANGUAGE);
     });
@@ -43,12 +43,12 @@ describe("Locale", ()=> {
   describe("#getRegion()", ()=> {
 
     it("should return 'null' by default", function() {
-      let locale:Locale = new Locale();
+      const locale:Locale = new Locale();
       expect(locale.getRegion()).to.be.null;
     });
 
     it("should return the value defined by the #setRegion() method", function() {
-      let locale:Locale = new Locale();
+      const locale:Locale = new Locale();
       locale.setRegion(utils.REGION);
       expect(locale.getRegion()).to.equal(utils.REGION);
     });
@@ -57,12 +57,12 @@ describe("Locale", ()=> {
   describe("#getScript()", ()=> {
 
     it("should return 'null' by default", function() {
-      let locale:Locale = new Locale();
+      const locale:Locale = new Locale();
       expect(locale.getScript()).to.be.null;
     });
 
     it("should return the value defined by the #setScript() method", function() {
-      let locale:Locale = new Locale();
+      const locale:Locale = new Locale();
       locale.setScript(utils.SCRIPT);
       expect(locale.getScript()).to.equal(utils.SCRIPT);
     });

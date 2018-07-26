@@ -26,59 +26,58 @@ describe("ScheduledParamsValidatorTest", ()=> {
 
   describe("#validate", ()=> {
     it("Valid CRON should be validated", function() {
-      expect(
+      const doValidate: Function = function():void {
         ScheduledParamsValidator.validate({
           cron: "0 0 * * *"
-        })
-      ).to.be.OK;
+        });
+      };
+      expect(doValidate).to.not.throw();
     });
 
     it("Valid fixed delay should be validated", function() {
-      expect(
-        ScheduledParamsValidator.validate({
-          fixedDelay: 300
-        })
-      ).to.be.OK;
+      const doValidate: Function = function():void {
+        ScheduledParamsValidator.validate({ fixedDelay: 300 });
+      };
+      expect(doValidate).to.not.throw();
     });
     
     it("Valid fixed rate should be validated", function() {
-      expect(
-        ScheduledParamsValidator.validate({
-          fixedRate: 300
-        })
-      ).to.be.OK;
+      const doValidate: Function = function():void {
+        ScheduledParamsValidator.validate({ fixedRate: 300 });
+      };
+      expect(doValidate).to.not.throw();
     });
 
     it("Empty CRON should not be validated", function() {
-      let invalidParams:Function = function():void {
+      const invalidParams:Function = function():void {
         ScheduledParamsValidator.validate( { cron: "" } );
       };
       expect(invalidParams).to.be.throw(SchedulingError);
     });
 
     it("Negative fixed delay should not be validated", function() {
-      let invalidParams:Function = function():void {
+      const invalidParams:Function = function():void {
         ScheduledParamsValidator.validate( { fixedDelay: -1 } );
       };
       expect(invalidParams).to.be.throw(SchedulingError);
     });
     
     it("Zero fixed delay should not be validated", function() {
-      let invalidParams:Function = function():void {
+      const invalidParams:Function = function():void {
         ScheduledParamsValidator.validate( { fixedDelay: 0 } );
       };
       expect(invalidParams).to.be.throw(SchedulingError);
     });
     
     it("Negative rate delay should not be validated", function() {
-      let invalidParams:Function = function():void {
+      const invalidParams:Function = function():void {
         ScheduledParamsValidator.validate( { fixedRate: -1 } );
       };
       expect(invalidParams).to.be.throw(SchedulingError);
     });
     
     it("Zero fixed rate should not be validated", function() {
-      let invalidParams:Function = function():void {
+      const invalidParams:Function = function():void {
         ScheduledParamsValidator.validate( { fixedRate: 0 } );
       };
       expect(invalidParams).to.be.throw(SchedulingError);

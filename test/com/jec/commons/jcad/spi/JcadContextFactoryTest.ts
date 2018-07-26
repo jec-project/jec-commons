@@ -27,8 +27,8 @@ describe("JcadContextFactory", ()=> {
 
   describe("#create()", ()=> {
     it("should return a new JcadContext instance", function() {
-      let factory:JcadContextFactory = new JcadContextFactory();
-      let context:JcadContext = factory.create();
+      const factory:JcadContextFactory = new JcadContextFactory();
+      const context:JcadContext = factory.create();
       // We cannot test interfaces inheritance, so we check whether it is the
       // default implementation, or not:
       expect(context).to.be.instanceOf(JcadContextImpl); 

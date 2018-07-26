@@ -28,25 +28,28 @@ describe("JcadValidator", ()=> {
   describe("#validateContext()", ()=> {
 
     it("should throw a JcadContextError when the specified context parameter is 'null'", function() {
-      let validator:JcadValidator = new JcadValidator();
-      let doValidation:Function = function():void {
+      const validator:JcadValidator = new JcadValidator();
+      const doValidation:Function = function():void {
         validator.validateContext(null, "JcadContext");
       };
       expect(doValidation).to.throw(JcadContextError);
     });
 
     it("should throw a JcadContextError when the specified context parameter is 'undefined'", function() {
-      let validator:JcadValidator = new JcadValidator();
-      let doValidation:Function = function():void {
+      const validator:JcadValidator = new JcadValidator();
+      const doValidation:Function = function():void {
         validator.validateContext(undefined, "JcadContext");
       };
       expect(doValidation).to.throw(JcadContextError);
     });
     
     it("should do nothing when the context parameter is a valid context", function() {
-      let validator:JcadValidator = new JcadValidator();
-      let context:JcadContext = ({} as JcadContext);
-      expect(validator.validateContext(context, "JcadContext")).to.be.OK;
+      const validator:JcadValidator = new JcadValidator();
+      const context:JcadContext = ({} as JcadContext);
+      const doValidation:Function = function():void {
+        validator.validateContext(context, "JcadContext")
+      };
+      expect(doValidation).to.not.throw();
     });
   });
 });

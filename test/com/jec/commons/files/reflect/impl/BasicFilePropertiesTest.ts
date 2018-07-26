@@ -23,7 +23,7 @@ import {BasicFileProperties} from "../../../../../../../src/com/jec/commons/file
 // Test:
 describe("BasicFileProperties", ()=> {
 
-  let fileProps:BasicFileProperties = new BasicFileProperties();
+  const fileProps:BasicFileProperties = new BasicFileProperties();
 
   it("should have a 'name' property", function() {
     expect(fileProps).to.have.property("name", null);

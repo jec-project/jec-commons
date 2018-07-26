@@ -26,8 +26,8 @@ describe("JcadContextImpl", ()=> {
 
   describe("#getId()", ()=> {
     it("should return a valid GUID V4", function() {
-      let ctx:JcadContextImpl = new JcadContextImpl();
-      let id:string = ctx.getId();
+      const ctx:JcadContextImpl = new JcadContextImpl();
+      const id:string = ctx.getId();
       expect(GuidTestUtils.GUID_VALIDATOR.test(id)).to.equal(true);
     });
   });

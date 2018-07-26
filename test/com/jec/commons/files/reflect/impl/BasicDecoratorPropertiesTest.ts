@@ -23,7 +23,7 @@ import {BasicDecoratorProperties} from "../../../../../../../src/com/jec/commons
 // Test:
 describe("DecoratorProperties", ()=> {
 
-  let decoratorProps:BasicDecoratorProperties = new BasicDecoratorProperties();
+  const decoratorProps:BasicDecoratorProperties = new BasicDecoratorProperties();
 
   it("should have a 'name' property", function() {
     expect(decoratorProps).to.have.property("name", null);

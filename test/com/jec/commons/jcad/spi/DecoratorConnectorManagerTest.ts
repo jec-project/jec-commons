@@ -32,7 +32,7 @@ describe("DecoratorConnectorManager", ()=> {
 
   describe("#constructor()", ()=> {
     it("should throw a SingletonError", function() {
-      let buildFromConstructor:Function = function():void {
+      const buildFromConstructor:Function = function():void {
         new DecoratorConnectorManager();
       };
       assert.throws(buildFromConstructor, SingletonError);
@@ -58,7 +58,7 @@ describe("DecoratorConnectorManager", ()=> {
   describe("#getId()", ()=> {
     it("should always return a valid GUID", function() {
       this.retries(10);
-      let guid:string = DecoratorConnectorManager.getInstance().getId();
+      const guid:string = DecoratorConnectorManager.getInstance().getId();
       expect(guid).to.be.a("string");
       expect(GuidTestUtils.GUID_VALIDATOR.test(guid)).to.equal(true);
     });
@@ -66,50 +66,65 @@ describe("DecoratorConnectorManager", ()=> {
 
   describe("#getConnector()", ()=> {
     it("should retrieve the same value as passed to the addConnector() method", function() {
-      let manager:DecoratorConnectorManager = DecoratorConnectorManager.getInstance();
-      let connector:DecoratorConnector = utils.buildDecoratorConnector();
+      const manager:DecoratorConnectorManager =
+                                        DecoratorConnectorManager.getInstance();
+      const connector:DecoratorConnector = utils.buildDecoratorConnector();
       manager.addConnector(connector, utils.CONTEXT);
-      expect(manager.getConnector(utils.JCAD_REFERENCE, utils.CONTEXT)).to.equal(connector);
+      expect(
+        manager.getConnector(utils.JCAD_REFERENCE, utils.CONTEXT)
+      ).to.equal(connector);
     });
   });
   
   describe("#hasConnector()", ()=> {
     it("should return true when connector is registered", function() {
-      let manager:DecoratorConnectorManager = DecoratorConnectorManager.getInstance();
-      expect(manager.hasConnector(utils.JCAD_REFERENCE, utils.CONTEXT)).to.equal(true);
+      const manager:DecoratorConnectorManager =
+                                        DecoratorConnectorManager.getInstance();
+      expect(
+        manager.hasConnector(utils.JCAD_REFERENCE, utils.CONTEXT)
+      ).to.equal(true);
     });
   });
 
   describe("#removeConnector()", ()=> {
     it("should remove already registered connectors", function() {
-      let manager:DecoratorConnectorManager = DecoratorConnectorManager.getInstance();
-      let result:boolean = manager.removeConnector(utils.JCAD_REFERENCE, utils.CONTEXT);
+      const manager:DecoratorConnectorManager =
+                                        DecoratorConnectorManager.getInstance();
+      const result:boolean =
+                   manager.removeConnector(utils.JCAD_REFERENCE, utils.CONTEXT);
       expect(result).to.equal(true);
-      expect(manager.getConnector(utils.JCAD_REFERENCE, utils.CONTEXT)).to.equal(undefined);
+      expect(
+        manager.getConnector(utils.JCAD_REFERENCE, utils.CONTEXT)
+      ).to.equal(undefined);
     });
   });
 
   describe("#hasConnector()", ()=> {
     it("should return false when connector is not registered", function() {
-      let manager:DecoratorConnectorManager = DecoratorConnectorManager.getInstance();
-      expect(manager.hasConnector(utils.JCAD_REFERENCE, utils.CONTEXT)).to.equal(false);
+      const manager:DecoratorConnectorManager = 
+                                        DecoratorConnectorManager.getInstance();
+      expect(
+        manager.hasConnector(utils.JCAD_REFERENCE, utils.CONTEXT)
+      ).to.equal(false);
     });
   });
 
   describe("#addConnector(null, null)", ()=> {
 
     it("should throw a JcadContextError when the specified 'connector' parameter is 'null'", function() {
-      let manager:DecoratorConnectorManager = DecoratorConnectorManager.getInstance();
-      let doAddConnector:Function = function():void {
+      const manager:DecoratorConnectorManager =
+                                        DecoratorConnectorManager.getInstance();
+      const doAddConnector:Function = function():void {
         manager.addConnector(null, null);
       };
       expect(doAddConnector).to.throw(JcadContextError);
     });
 
     it("should throw a JcadContextError when the specified 'context' parameter is 'null'", function() {
-      let manager:DecoratorConnectorManager = DecoratorConnectorManager.getInstance();
-      let connector:DecoratorConnector = utils.buildDecoratorConnector();
-      let doAddConnector:Function = function():void {
+      const manager:DecoratorConnectorManager =
+                                        DecoratorConnectorManager.getInstance();
+      const connector:DecoratorConnector = utils.buildDecoratorConnector();
+      const doAddConnector:Function = function():void {
         manager.addConnector(connector, null);
       };
       expect(doAddConnector).to.throw(JcadContextError);
@@ -118,8 +133,9 @@ describe("DecoratorConnectorManager", ()=> {
 
   describe("#getConnector(any, null)", ()=> {
     it("should throw a JcadContextError when the specified 'context' parameter is 'null'", function() {
-      let manager:DecoratorConnectorManager = DecoratorConnectorManager.getInstance();
-      let doGetConnector:Function = function():void {
+      const manager:DecoratorConnectorManager =
+                                        DecoratorConnectorManager.getInstance();
+      const doGetConnector:Function = function():void {
         manager.getConnector("anyRef", null);
       };
       expect(doGetConnector).to.throw(JcadContextError);
@@ -128,8 +144,9 @@ describe("DecoratorConnectorManager", ()=> {
   
   describe("#hasConnector(any, null)", ()=> {
     it("should throw a JcadContextError when the specified 'context' parameter is 'null'", function() {
-      let manager:DecoratorConnectorManager = DecoratorConnectorManager.getInstance();
-      let doHasConnector:Function = function():void {
+      const manager:DecoratorConnectorManager =
+                                        DecoratorConnectorManager.getInstance();
+      const doHasConnector:Function = function():void {
         manager.hasConnector("anyRef", null);
       };
       expect(doHasConnector).to.throw(JcadContextError);
@@ -138,8 +155,9 @@ describe("DecoratorConnectorManager", ()=> {
   
   describe("#getDecorator(any, null)", ()=> {
     it("should throw a JcadContextError when the specified 'context' parameter is 'null'", function() {
-      let manager:DecoratorConnectorManager = DecoratorConnectorManager.getInstance();
-      let doGetConnector:Function = function():void {
+      const manager:DecoratorConnectorManager =
+                                        DecoratorConnectorManager.getInstance();
+      const doGetConnector:Function = function():void {
         manager.getDecorator("anyRef", null);
       };
       expect(doGetConnector).to.throw(JcadContextError);
@@ -148,8 +166,9 @@ describe("DecoratorConnectorManager", ()=> {
   
   describe("#removeConnector(any, null)", ()=> {
     it("should throw a JcadContextError when the specified 'context' parameter is 'null'", function() {
-      let manager:DecoratorConnectorManager = DecoratorConnectorManager.getInstance();
-      let doRemoveConnector:Function = function():void {
+      const manager:DecoratorConnectorManager =
+                                        DecoratorConnectorManager.getInstance();
+      const doRemoveConnector:Function = function():void {
         manager.removeConnector("anyRef", null);
       };
       expect(doRemoveConnector).to.throw(JcadContextError);

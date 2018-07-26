@@ -28,17 +28,17 @@ import * as utils from "../../../../../../utils/test-utils/utilities/FieldTestUt
 // Test:
 describe("Field", ()=> {
 
-    let member:Member = utils.buildField();
+  const member:Member = utils.buildField();
 
-    it("#getName() should retrieve the same value as passed to the constructor parameter", function() {
-      expect(member.getName()).to.equal(utils.FIELD_NAME);
-    });
-    
-    it("#getType() should return 'MemberType.FIELD'", function() {
-      expect(member.getType()).to.equal(MemberType.FIELD);
-    });
-    
-    it("#getDeclaringClass() should retrieve the same value as passed to the constructor parameter", function() {
-      expect(member.getDeclaringClass()).to.equal(utils.FieldMemberTest);
-    });
+  it("#getName() should retrieve the same value as passed to the constructor parameter", function() {
+    expect(member.getName()).to.equal(utils.FIELD_NAME);
+  });
+  
+  it("#getType() should return 'MemberType.FIELD'", function() {
+    expect(member.getType()).to.equal(MemberType.FIELD);
+  });
+  
+  it("#getDeclaringClass() should retrieve the same value as passed to the constructor parameter", function() {
+    expect(member.getDeclaringClass()).to.equal(utils.FieldMemberTest);
+  });
 });

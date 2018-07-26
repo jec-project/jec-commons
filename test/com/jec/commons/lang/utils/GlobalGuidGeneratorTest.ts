@@ -31,34 +31,34 @@ describe("GlobalGuidGenerator", ()=> {
   describe("#singleton()", ()=> {
 
     it("should throw a singleton error when calling the constructor function", function() {
-      let buildInstance:Function = function():void {
+      const buildInstance:Function = function():void {
         new GlobalGuidGenerator();
       };
       expect(buildInstance).to.throw(SingletonError);
     });
     
     it("should return a GlobalGuidGenerator instance", function() {
-      let generator:GuidGenerator = GlobalGuidGenerator.getInstance();
+      const generator:GuidGenerator = GlobalGuidGenerator.getInstance();
       expect(generator).to.be.an.instanceOf(GlobalGuidGenerator);
     });
     
     it("should return a singleton reference", function() {
-      let generator1:GuidGenerator = GlobalGuidGenerator.getInstance();
-      let generator2:GuidGenerator = GlobalGuidGenerator.getInstance();
+      const generator1:GuidGenerator = GlobalGuidGenerator.getInstance();
+      const generator2:GuidGenerator = GlobalGuidGenerator.getInstance();
       expect(generator1).to.equal(generator2);
     });
   });
 
   describe("#generate", ()=> {
     it("should return a valid GUID V4", function() {
-      let guid:string = GlobalGuidGenerator.getInstance().generate();
+      const guid:string = GlobalGuidGenerator.getInstance().generate();
       expect(GuidTestUtils.GUID_VALIDATOR.test(guid)).to.equal(true);
     });
 
     it("should a unique GUID each time", function() {
-      let generator:GuidGenerator =  GlobalGuidGenerator.getInstance();
-      let guid1:string = generator.generate();
-      let guid2:string = generator.generate();
+      const generator:GuidGenerator =  GlobalGuidGenerator.getInstance();
+      const guid1:string = generator.generate();
+      const guid2:string = generator.generate();
       expect(guid1).to.not.equal(guid2);
     });
   });

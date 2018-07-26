@@ -15,6 +15,8 @@
 //   limitations under the License.
 
 import {AbstractLoggerProxy} from "../../../src/com/jec/commons/logging/proxy/AbstractLoggerProxy";
+import {LogLevel} from "../../../src/com/jec/commons/logging/LogLevel";
+import {AbstractLogger} from "../../../src/com/jec/commons/logging/AbstractLogger";
 
 /*!
  * This module constains utilities used by the AbstractLoggerProxyTest test
@@ -22,10 +24,13 @@ import {AbstractLoggerProxy} from "../../../src/com/jec/commons/logging/proxy/Ab
  */
 
 // Utilities:
+class AbstractLoggerImpl extends AbstractLogger {}
 class AbstractLoggerProxyImpl extends AbstractLoggerProxy {}
 export const buildAbstractLoggerProxy:Function = function():AbstractLoggerProxy {
-  let loggerProxy:AbstractLoggerProxy = new AbstractLoggerProxyImpl(LOG_CONTEXT);
+  const loggerProxy:AbstractLoggerProxy = new AbstractLoggerProxyImpl(LOG_CONTEXT);
+  loggerProxy.setLogger(new AbstractLoggerImpl());
   return loggerProxy;
 };
 export const LOG_CONTEXT:string = "[CONTEXT]";
+export const LOG_LEVEL:LogLevel = LogLevel.INFO;
 export const MESSAGE:string = "message";

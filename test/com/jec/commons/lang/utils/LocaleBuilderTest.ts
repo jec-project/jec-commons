@@ -30,27 +30,27 @@ describe("LocaleBuilder", ()=> {
   describe("#build()", ()=> {
 
     it("should return a different 'Locale' instance each time", function() {
-      let builder:LocaleBuilder = new LocaleBuilder();
-      let locale1:Locale = builder.build();
-      let locale2:Locale = builder.build();
+      const builder:LocaleBuilder = new LocaleBuilder();
+      const locale1:Locale = builder.build();
+      const locale2:Locale = builder.build();
       expect(locale1).to.not.equal(locale2);
     });
 
     it("should return a 'Locale' with empty properties", function() {
 
-      let builder:LocaleBuilder = new LocaleBuilder();
-      let locale:Locale = builder.build();
+      const builder:LocaleBuilder = new LocaleBuilder();
+      const locale:Locale = builder.build();
       expect(locale.getLanguage()).to.be.null;
       expect(locale.getRegion()).to.be.null;
       expect(locale.getScript()).to.be.null;
     });
 
     it("should return a 'Locale' with the correct properties", function() {
-      let builder:LocaleBuilder = new LocaleBuilder();
-      let locale:Locale = builder.setLanguage(utils.LANGUAGE)
-                                 .setRegion(utils.REGION)
-                                 .setScript(utils.SCRIPT)
-                                 .build();
+      const builder:LocaleBuilder = new LocaleBuilder();
+      const locale:Locale = builder.setLanguage(utils.LANGUAGE)
+                                   .setRegion(utils.REGION)
+                                   .setScript(utils.SCRIPT)
+                                   .build();
       expect(locale.getLanguage()).to.equal(utils.LANGUAGE);
       expect(locale.getRegion()).to.equal(utils.REGION);
       expect(locale.getScript()).to.equal(utils.SCRIPT);
@@ -60,12 +60,12 @@ describe("LocaleBuilder", ()=> {
   describe("#clear()", ()=> {
 
     it("should reset all properties", function() {
-      let builder:LocaleBuilder = new LocaleBuilder();
+      const builder:LocaleBuilder = new LocaleBuilder();
       builder.setLanguage(utils.LANGUAGE)
              .setRegion(utils.REGION)
              .setScript(utils.SCRIPT);
       builder.clear();
-      let locale:Locale = builder.build();
+      const locale:Locale = builder.build();
       expect(locale.getLanguage()).to.be.null;
       expect(locale.getRegion()).to.be.null;
       expect(locale.getScript()).to.be.null;

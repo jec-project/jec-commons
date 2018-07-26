@@ -24,7 +24,7 @@ import {AbstractLogger} from "../../../src/com/jec/commons/logging/AbstractLogge
 // Utilities:
 class AbstractLoggerImpl extends AbstractLogger {}
 export const buildAbstractLogger:Function = function():AbstractLogger {
-  let logger:AbstractLogger = new AbstractLoggerImpl();
+  const logger:AbstractLogger = new AbstractLoggerImpl();
   return logger;
 };
 export const NAME:string = "name";

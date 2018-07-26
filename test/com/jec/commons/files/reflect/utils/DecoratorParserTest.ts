@@ -29,12 +29,14 @@ describe("DecoratorParser", ()=> {
 
   describe("#findDecorators()", ()=> {
     it("should return an empty array when the file does not contain decorator declarations", function() {
-      let result:DecoratorProperties[] = DecoratorParser.findDecorators(utils.EMPTY_FILE);
+      const result:DecoratorProperties[] =
+                               DecoratorParser.findDecorators(utils.EMPTY_FILE);
       expect(result).to.have.lengthOf(0);
     });
 
     it("should return an array composed of decorator properties found in the specified file", function() {
-      let result:DecoratorProperties[] = DecoratorParser.findDecorators(utils.VALID_FILE);
+      const result:DecoratorProperties[] =
+                               DecoratorParser.findDecorators(utils.VALID_FILE);
       let props:DecoratorProperties = null;
       expect(result).to.have.lengthOf(1);
       props = result[0];

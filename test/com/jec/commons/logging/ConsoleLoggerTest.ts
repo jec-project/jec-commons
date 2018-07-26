@@ -16,7 +16,7 @@
 
 import "mocha";
 import * as chai from "chai";
-import * as spies from "chai-spies";
+import * as sinon from "sinon";
 import {LogLevelString} from "../../../../../src/com/jec/commons/logging/utils/LogLevelString";
 
 // Class to test:
@@ -26,31 +26,32 @@ import {ConsoleLogger} from "../../../../../src/com/jec/commons/logging/ConsoleL
 import * as utils from "../../../../../utils/test-utils/utilities/ConsoleLoggerTestUtils";
 
 // Chai declarations:
-const expect = chai.expect;
-chai.use(spies);
+const expect: any = chai.expect;
 
 // Test:
 describe("ConsoleLogger", ()=> {
 
   let logger:ConsoleLogger = null;
+  let logSpy:any = null;
 
   beforeEach(()=> {
     logger = new ConsoleLogger();
+    logSpy = sinon.spy(console, "log");
   });
 
   afterEach(()=> {
     logger = null;
+    sinon.restore();
   });
 
   describe("#trace()", ()=> {
     it("should output a log message in the console", function() {
-      let spy:any = chai.spy.on(console, "log");
       logger.trace(utils.MESSAGE, utils.CONTEXT);
-      expect(spy).to.have.been.called();
+      sinon.assert.calledOnce(logSpy);
     });
 
     it("should output a well formatted log message", function() {
-      let oldLog:any = console.log;
+      const oldLog:any = console.log;
       logger.trace(utils.MESSAGE, utils.CONTEXT);
       console.log = function (message) {
           expect(message).to.have.string(LogLevelString.TRACE);
@@ -64,13 +65,12 @@ describe("ConsoleLogger", ()=> {
 
   describe("#info()", ()=> {
     it("should output a log message in the console", function() {
-      let spy:any = chai.spy.on(console, "log");
       logger.info(utils.MESSAGE, utils.CONTEXT);
-      expect(spy).to.have.been.called();
+      sinon.assert.calledOnce(logSpy);
     });
 
     it("should output a well formatted log message", function() {
-      let oldLog:any = console.log;
+      const oldLog:any = console.log;
       logger.info(utils.MESSAGE, utils.CONTEXT);
       console.log = function (message) {
           expect(message).to.have.string(LogLevelString.INFO);
@@ -84,13 +84,12 @@ describe("ConsoleLogger", ()=> {
 
   describe("#debug()", ()=> {
     it("should output a log message in the console", function() {
-      let spy:any = chai.spy.on(console, "log");
       logger.debug(utils.MESSAGE, utils.CONTEXT);
-      expect(spy).to.have.been.called();
+      sinon.assert.calledOnce(logSpy);
     });
 
     it("should output a well formatted log message", function() {
-      let oldLog:any = console.log;
+      const oldLog:any = console.log;
       logger.debug(utils.MESSAGE, utils.CONTEXT);
       console.log = function (message) {
           expect(message).to.have.string(LogLevelString.DEBUG);
@@ -103,14 +102,13 @@ describe("ConsoleLogger", ()=> {
   });
   
   describe("#warn()", ()=> {
-    it("should output a log message in the console", function() {
-      let spy:any = chai.spy.on(console, "log");
+    it("should output a log message in the console", function() {;
       logger.warn(utils.MESSAGE, utils.CONTEXT);
-      expect(spy).to.have.been.called();
+      sinon.assert.calledOnce(logSpy);
     });
 
     it("should output a well formatted log message", function() {
-      let oldLog:any = console.log;
+      const oldLog:any = console.log;
       logger.warn(utils.MESSAGE, utils.CONTEXT);
       console.log = function (message) {
           expect(message).to.have.string(LogLevelString.WARN);
@@ -124,13 +122,12 @@ describe("ConsoleLogger", ()=> {
   
   describe("#error()", ()=> {
     it("should output a log message in the console", function() {
-      let spy:any = chai.spy.on(console, "log");
       logger.error(utils.MESSAGE, utils.CONTEXT);
-      expect(spy).to.have.been.called();
+      sinon.assert.calledOnce(logSpy);
     });
 
     it("should output a well formatted log message", function() {
-      let oldLog:any = console.log;
+      const oldLog:any = console.log;
       logger.error(utils.MESSAGE, utils.CONTEXT);
       console.log = function (message) {
           expect(message).to.have.string(LogLevelString.ERROR);
@@ -144,13 +141,12 @@ describe("ConsoleLogger", ()=> {
   
   describe("#always()", ()=> {
     it("should output a log message in the console", function() {
-      let spy:any = chai.spy.on(console, "log");
       logger.always(utils.MESSAGE, utils.CONTEXT);
-      expect(spy).to.have.been.called();
+      sinon.assert.calledOnce(logSpy);
     });
 
     it("should output a well formatted log message", function() {
-      let oldLog:any = console.log;
+      const oldLog:any = console.log;
       logger.always(utils.MESSAGE, utils.CONTEXT);
       console.log = function (message) {
           expect(message).to.have.string(LogLevelString.ALWAYS);

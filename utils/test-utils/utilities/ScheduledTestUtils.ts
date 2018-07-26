@@ -22,7 +22,6 @@ import {AbstractDecoratorConnector} from "../../../src/com/jec/commons/jcad/spi/
 import {JcadContextFactory} from "../../../src/com/jec/commons/jcad/spi/JcadContextFactory";
 import {JcadContext} from "../../../src/com/jec/commons/jcad/JcadContext";
 import {Decorator} from "../../../src/com/jec/commons/jcad/Decorator";
-import {DecoratorConnector} from "../../../src/com/jec/commons/jcad/DecoratorConnector";
 import {SchedulingConnectorRefs} from "../../../src/com/jec/commons/scheduling/jcad/SchedulingConnectorRefs";
 import {ScheduledParams} from "../../../src/com/jec/commons/scheduling/annotations/core/ScheduledParams";
 

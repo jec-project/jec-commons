@@ -31,20 +31,20 @@ describe("GlobalClassLoader", ()=> {
   describe("#singleton()", ()=> {
 
     it("should throw a singleton error when calling the constructor function", function() {
-      let buildInstance:Function = function():void {
+      const buildInstance:Function = function():void {
         new GlobalClassLoader();
       };
       expect(buildInstance).to.throw(SingletonError);
     });
     
     it("should return a GlobalClassLoader instance", function() {
-      let loader:ClassLoader = GlobalClassLoader.getInstance();
+      const loader:ClassLoader = GlobalClassLoader.getInstance();
       expect(loader).to.be.an.instanceOf(GlobalClassLoader);
     });
     
     it("should return a singleton reference", function() {
-      let loader1:ClassLoader = GlobalClassLoader.getInstance();
-      let loader2:ClassLoader = GlobalClassLoader.getInstance();
+      const loader1:ClassLoader = GlobalClassLoader.getInstance();
+      const loader2:ClassLoader = GlobalClassLoader.getInstance();
       expect(loader1).to.equal(loader2);
     });
   });
@@ -52,22 +52,22 @@ describe("GlobalClassLoader", ()=> {
   describe("#loadClass()", ()=> {
 
     it("should return a valid class constructor", function() {
-      let Contructor:any = GlobalClassLoader.getInstance()
-                                            .loadClass(utils.VALID_CLASS);
-      let obj:any = new Contructor();
+      const Contructor:any = GlobalClassLoader.getInstance()
+                                              .loadClass(utils.VALID_CLASS);
+      const obj:any = new Contructor();
       expect(obj).not.to.be.null;
       expect(obj).to.be.an('object');
     });
 
     it("should throw an error when the path to class is not valid", function() {
-      let loadInvalidClassPath:Function = function():void {
+      const loadInvalidClassPath:Function = function():void {
         GlobalClassLoader.getInstance().loadClass(utils.INVALID_CLASS_PATH);
       };
       assert.throws(loadInvalidClassPath, Error);
     });
 
     it("should throw a TypeError when the loaded file is not a class", function() {
-      let Contructor:any = 
+      const Contructor:any = 
             GlobalClassLoader.getInstance().loadClass(utils.INVALID_CLASS_FILE);
       try {
         new Contructor();

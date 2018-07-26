@@ -25,14 +25,14 @@ describe("SingletonError", ()=> {
 
   describe("instanceOf(Error)", ()=> {
     it("SingletonError should extend Error", function() {
-      let error:SingletonError = new SingletonError(Array);
+      const error:SingletonError = new SingletonError(Array);
       expect(error).to.be.instanceOf(Error);
     });
   });
 
   describe("#getClassRef", ()=> {
     it("should return the same class as passed in the class constructor", function() {
-      let error:SingletonError = new SingletonError(Array);
+      const error:SingletonError = new SingletonError(Array);
       expect(error.getClassRef()).to.equal(Array);
     });
   });

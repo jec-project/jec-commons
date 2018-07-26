@@ -25,13 +25,17 @@ describe("ConfigConnectorRefs", ()=> {
 
   describe("#CACHE_CONTROL_CONNECTOR_REF", ()=> {
     it("CACHE_CONTROL_CONNECTOR_REF should return 'com.jec.commons.cfg.annotations.CacheControl", function() {
-      expect(ConfigConnectorRefs.CACHE_CONTROL_CONNECTOR_REF).to.equal("com.jec.commons.cfg.annotations.CacheControl");
+      expect(
+        ConfigConnectorRefs.CACHE_CONTROL_CONNECTOR_REF
+      ).to.equal("com.jec.commons.cfg.annotations.CacheControl");
     });
   });
   
   describe("#STATIC_RESOURCE_CONNECTOR_REF", ()=> {
     it("STATIC_RESOURCE_CONNECTOR_REF should return 'com.jec.commons.cfg.annotations.StaticResource", function() {
-      expect(ConfigConnectorRefs.STATIC_RESOURCE_CONNECTOR_REF).to.equal("com.jec.commons.cfg.annotations.StaticResource");
+      expect(
+        ConfigConnectorRefs.STATIC_RESOURCE_CONNECTOR_REF
+      ).to.equal("com.jec.commons.cfg.annotations.StaticResource");
     });
   });
 });

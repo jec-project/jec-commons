@@ -40,30 +40,30 @@ describe("ImportRefParser", ()=> {
   describe("#getImports()", ()=> {
     
     it("should return an empty array when the specified file does not contain decorator import references", function() {
-      let importRefs:ImportRef[] = parser.getImports(utils.EMPTY_FILE);
+      const importRefs:ImportRef[] = parser.getImports(utils.EMPTY_FILE);
       expect(importRefs).to.have.lengthOf(0);
     });
 
     it("should return an array that contains decorator import references for the specified file", function() {
-      let importRefs:ImportRef[] = parser.getImports(utils.FILE);
+      const importRefs:ImportRef[] = parser.getImports(utils.FILE);
       expect(importRefs).to.have.lengthOf(1);
     });
     
     it("should return an ImportRef object with the right 'ref' vlaue ", function() {
-      let importRefs:ImportRef[] = parser.getImports(utils.FILE);
-      let importRef:ImportRef = importRefs[0];
+      const importRefs:ImportRef[] = parser.getImports(utils.FILE);
+      const importRef:ImportRef = importRefs[0];
       expect(importRef.ref).to.equal(utils.REF);
     });
     
     it("should return an ImportRef object with the right 'classPath' vlaue ", function() {
-      let importRefs:ImportRef[] = parser.getImports(utils.FILE);
-       let importRef:ImportRef = importRefs[0];
+      const importRefs:ImportRef[] = parser.getImports(utils.FILE);
+      const importRef:ImportRef = importRefs[0];
       expect(importRef.classPath).to.equal(utils.CLASS_PATH);
     });
     
     it("should return an ImportRef object with the right 'content' vlaue ", function() {
-      let importRefs:ImportRef[] = parser.getImports(utils.FILE);
-       let importRef:ImportRef = importRefs[0];
+      const importRefs:ImportRef[] = parser.getImports(utils.FILE);
+      const importRef:ImportRef = importRefs[0];
       expect(importRef.content).to.equal(utils.CONTENT);
     });
   });
