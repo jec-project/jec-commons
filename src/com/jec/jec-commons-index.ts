@@ -135,6 +135,10 @@ export {Scheduled} from "./commons/scheduling/annotations/Scheduled";
 export {SchedulingError} from "./commons/scheduling/exceptions/SchedulingError";
 //--> com/jec/commons/scheduling/jcad
 export {SchedulingConnectorRefs} from "./commons/scheduling/jcad/SchedulingConnectorRefs";
+//--> com/jec/commons/scheduling/timer/impl
+export {JecTimerImpl} from "./commons/scheduling/timer/impl/JecTimerImpl";
+//--> com/jec/commons/scheduling/timer/
+export {JecTimer} from "./commons/scheduling/timer/JecTimer";
 //--> com/jec/commons/scheduling/utils
 export {ScheduledParamsValidator} from "./commons/scheduling/utils/ScheduledParamsValidator";
 //--> com/jec/commons/startup

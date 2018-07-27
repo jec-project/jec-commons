@@ -16,7 +16,6 @@
 
 import {SingletonError} from "../../exceptions/SingletonError";
 import {Singleton} from "../../lang/Singleton";
-import {GuidGenerator} from "../../lang/GuidGenerator";
 import {GlobalGuidGenerator} from "../../lang/utils/GlobalGuidGenerator";
 
 /**

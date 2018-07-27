@@ -15,7 +15,6 @@
 //   limitations under the License.
 
 import {JcadContext} from "../JcadContext";
-import {GuidGenerator} from "../../lang/GuidGenerator";
 import {GlobalGuidGenerator} from "../../lang/utils/GlobalGuidGenerator";
 
 /**

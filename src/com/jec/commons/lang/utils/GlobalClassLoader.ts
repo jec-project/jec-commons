@@ -19,7 +19,6 @@ import {Singleton} from "../Singleton";
 import {SingletonError} from "../../exceptions/SingletonError";
 import {DefaultClassLoader} from "./DefaultClassLoader";
 import {GlobalGuidGenerator} from "./GlobalGuidGenerator";
-import {GuidGenerator} from "../GuidGenerator";
 
 /**
  * A singleton implementation of the <code>ClassLoader</code> interface that

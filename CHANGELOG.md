@@ -11,6 +11,7 @@
 
 - Updating all dependencies
 - Test cases improvements
+- Adding support for high accuracy timer
 
 <a name="jec-commons-node-1.1.9"></a>
 ## **1.1.9** (2018-04-07)
