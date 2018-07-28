@@ -1,5 +1,11 @@
 # JEC Commons Project
 
+
+[![JEC version](https://img.shields.io/badge/JEC-1.0-%23ba00ff.svg)](http://jecproject.org)
+[![npm version](https://badge.fury.io/js/jec-commons.svg)](https://www.npmjs.com/package/jec-commons)
+[![Apache 2.0](https://img.shields.io/hexpm/l/plug.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+
+
 JEC Commons is a [JavaScript Enterprise Container][jec-url] project focused on all aspects of reusable JEC components.
 
 [![][jec-logo]][jec-url]
