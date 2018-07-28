@@ -7,20 +7,23 @@ class JecTimerImpl {
         this._interval = -1;
         this._nextTick = -1;
         this._timer = -1;
+        this._isRunning = false;
         this._id = null;
         this._bindTick = null;
         this.initObj(callback, interval);
     }
     start() {
         this._nextTick = this.now() + this._interval;
+        this._isRunning = true;
         this._timer = setTimeout(this._bindTick, this._interval);
     }
     stop() {
         clearTimeout(this._timer);
         this._timer = -1;
+        this._isRunning = false;
     }
     running() {
-        return this._timer !== -1;
+        return this._isRunning;
     }
     getId() {
         return this._id;
@@ -35,12 +38,14 @@ class JecTimerImpl {
         return Date.now();
     }
     tick() {
-        const current = this.now();
-        const drift = current - this._nextTick;
-        const adjustment = Math.max(0, this._interval - drift);
-        this._nextTick += this._interval;
-        this._callback(current, this._nextTick);
-        this._timer = setTimeout(this._bindTick, adjustment);
+        if (this._isRunning) {
+            const current = this.now();
+            const drift = current - this._nextTick;
+            const adjustment = Math.max(0, this._interval - drift);
+            this._nextTick += this._interval;
+            this._callback(current, this._nextTick);
+            this._timer = setTimeout(this._bindTick, adjustment);
+        }
     }
 }
 exports.JecTimerImpl = JecTimerImpl;

@@ -66,6 +66,12 @@ export class JecTimerImpl implements JecTimer {
   private _timer:number = -1;
 
   /**
+   * Indicates whether this timer is running (<code>true</code>), or not
+   * (<code>false</code>).
+   */
+  private _isRunning:boolean = false;
+
+  /**
    * The unique identifier of this timer.
    */
   private _id:string = null;
@@ -85,6 +91,7 @@ export class JecTimerImpl implements JecTimer {
    */
   public start():void {
     this._nextTick = this.now() + this._interval;
+    this._isRunning = true;
     this._timer = setTimeout(this._bindTick, this._interval);
   }
 
@@ -94,13 +101,14 @@ export class JecTimerImpl implements JecTimer {
   public stop():void {
     clearTimeout(this._timer);
     this._timer = -1;
+    this._isRunning = false;
   }
 
   /**
    * @inheritDoc
    */
   public running():boolean {
-    return this._timer !== -1;
+    return this._isRunning;
   }
 
   public getId(): string {
@@ -139,11 +147,13 @@ export class JecTimerImpl implements JecTimer {
    * The method executed at each new new interval invocation.
    */
   private tick():void {
-    const current: number = this.now();
-    const drift:number = current - this._nextTick;
-    const adjustment:number = Math.max(0, this._interval - drift);
-    this._nextTick += this._interval;
-    this._callback(current, this._nextTick);
-    this._timer = setTimeout(this._bindTick, adjustment);
+    if(this._isRunning) {
+      const current: number = this.now();
+      const drift:number = current - this._nextTick;
+      const adjustment:number = Math.max(0, this._interval - drift);
+      this._nextTick += this._interval;
+      this._callback(current, this._nextTick);
+      this._timer = setTimeout(this._bindTick, adjustment);
+    }
   }
 }
